@@ -1,0 +1,23 @@
+<h1 translate="global.menu.miespacio.misalumnos"></h1>
+
+<div class="form-group">
+    <div>
+        <label translate="miespacio.misalumnos.empresa.creditosTotales"></label>
+        {{ctrl.usuario.creditosTotales}}
+    </div>
+
+    <div>
+        <label translate="miespacio.misalumnos.empresa.creditosDistribuidos"></label>
+        {{ctrl.usuario.creditosDistribuidos}}
+    </div>
+
+    <div>
+        <label translate="miespacio.misalumnos.empresa.creditosDisponibles"></label>
+        {{ctrl.usuario.creditosDisponibles}}
+    </div>
+
+    <!--TODO: Créditos consumidos? Si es necesario, hacer una petición REST simplemente para obtener el valor, o si no un DTO con todas las estadisticas-->
+
+</div>
+
+<mis-alumnos-list></mis-alumnos-list>

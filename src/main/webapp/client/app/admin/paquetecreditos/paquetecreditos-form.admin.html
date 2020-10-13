@@ -1,0 +1,26 @@
+<form name="form" role="form" ng-submit="ctrl.save()" novalidate>
+    <div class="form-body">
+
+        <div class="row">
+            <!--Créditos-->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label-form key="admin.paquetecreditos.form.creditos" for="creditos" required="true"></label-form>
+                    <input class="form-control" id="creditos" type="number" ng-model="ctrl.item.creditos" required>
+                </div>
+            </div>
+
+            <!--Coste-->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label-form key="admin.paquetecreditos.form.coste" for="coste" required="true"></label-form>
+                    <input class="form-control" id="coste" type="number" ng-model="ctrl.item.coste" required>
+                </div>
+            </div>
+        </div>
+
+        <!--Botones-->
+        <buttons can-save="ctrl.canSave" mode="ctrl.mode"></buttons>
+    </div>
+</form>
+

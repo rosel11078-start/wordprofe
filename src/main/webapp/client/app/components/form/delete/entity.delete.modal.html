@@ -1,0 +1,25 @@
+<form ng-submit="ctrl.confirmRemove(ctrl.item)">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="ctrl.dismiss()">&times;</button>
+        <h4 class="modal-title" translate="{{ctrl.params.title}}"></h4>
+    </div>
+
+    <div class="modal-body">
+        <alert modal="true"></alert>
+
+        <p translate="{{ctrl.params.body}}"
+           translate-values="{id: '{{::ctrl.item[ctrl.params.property]}}'}"></p>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="ctrl.dismiss()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            translate="admin.form.button.cancel"></span>
+        </button>
+        <button type="submit" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span
+            translate="admin.form.button.delete"></span>
+        </button>
+    </div>
+</form>

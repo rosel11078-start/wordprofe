@@ -1,0 +1,8 @@
+<label-form key="{{ctrl.label}}" for="{{ctrl.id}}" required="ctrl.required" tooltip="{{ctrl.tooltip}}"></label-form>
+
+<select class="form-control" name="{{ctrl.id}}"
+        ng-model="ctrl.model" ng-change="ctrl.change(ctrl.model)"
+        ng-options="value as ctrl.formatElement(value) | translate for value in ctrl.options track by value.id"
+        ng-required="ctrl.required">
+    <option value="" ng-if="!ctrl.required">{{ctrl.empty | translate}}</option>
+</select>

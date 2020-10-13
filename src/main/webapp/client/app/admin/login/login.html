@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1 translate="login.title"></h1>
+        <form class="form" role="form" novalidate ng-submit="loginCtrl.login()">
+            <div class="form-group">
+                <label-form key="login.form.username.label" for="username" required="true"></label-form>
+                <input class="form-control" id="username" ng-model="loginCtrl.username" type="text" required/>
+            </div>
+            <div class="form-group">
+                <label-form key="login.form.password.label" for="password" required="true"></label-form>
+                <input class="form-control" id="password" ng-model="loginCtrl.password" type="password" required/>
+            </div>
+            <div class="form-group">
+                <label for="rememberMe" class="float-right">
+                    <input checked="true" id="rememberMe" ng-model="loginCtrl.rememberMe" type="checkbox"/>
+                    {{'login.form.rememberme' | translate}}</label>
+            </div>
+            <button class="btn btn-primary" translate="login.form.button" type="submit"></button>
+        </form>
+    </div>
+</div>

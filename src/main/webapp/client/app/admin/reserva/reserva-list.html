@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-sm-3">
+        <div class="form-group">
+            <enum-select id="estado" label="reserva.form.estado" model="ctrl.filter.estado"
+                         options="ctrl.estados" base="enum.estado" empty="multiselect.todos"
+                         required="false"></enum-select>
+        </div>
+    </div>
+</div>
+
+<div class="empty" ng-show="ctrl.empty" translate="reserva.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'reserva.form.fechainicio' | translate" sortable="'fecha'" align="center">
+            <date model="element.fecha"></date>
+        </td>
+        <td data-title="'reserva.form.estado' | translate" sortable="'estado'">
+            {{'enum.estado.' + element.estado | translate}}
+        </td>
+        <td data-title="'global.profesor' | translate" sortable="'profesor.email'">
+            <span ng-if="element.profesor.email">{{element.profesor.email}}</span>
+        </td>
+        <td data-title="'reserva.motivo.profesor.title' | translate" sortable="'motivoProfesor'">
+            <span ng-if="element.motivoProfesor">{{element.motivoProfesor}}</span>
+        </td>
+        <td data-title="'global.alumno' | translate" sortable="'alumno.email'">
+            <span ng-if="element.alumno.email">{{element.alumno.email}}</span>
+        </td>
+        <td data-title="'reserva.motivo.alumno.title' | translate" sortable="'motivoAlumno'">
+            <span ng-if="element.motivoAlumno">{{element.motivoAlumno}}</span>
+        </td>
+        <td ng-if="ctrl.titulo === 'reserva.norevisadas'" data-title="'reserva.creditos.devolver' | translate"
+            class="col-md-1 text-center button-icons">
+            <a ng-click="ctrl.devolver(element.id)" class="button glyphicon glyphicon-ok"
+               title="{{'reserva.creditos.aceptar' | translate}}"></a>
+            <a ng-click="ctrl.rechazar(element.id)" class="button glyphicon glyphicon-remove"
+               title="{{'reserva.creditos.rechazar' | translate}}"></a>
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

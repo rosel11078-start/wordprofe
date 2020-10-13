@@ -1,0 +1,41 @@
+<form class="form" role="form" novalidate ng-submit="ctrl.save()">
+    <div class="form-group">
+        <label-form key="admin.configuracion.iva" for="iva" required="true"></label-form>
+        <input class="form-control" id="iva" ng-model="ctrl.configuracion.iva" type="number" required/>
+    </div>
+
+    <div class="form-group">
+        <label-form key="admin.configuracion.tiempomaximorespuesta" for="tiempoMaximoRespuesta"
+                    required="true"></label-form>
+        <input class="form-control" id="tiempoMaximoRespuesta" ng-model="ctrl.configuracion.tiempoMaximoRespuesta"
+               type="number" required/>
+    </div>
+
+    <div class="form-group">
+        <label-form key="admin.configuracion.tiempoantesiniciocancelar" for="tiempoAntesInicioCancelar"
+                    required="true"></label-form>
+        <input class="form-control" id="tiempoAntesInicioCancelar"
+               ng-model="ctrl.configuracion.tiempoAntesInicioCancelar" type="number" required/>
+    </div>
+
+    <!--<div class="form-group">-->
+    <!--<label for="tiempoMaximoActualizarIncidencia"-->
+    <!--translate="admin.configuracion.tiempomaximoactualizarincidencia"></label>-->
+    <!--<input class="form-control" id="tiempoMaximoActualizarIncidencia"-->
+    <!--ng-model="ctrl.configuracion.tiempoMaximoActualizarIncidencia" type="number" required/>-->
+    <!--</div>-->
+
+    <div class="form-group">
+        <label-form key="admin.configuracion.correoNotificaciones" for="correoNotificaciones"
+                    required="true"></label-form>
+        <input class="form-control" id="correoNotificaciones" ng-model="ctrl.configuracion.correoNotificaciones"
+               type="email" required/>
+    </div>
+
+    <div class="form-group" align="right">
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;<span
+            translate="global.button.accept"></span>
+        </button>
+    </div>
+</form>

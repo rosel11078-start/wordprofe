@@ -1,0 +1,27 @@
+<h1>{{'recuperar.title' | translate}}</h1>
+
+<div class="alert alert-success" ng-show="ctrl.success" translate="recuperar.success" translate-compile></div>
+
+<div ng-if="!ctrl.success">
+    <p>{{'recuperar.info' | translate}}</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <form class="form" role="form" ng-submit="ctrl.recuperar(ctrl.email)">
+                <div class="form-group">
+                    <label-form key="registro.form.email" required="true" for="email"></label-form>
+                    <input type="email" class="form-control" id="email" name="email" ng-model="ctrl.email" required>
+                </div>
+
+                <!--Campos obligatorios-->
+                <div class="message-required">{{'global.form.required' | translate}}</div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">
+                        {{'recuperar.submit' | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row registro">
+
+    <div class="login">
+        <h1>{{'registro.title' | translate}}</h1>
+        <login foco="true"></login>
+    </div>
+
+    <div class="registro-info">
+        <h1>{{'registro.info.titulo' | translate}}</h1>
+
+        <div class="form-group">
+            <p translate="registro.info.mensaje"></p>
+        </div>
+
+        <div class="text-center botones">
+            <social ng-if="false" provider="google"></social>
+            <social ng-if="false" provider="facebook"></social>
+
+            <a ui-sref="registro({tipo: 'alumno'})"
+               class="btn btn-default btn-block">{{'registro.info.registrate' | translate}}</a>
+        </div>
+    </div>
+</div>

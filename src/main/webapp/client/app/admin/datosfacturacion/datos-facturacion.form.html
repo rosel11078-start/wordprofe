@@ -1,0 +1,63 @@
+<!-- Datos fiscales -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4>{{'admin.datosfacturacion.title' | translate}}</h4>
+    </div>
+</div>
+
+<div class="row">
+    <!--Nombre-->
+    <div class="col-sm-9">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.nombre" for="dfnombre"></label-form>
+            <input class="form-control" id="dfnombre" type="text" ng-model="ctrl.item.datosFacturacion.nombre">
+        </div>
+    </div>
+
+    <!--CIF-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.cifnif" for="dfcif"></label-form>
+            <input class="form-control" id="dfcif" type="text" ng-model="ctrl.item.datosFacturacion.nif" maxLength="20">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Provincia-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.provincia" for="dfprovincia"></label-form>
+            <input class="form-control" id="dfprovincia" type="text"
+                   ng-model="ctrl.item.datosFacturacion.provincia" maxLength="50">
+        </div>
+    </div>
+
+    <!--Localidad-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.localidad" for="dflocalidad"></label-form>
+            <input class="form-control" id="dflocalidad" type="text"
+                   ng-model="ctrl.item.datosFacturacion.localidad" maxLength="50">
+        </div>
+    </div>
+
+    <!--CP-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.cp" for="dfcp"></label-form>
+            <input class="form-control" id="dfcp" type="text" ng-model="ctrl.item.datosFacturacion.codigoPostal"
+                   maxLength="10">
+        </div>
+    </div>
+
+    <!--Dirección-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.direccion" for="dfdireccion"></label-form>
+            <input class="form-control" id="dfdireccion" type="text"
+                   ng-model="ctrl.item.datosFacturacion.direccion" maxLength="500">
+        </div>
+    </div>
+</div>

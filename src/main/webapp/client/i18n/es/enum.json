@@ -1,0 +1,70 @@
+{
+  "enum": {
+    "all": "Todos",
+    "boolean": {
+      "true": "Sí",
+      "false": "No"
+    },
+    "color": {
+      "COLOR_CLASE_LIBRE": "Disponible",
+      "COLOR_CLASE_OCUPADA": "Ocupada",
+      "COLOR_RESERVA_PENDIENTE": "Pendiente de evaluar",
+      "COLOR_RESERVA_SIN_CONTESTAR": "Solicitada",
+      "COLOR_RESERVA_CONFIRMADA": "Reserva confirmada",
+      "COLOR_RESERVA_NO_CONTESTADA_RECHAZADA_CANCELADA_POR_ALUMNO_O_PROFESOR": "Reserva no contestada o cancelada",
+      "COLOR_RESERVA_INCIDENCIA": "Reserva con incidencia",
+      "COLOR_RESERVA_REALIZADA": "Clase impartida"
+    },
+    "dia": {
+      "LUNES": "Lunes",
+      "MARTES": "Martes",
+      "MIERCOLES": "Miércoles",
+      "JUEVES": "Jueves",
+      "VIERNES": "Viernes",
+      "SABADO": "Sábado",
+      "DOMINGO": "Domingo"
+    },
+    "mes": {
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
+    },
+    "disponibilidad": {
+      "AMBOS": "Ambos",
+      "ONLINE": "Online",
+      "PRESENCIAL": "Presencial"
+    },
+    "estado": {
+      "CANCELADA_POR_ALUMNO": "Cancelada por alumno/a",
+      "CANCELADA_POR_PROFESOR": "Cancelada por profesor/a",
+      "CONFIRMADA": "Confirmada por profesor/a",
+      "INCIDENCIA": "No impartida por incidencia",
+      "NO_CONTESTADA": "No contestada por profesor/a",
+      "PENDIENTE": "Pendiente de evaluar",
+      "REALIZADA": "Clase impartida",
+      "RECHAZADA": "Rechazada por profesor/a",
+      "SIN_CONTESTAR": "Sin contestar"
+    },
+    "horadia": {
+      "MADRUGADA": "Madrugada (00h-06h)",
+      "MANHANA": "Mañana (06h-12h)",
+      "TARDE": "Tarde (12h-18h)",
+      "NOCHE": "Noche (18h-24h)"
+    },
+    "motivo": {
+      "IMPREVISTO": "Imprevisto",
+      "INCIDENCIA_TECNICA": "Incidencia técnica",
+      "OCUPADA": "Clase ocupada",
+      "PROFESOR_AUSENTADO": "Profesor/a ausentado/a"
+    }
+  }
+}

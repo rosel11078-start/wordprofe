@@ -1,0 +1,20 @@
+/**/
+.date-picker .input-group-btn .btn {
+    padding-bottom: 7px;
+}
+
+.date-picker .btn {
+    box-shadow: none ! important;
+}
+
+.date-picker .uib-datepicker-popup .btn {
+    border: none;
+}
+
+.date-picker .uib-datepicker-popup *:focus {
+    outline: none;
+}
+
+.date-picker th {
+    vertical-align: middle;
+}

@@ -1,0 +1,62 @@
+####################### ADMIN #######################
+
+#- componente: <idiomas></idiomas>
+
+# Enlace a la página principal. Útil durante el desarrolo.
+#- label: Principal
+#  icon: glyphicon glyphicon-home
+#  state: home
+
+# Reservas
+- label: global.menu.reserva.title
+  authorities: ROLE_ADMIN
+  actives: admin/reserva
+  state: admin/reserva({revisadas:null})
+
+# Usuarios
+- label: global.menu.usuarios
+  authorities: ROLE_ADMIN
+  actives: admin/profesor, admin/empresa, admin/alumno
+  subtree:
+    - label: global.menu.profesores
+      state: admin/profesor
+    - label: global.menu.empresas
+      state: admin/empresa
+    - label: global.menu.alumnos
+      state: admin/alumno
+
+# Paquetes de créditos
+- label: global.menu.paquetescreditos
+  authorities: ROLE_ADMIN
+  state: admin/paquetecreditos
+
+# Estáticas
+#- label: estaticas.title
+#  authorities: ROLE_ADMIN
+#  actives: admin/estaticas
+#  subtree:
+#    - label: estaticas.pagina.principal
+#      state: admin/estaticas({nombre:'principal'})
+
+# Administradores
+- label: global.menu.administradores
+  authorities: ROLE_ADMIN
+  state: admin/admin
+
+# Configuración
+- label: global.menu.configuracion
+  authorities: ROLE_ADMIN
+  icon: glyphicon glyphicon-cog
+  state: admin/configuracion
+
+### Autenticado ###
+- label: global.menu.account.main
+  icon: glyphicon glyphicon-user
+  authorities: ROLE_ADMIN, ROLE_COLABORADOR
+  subtree:
+    - label: admin.changepassword.title
+      icon: glyphicon glyphicon-edit
+      state: contrasena
+    - label: global.menu.logout
+      icon: glyphicon glyphicon-log-out
+      state: logout

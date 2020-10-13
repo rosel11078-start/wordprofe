@@ -1,0 +1,75 @@
+<!--Campos reutilizables-->
+<script type="text/ng-template" id="bloque-password.html">
+    <div class="row">
+        <!--Contraseña-->
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label-form key="registro.form.contrasena" for="password" required="true"></label-form>
+                <input class="form-control" id="password" type="password" ng-model="ctrl.item.contrasenaClaro" required
+                   autocomplete="new-password">
+                <password-strength-bar password-to-check="ctrl.item.contrasenaClaro"></password-strength-bar>
+            </div>
+        </div>
+
+        <!--Repetir-->
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label-form key="registro.form.repetircontrasena" for="confirmPassword" required="true"></label-form>
+                <input class="form-control" id="confirmPassword" type="password" ng-model="ctrl.confirmPassword"
+                       required
+                   autocomplete="new-password">
+            </div>
+        </div>
+    </div>
+</script>
+
+<!--Contenido-->
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>
+            <enumerado base="registro.tipo" value="{{ctrl.tipo}}"></enumerado>
+        </h1>
+
+        <loading is-loading="ctrl.loading" class="center-block"></loading>
+
+        <div class="alert alert-info" ng-show="ctrl.success"> {{'registro.success.email' | translate}}</div>
+
+        <form ng-show="!ctrl.success" name="form" role="form" ng-submit="ctrl.save(ctrl.item)" novalidate>
+
+            <div class="form-body">
+
+                <!--Alumno-->
+                <div ng-if="ctrl.tipo == 'alumno'">
+                    <ng-include src="'app/public/cuenta/registro/registro.alumno.html'"></ng-include>
+                </div>
+
+                <!--Campos obligatorios-->
+                <div class="message-required">{{'global.form.required' | translate}}</div>
+
+                <!--Acepto las condiciones-->
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="noselect">
+                            <input type="checkbox" id="visible" ng-model="ctrl.acepto">
+                            {{'registro.form.acepto' | translate}}
+                        </label>
+                    </div>
+                </div>
+
+                <!--Botones-->
+                <div class="form-bottom-buttons">
+                    <button type="button" class="btn btn-default" ng-click="$root.back()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
+                        <span translate="admin.form.button.cancel"></span>
+                    </button>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok"></span>&nbsp;
+                        <span translate="registro.form.save"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

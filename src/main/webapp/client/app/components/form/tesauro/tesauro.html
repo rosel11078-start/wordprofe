@@ -1,0 +1,47 @@
+<div class="tesauro">
+
+    <ng-include src="'app/templates/tesauro.templates.html'" ng-if="ctrl.templateUrl"></ng-include>
+
+    <label-form key="{{ctrl.label}}" for="{{ctrl.id}}"
+                required="ctrl.required" tooltip="{{ctrl.tooltip}}"></label-form>
+
+    <!--Múltiple (ngTagsInput)-->
+    <tags-input ng-if="ctrl.multiple" name="{{ctrl.id}}"
+                class="bootstrap" ng-class="{'as-list': ctrl.asList}"
+                ng-model="ctrl.ngModel"
+                ng-disabled="ctrl.disabled"
+                display-property="{{ctrl.display}}"
+                key-property="{{ctrl.key}}"
+                add-on-blur="false"
+                add-from-autocomplete-only="{{ctrl.restricted}}"
+                on-tag-added="ctrl.setElement($tag)"
+                replace-spaces-with-dashes="false"
+                placeholder="{{ctrl.placeholder | translate}}">
+        <auto-complete source="ctrl.loadTags($query)" select-first-match="false"
+                       min-length="{{ctrl.minLength}}" load-on-focus="true"
+                       load-on-empty="{{ctrl.minLength == 0}}"></auto-complete>
+    </tags-input>
+
+    <!--Simple (Angular Bootstrap)-->
+    <div ng-if="!ctrl.multiple" ng-class="{'input-group': ctrl.eliminable}">
+        <input type="text" class="form-control" id="{{ctrl.id}}" name="{{ctrl.id}}"
+               ng-model="ctrl.ngModel[ctrl.display]"
+               ng-required="ctrl.required"
+               ng-disabled="ctrl.disabled"
+               ng-change="ctrl.resetElement()"
+               typeahead-show-hint="true"
+               typeahead-editable="!ctrl.restricted"
+               uib-typeahead="element[ctrl.display] for element in ctrl.loadTags($viewValue)"
+               typeahead-min-length="ctrl.minLength | num"
+               typeahead-on-select="ctrl.setElement($item)"
+               typeahead-select-on-exact="true"
+               typeahead-template-url="{{ctrl.templateUrl}}"
+               autocomplete="none" placeholder="{{ctrl.placeholder | translate}}"/>
+        <span class="input-group-addon" ng-if="ctrl.eliminable">
+            <a type="button" class="glyphicon glyphicon-remove" ng-click="ctrl.clear()"
+               title="{{'admin.form.button.remove' | translate}}"
+               ng-class="{'disabled': !ctrl.ngModel[ctrl.display] || ctrl.disabled}"></a>
+        </span>
+    </div>
+
+</div>

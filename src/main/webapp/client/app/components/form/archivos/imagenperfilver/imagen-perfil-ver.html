@@ -1,0 +1,6 @@
+<div class="imagen-perfil">
+    <span class="glyphicon glyphicon-user" ng-class="ctrl.mini ? 'mini' : 'normal'" ng-if="!ctrl.usuario.foto"></span>
+    <img ng-class="ctrl.mini ? 'mini' : 'normal'"
+         ng-src="upload/usuarios/{{ctrl.usuario.id}}/perfil/n_{{ctrl.usuario.foto}}"
+         ng-if="ctrl.usuario.foto"/>
+</div>

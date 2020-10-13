@@ -1,0 +1,40 @@
+<filter filter="ctrl.filter.key"></filter>
+
+<div class="empty" ng-show="ctrl.empty" translate="miespacio.misalumnos.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'miespacio.misalumnos.nombre' | translate" sortable="'nombre'">
+            {{element.nombre}}
+        </td>
+
+        <td data-title="'miespacio.misalumnos.apellidos' | translate" sortable="'apellidos'">
+            {{element.apellidos}}
+        </td>
+
+        <td data-title="'miespacio.misalumnos.email' | translate" sortable="'email'">
+            {{element.email}}
+        </td>
+
+        <td data-title="'miespacio.misalumnos.creditosTotales' | translate" sortable="'creditosTotales'"
+            align="right" class="col-sm-1">
+            {{element.creditosTotales}}
+        </td>
+
+        <td data-title="'miespacio.misalumnos.creditosDisponibles' | translate" sortable="'creditosDisponibles'"
+            align="right" class="col-sm-1">
+            {{element.creditosDisponibles}}
+        </td>
+
+        <td data-title="'miespacio.misalumnos.creditosConsumidos' | translate" sortable="'creditosConsumidos'"
+            align="right" class="col-sm-1">
+            {{element.creditosConsumidos}}
+        </td>
+    </tr>
+</table>
+
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

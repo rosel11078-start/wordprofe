@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.creacion.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h3 th:text="#{email.creacion.greeting(${user.email})}"></h3>
+
+<p th:text="#{email.creacion.text1}"></p>
+
+<p>
+    <a th:href="@{|${baseUrl}/#/nueva-contrasena?key=${user.claveReset}&amp;email=${user.email}|}"
+       th:text="@{|${baseUrl}/#/nueva-contrasena?key=${user.claveReset}&amp;email=${user.email}|}"></a>
+</p>
+
+<p>
+    <span th:text="#{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>

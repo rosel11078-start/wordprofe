@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="pull-left">
+        <a ui-sref="registro/info">
+            <div>
+                <div class="logo"><img ng-src="assets/images/logo_worldprofe_h50.png"/></div>
+            </div>
+        </a>
+    </div>
+
+    <div class="pull-right" ng-if="false">
+        <idiomas></idiomas>
+    </div>
+
+    <div class="text-right" ng-show="!$root.isOffline">
+        <div class="usuario">
+            <div has-any-authority="ROLE_ANONYMOUS">
+                <a class="btn btn-primary" ui-sref="registro/info"><i class="fa fa-sign-in"></i> {{'header.login' |
+                    translate}} </a>
+            </div>
+            <div has-any-authority="ROLE_AUTHENTICATED">
+                <div class="info-usuario">
+                    <span ng-if="!ctrl.usuario.nombre && !ctrl.usuario.apellidos">{{ctrl.usuario.email}}</span>
+                    <span class="nombre" title="{{ctrl.usuario.email}}">{{ctrl.usuario.nombre}} <span
+                        ng-if="ctrl.usuario.apellidos">{{ctrl.usuario.apellidos}}</span></span>
+                    <imagen-perfil-ver usuario="ctrl.usuario" mini="true"></imagen-perfil-ver>
+                </div>
+
+                <a class="btn btn-warning" ui-sref="logout"><i class="fa fa-sign-out"></i> {{'header.logout' |
+                    translate}}</a>
+            </div>
+        </div>
+    </div>
+
+</div>

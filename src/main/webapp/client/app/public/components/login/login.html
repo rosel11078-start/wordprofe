@@ -1,0 +1,30 @@
+<div has-any-authority="ROLE_ANONYMOUS">
+    <form class="form" role="form" ng-submit="$ctrl.login()" novalidate>
+        <div class="form-group">
+            <label-form key="login.form.username.label" for="username" required="true"></label-form>
+            <input class="form-control" id="username" ng-model="$ctrl.username" type="email" required/>
+        </div>
+        <div class="form-group">
+            <label-form key="login.form.password.label" for="password" required="true"></label-form>
+            <input class="form-control" id="password" ng-model="$ctrl.password" type="password" required/>
+        </div>
+
+        <div class="form-group">
+            <a ui-sref="recuperar/init">{{'login.password.forgot' | translate}}</a>
+            <label for="rememberMe" class="float-right">
+                <input checked="true" id="rememberMe" ng-model="$ctrl.rememberMe" type="checkbox"/>
+                {{'login.form.rememberme' | translate}}
+            </label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" translate="login.form.button"></button>
+        </div>
+
+        <!--<div class="form-group">-->
+        <!--<social provider="google"></social>-->
+        <!--<social provider="facebook"></social>-->
+        <!--</div>-->
+    </form>
+</div>
+

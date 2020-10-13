@@ -1,0 +1,26 @@
+<div class="btn-ctrl">
+    <a class="btn btn-primary btn-crear" ui-sref="admin/admin/create">
+        <span translate="global.menu.register"></span>
+    </a>
+</div>
+
+<table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped">
+
+    <tr ng-repeat="user in $data track by user.login">
+        <td data-title="'admin.admin.form.login' | translate" sortable="'login'">
+            {{user.email}}
+        </td>
+
+        <td data-title="'admin.admin.form.fechaultimoacceso' | translate" sortable="'fechaUltimoAcceso'">
+            <date model="user.fechaUltimoAcceso"></date>
+        </td>
+
+        <td class="text-center button-icons">
+            <a ng-if="user.login !== 'admin'" ng-click="ctrl.showRemoveConfirmation(user)"
+               class="button glyphicon glyphicon-trash"
+               title="{{'admin.form.button.delete' | translate}}"></a>
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

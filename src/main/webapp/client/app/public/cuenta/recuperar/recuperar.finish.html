@@ -1,0 +1,36 @@
+<h1>{{'recuperar.title' | translate}}</h1>
+
+<p>{{'recuperar.finish.info' | translate}}</p>
+
+<div class="alert alert-success" ng-show="ctrl.success" translate="recuperar.success" translate-compile></div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form class="form" role="form" ng-submit="ctrl.save()" novalidate>
+
+            <div class="form-group">
+                <label-form key="admin.changepassword.newpassword" for="newPassword" required="true"></label-form>
+                <input type="password" class="form-control" id="newPassword" ng-maxlength="50" ng-minlength="1"
+                       ng-model="ctrl.newPassword" required/>
+                <password-strength-bar password-to-check="ctrl.newPassword"></password-strength-bar>
+            </div>
+
+            <div class="form-group">
+                <label-form key="admin.changepassword.confirmpassword" for="confirmPassword"
+                            required="true"></label-form>
+                <input type="password" class="form-control" id="confirmPassword" ng-maxlength="50" ng-minlength="1"
+                       ng-model="ctrl.confirmPassword" required/>
+            </div>
+
+            <!--Campos obligatorios-->
+            <div class="message-required">{{'global.form.required' | translate}}</div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    {{'recuperar.submit' | translate}}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

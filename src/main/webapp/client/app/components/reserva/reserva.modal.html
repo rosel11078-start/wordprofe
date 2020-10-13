@@ -1,0 +1,139 @@
+<form name="form" ng-submit="ctrl.confirm(ctrl.item)">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="ctrl.dismiss()">&times;</button>
+        <h4 class="modal-title" translate="reserva.info"></h4>
+    </div>
+
+    <div class="modal-body">
+        <alert modal="true"></alert>
+
+        <p translate="{{ctrl.params.body}}"
+           translate-values="{id: '{{::ctrl.item[ctrl.params.property]}}'}"></p>
+
+        <usuario-reserva usuario="ctrl.usuarioModal" reserva="ctrl.item"></usuario-reserva>
+
+        <div ng-if="ctrl.parametros.estadobd == null">
+            <label-form key="reserva.creditos.disponibles" sufijo=":"></label-form>
+            <span>{{ctrl.parametros.creditosDisponibles}}</span>
+        </div>
+
+        <button type="button" class="btn btn-default btn-block" ng-click="isCollapsed = !isCollapsed"
+                ng-show="ctrl.parametros.estadobd != null && ctrl.mostrar"
+                ng-init="ctrl.mostrar=false">
+            <span ng-if="ctrl.tipo == ctrl.tipos.SIN_CONTESTAR" translate="reserva.contestar"></span>
+            <span ng-if="ctrl.tipo == ctrl.tipos.CANCELAR_PROFESOR || ctrl.tipo == ctrl.tipos.CANCELAR_ALUMNO"
+                  translate="reserva.cancelar"></span>
+            <span ng-if="ctrl.tipo == ctrl.tipos.RESPONDER_PROFESOR
+            || ctrl.tipo == ctrl.tipos.RESPONDER_ALUMNO
+            || ctrl.tipo == ctrl.tipos.RESPONDER_ALUMNO_PENDIENTE"
+                  translate="reserva.evaluar"></span>
+        </button>
+        <div uib-collapse="!isCollapsed" class="gestionar-reserva">
+            <div class="well well-lg">
+
+                <!-- Profesor que contesta a una reserva -->
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.SIN_CONTESTAR"
+                     ng-init="ctrl.parametros.estado='CONFIRMADA'; ctrl.mostrar=true">
+                    <div class="form-group">
+                        <label class="radio-inline"><input
+                            type="radio" ng-model="ctrl.parametros.estado"
+                            value="CONFIRMADA">{{'reserva.acciones.confirmar' | translate}}</label>
+                        <label class="radio-inline"><input
+                            type="radio" ng-model="ctrl.parametros.estado"
+                            value="RECHAZADA">{{'reserva.acciones.rechazar' | translate}}</label>
+                    </div>
+                </div>
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.SIN_CONTESTAR"
+                     uib-collapse="ctrl.parametros.estado == 'CONFIRMADA'">
+                    <div class="form-group">
+                        <span ng-bind-html="'reserva.motivo.profesor.rechazo' | translate"></span>
+                        <textarea class="form-control" id="motivoRechazo" ng-model="ctrl.parametros.motivoProfesor"
+                                  ng-required="ctrl.parametros.estado == 'RECHAZADA'"></textarea>
+                    </div>
+                </div>
+
+                <!-- Profesor o alumno que cancelan una reserva -->
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.CANCELAR_PROFESOR"
+                     ng-init="ctrl.parametros.estado='CANCELADA_POR_PROFESOR'; ctrl.mostrar=true">
+                    <div class="form-group">
+                        <span ng-bind-html="'reserva.motivo.profesor.cancelacion' | translate"></span>
+                        <textarea class="form-control" id="motivoCancelacion" ng-model="ctrl.parametros.motivoProfesor"
+                                  required></textarea>
+                    </div>
+                </div>
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.CANCELAR_ALUMNO"
+                     ng-init="ctrl.parametros.estado='CANCELADA_POR_ALUMNO'; ctrl.mostrar=true">
+                    <div class="form-group">
+                        <span ng-bind-html="'reserva.motivo.alumno.cancelacion' | translate"></span>
+                        <textarea class="form-control" id="motivoCancelacionAlumno"
+                                  ng-model="ctrl.parametros.motivoAlumno" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Profesor indica si la clase se llevó a cabo o no -->
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.RESPONDER_PROFESOR"
+                     ng-init="ctrl.parametros.estado='REALIZADA'; ctrl.mostrar=true; console.log('INIT ESTADO REALIZADA');">
+                    <div class="form-group">
+                        <label class="radio-inline"><input
+                            type="radio" ng-model="ctrl.parametros.estado"
+                            value="REALIZADA">{{'reserva.estado.realizada.titulo' | translate}}</label>
+                        <label class="radio-inline"><input
+                            type="radio" ng-model="ctrl.parametros.estado"
+                            value="INCIDENCIA">{{'reserva.estado.incidencia.titulo' | translate}}</label>
+                    </div>
+
+                    <span ng-if="ctrl.parametros.estado === 'REALIZADA'"
+                          ng-bind-html="'reserva.estado.realizada.info' | translate"></span>
+
+                    <div class="form-group" ng-if="ctrl.parametros.estado === 'INCIDENCIA'">
+                        <span ng-bind-html="'reserva.estado.incidencia.info' | translate"></span>
+                        <textarea class="form-control" id="motivoIncidenciaProfesor"
+                                  ng-model="ctrl.parametros.motivoProfesor" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Alumno indica qué le pareció la clase -->
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.RESPONDER_ALUMNO && !ctrl.item.motivoAlumno"
+                     ng-init="ctrl.parametros.estado=ctrl.parametros.estadobd; ctrl.mostrar=true">
+                    <div class="form-group">
+                        <span ng-bind-html="'reserva.motivo.alumno.evaluar' | translate"></span>
+                        <textarea class="form-control" id="motivoIncidenciaAlumno"
+                                  ng-model="ctrl.parametros.motivoAlumno" required></textarea>
+                    </div>
+                </div>
+
+                <div ng-if="ctrl.tipo == ctrl.tipos.RESPONDER_ALUMNO_PENDIENTE"
+                     ng-init="ctrl.parametros.estado=ctrl.parametros.estadobd; ctrl.mostrar=true">
+                    <span translate="reserva.estado.pendiente"></span>
+                </div>
+
+                <!-- Si profesor y alumno anotaron la incidencia -> No se puede modificar -->
+                <div
+                    ng-if="ctrl.parametros.estadobd === 'INCIDENCIA' && ctrl.item.motivoProfesor.length && ctrl.item.motivoAlumno.length"
+                    ng-init="ctrl.mostrar=false"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" ng-if="isCollapsed && ctrl.mostrarFooter || ctrl.parametros.estadobd == null">
+        <button type="button" class="btn btn-default" ng-click="ctrl.dismiss()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+            translate="reserva.acciones.cancelar"></span>
+        </button>
+        <button type="submit" class="btn btn-primary"
+                ng-disabled="ctrl.$invalid || (ctrl.parametros.creditosDisponibles <= 0 && ctrl.parametros.estadobd == null)">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;
+            <span ng-if="ctrl.parametros.estadobd != null" translate="reserva.acciones.guardar"></span>
+            <span ng-if="ctrl.parametros.estadobd == null" translate="reserva.acciones.reservar"></span>
+        </button>
+    </div>
+
+
+</form>

@@ -1,0 +1,33 @@
+apply plugin: 'org.springframework.boot'
+
+ext {
+    logbackLoglevel = 'INFO'
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: spring_boot_version
+}
+
+def profiles = 'prod'
+
+bootRun {
+    args = ['--spring.profiles.active=prod']
+}
+
+war {
+    webAppDirName = 'build/www/'
+}
+
+processResources {
+    filesMatching('**/logback-spring.xml') {
+        filter {
+            it.replace('@logback.loglevel@', logbackLoglevel)
+        }
+    }
+}
+
+task setProdProperties(dependsOn: bootRun) << {
+    doFirst {
+        System.setProperty('spring.profiles.active', profiles)
+    }
+}

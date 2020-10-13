@@ -1,0 +1,70 @@
+# ===================================================================
+# Spring Boot configuracion for the "dev" profile.
+#
+# This configuracion overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+
+    # Configuración de la BASE DE DATOS
+    datasource:
+        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+        url: jdbc:postgresql://localhost:5432/sife1701
+        username: postgres
+        password: postgres
+        maximum-pool-size: 5
+
+    application:
+        url: http://localhost:8080
+    profiles:
+        active: dev
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use gulp + BrowserSync for livereload
+
+    jpa:
+      show-sql: false
+
+    mail:
+      host: xxxxxxxx
+      port: 587
+      username: xxxxxxxx
+      password: xxxxxxxx
+      protocol: smtp
+      default-encoding: UTF-8
+      properties.mail.smtp:
+        auth: true
+        starttls.enable: false
+
+    social:
+        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+      google:
+        clientId: xxxxxxxx
+        clientSecret: xxxxxxxx
+        # see https://developers.facebook.com/docs/facebook-login
+      facebook:
+        clientId: xxxxxxxx
+        clientSecret: xxxxxxxx
+
+properties:
+  paypal:
+    # Datos de desarrollo
+    clientID: xxxxxxxx
+    clientSecret: xxxxxxxx
+    environment: sandbox
+
+  mail:
+    from: xxxxxxxx
+    name: Probas Correo
+
+    social:
+        redirectAfterSignIn: "http://localhost:9000/#/social-auth"
+        redirectAfterSignUp: "http://localhost:9000/#/social-register"

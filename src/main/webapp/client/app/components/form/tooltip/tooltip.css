@@ -1,0 +1,16 @@
+/**/
+.ng-tooltip .icon {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #999;
+}
+
+h1 .ng-tooltip .icon, h2 .ng-tooltip .icon, h3 .ng-tooltip .icon, h4 .ng-tooltip .icon {
+    color: white;
+    font-size: 16px;
+}
+
+.ng-tooltip .tooltip {
+    line-height: 1.2em;
+}
+

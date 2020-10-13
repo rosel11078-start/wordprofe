@@ -1,0 +1,32 @@
+<ng-form name="ficheroForm">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <!--<div ng-if="!ctrl.archivo" class="datos-archivo pull-left">{{'upload.file.vacio' | translate}}</div>-->
+                <div ng-if="ctrl.archivo" class="datos-archivo pull-left">
+                    <download ng-if="ctrl.url && !ctrl.archivoTemporal" archivo="ctrl.archivo" url="{{ctrl.url}}"
+                              show-label="false" has-any-authority="{{ctrl.authorities}}"></download>
+
+                    <span ng-if="!ctrl.progresoArchivo" class="glyphicon glyphicon-remove clickable eliminar-archivo"
+                          title="Eliminar" ng-click="ctrl.eliminarArchivo()"></span>
+
+                    <span>{{ctrl.archivo}}</span>
+                </div>
+
+                <loading is-loading="ctrl.progresoArchivo"></loading>
+
+                <input id="{{ctrl.id}}" name="archivo" type="file" class="oculto" ngf-select accept="{{ctrl.accept}}"
+                       ngf-change="ctrl.onArchivoSelect($files, ficheroForm)"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" ng-disabled="ctrl.progresoArchivo" class="btn btn-default btn-sm pull-left"
+                        ng-click="ctrl.upload()">
+                    {{'upload.file.title' | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</ng-form>

@@ -1,0 +1,17 @@
+<form name="form" role="form" ng-submit="ctrl.save()" novalidate>
+    <div class="form-body">
+
+        <div class="row">
+            <!--Nombre-->
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label-form key="admin.capacidad.form.nombre" for="nombre" required="true"></label-form>
+                    <input class="form-control" id="nombre" type="text" ng-model="ctrl.item.nombre" required>
+                </div>
+            </div>
+        </div>
+
+        <!--Botones-->
+        <buttons can-save="ctrl.canSave" mode="ctrl.mode"></buttons>
+    </div>
+</form>

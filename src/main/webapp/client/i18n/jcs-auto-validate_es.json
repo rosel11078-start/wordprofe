@@ -1,0 +1,15 @@
+{
+  "defaultMsg": "Agrege el mensaje de error para {0}",
+  "email": "Introduzca un correo válido",
+  "minlength": "Introduzca al menos {0} caracteres",
+  "maxlength": "Has introducido más del número máximo de caracteres permitidos ({0})",
+  "min": "El valor debe de ser superior o igual a {0}",
+  "max": "Introduzca un valor menor a {0}",
+  "required": "Campo obligatorio",
+  "date": "Introduzca una fecha válida",
+  "pattern": "Comprueba que el valor introducido coincide con el patrón {0}",
+  "number": "Introduzca sólo números",
+  "url": "Introduzca una URL válida con el formato http(s)://www.google.com",
+  "loginPattern": "Caracteres válidos: letras, números",
+  "sameAs": "Los valores no coinciden"
+}

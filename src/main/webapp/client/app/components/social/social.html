@@ -1,0 +1,9 @@
+<form action="{{providerURL}}" method="POST" has-any-authority="ROLE_ANONYMOUS" >
+    <button type="submit" class="btn btn-social btn-{{provider}}"
+            ng-class="{'btn-social-mini': mini, 'btn-block': !mini}">
+        <i class="fa fa-{{provider}}"></i>
+        <span data-translate="social.btn" translate-values="{label: label}" ng-show="!mini"></span>
+    </button>
+    <input name="scope" type="hidden" value="{{providerSetting}}"/>
+    <input name="_csrf" type="hidden" value="{{csrf}}"/>
+</form>

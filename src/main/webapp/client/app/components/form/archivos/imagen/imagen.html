@@ -1,0 +1,33 @@
+<div class="form-group">
+    <ng-form name="imagenForm">
+
+        <div class="enxe-boton-elegir" ng-show="ctrl.edicion && !ctrl.ngModel.rutaImagen && !ctrl.progresoImagen">
+            <button type="button" class="btn btn-default btn-sm  pull-left"
+                    ng-disabled="ctrl.progresoImagen"
+                    ng-click="ctrl.clickUpload()">
+                {{'imagen.upload' | translate}}
+            </button>
+        </div>
+
+        <div class="imagen" ng-if="ctrl.ngModel.rutaImagen && ctrl.edicion"
+             ng-class="{'imagen-profile' : ctrl.profile}">
+            <div class="imagen-wrap" ng-if="ctrl.ngModel.path">
+                <span class="glyphicon glyphicon-remove clickable close"
+                      ng-click="ctrl.eliminarImagen()"
+                      title="{{'admin.form.button.delete' | translate}}"></span>
+
+                <img class="enxe-img pull-left" ng-src="{{ctrl.ngModel.rutaImagen}}"/>
+
+                <radio ng-if="ctrl.ngModelRadio" class="principal" model="ctrl.ngModelRadio"
+                       value="{{ctrl.indice}}"></radio>
+            </div>
+
+            <loading is-loading="ctrl.progresoImagen"></loading>
+        </div>
+
+        <input id="inputFoto{{ctrl.indice}}" type="file" ngf-select="" class="oculto"
+               ngf-change="ctrl.onImagenSelect($files, imagenForm, ctrl.indice)"
+               accept=".jpg,.png,.gif,.jpeg"/>
+
+    </ng-form>
+</div>

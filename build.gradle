@@ -1,0 +1,152 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+        maven { url 'http://repo.spring.io/milestone' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath group: 'net.ltgt.gradle', name: 'gradle-apt-plugin', version: '0.6'
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: spring_boot_version
+        classpath group: 'org.springframework.build.gradle', name: 'propdeps-plugin', version: '0.0.7'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+defaultTasks 'bootRun'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootRepackage {
+    mainClass = 'es.enxenio.sife1701.Application'
+}
+
+war {
+    rootSpec.exclude("**/tomcat-*.jar")
+    exclude("**/client")
+    exclude("**/tmp")
+    exclude("**/upload")
+    from "dist"
+}
+
+springBoot {
+    mainClass = 'es.enxenio.sife1701.Application'
+    executable = true
+}
+
+bootRun {
+    addResources = false
+}
+
+if (project.hasProperty('prod')) {
+    apply from: 'gradle/profile_prod.gradle'
+} else {
+    apply from: 'gradle/profile_dev.gradle'
+}
+
+apply from: 'gradle/process_resources.gradle'
+
+group = 'es.enxenio.sife1701'
+version = '0.0.1-SNAPSHOT'
+description = ''
+
+configurations {
+    providedRuntime
+}
+
+repositories {
+    mavenLocal()
+    maven { url 'http://repo.spring.io/milestone' }
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/releases' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'http://repo.maven.apache.org/maven2' }
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-logging'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+
+    //
+    compile group: 'javax.inject', name: 'javax.inject', version: '1'
+    compile group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'javax.transaction', name: 'javax.transaction-api', version: '1.2'
+    compile group: 'javax.annotation', name: 'jsr250-api', version: '1.0'
+    compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+    compile group: 'javax.mail', name: 'javax.mail-api', version: '1.5.6'
+
+    compile(group: 'com.zaxxer', name: 'HikariCP', version: '2.6.3') {
+        exclude(module: 'tools')
+    }
+    compile group: 'org.postgresql', name: 'postgresql', version: postgresql_version
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: spring_boot_version
+
+    compile group: 'org.springframework', name: 'spring-aspects'
+    compile group: 'org.springframework.data', name: 'spring-data-jpa'
+    compile group: 'org.springframework', name: 'spring-context'
+    compile group: 'org.springframework', name: 'spring-context-support'
+    compile group: 'org.springframework.security', name: 'spring-security-core'
+    compile group: 'org.springframework.security', name: 'spring-security-config'
+    compile group: 'org.springframework.security', name: 'spring-security-data'
+    compile group: 'org.springframework.security', name: 'spring-security-web'
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: hibernate_version
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: hibernate_version
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: hibernate_version
+
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
+
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: jackson_version
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jackson_version
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jackson_version
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-hibernate5', version: jackson_version
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: jackson_version
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-afterburner', version: jackson_version
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+
+    // No se puede seguir actualizando porque deja de ser compatible con Spring Boot 1.x
+    compile group: 'net.bull.javamelody', name: 'javamelody-spring-boot-starter', version: '1.72.0'
+
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.2'
+
+    // Starter for building MVC web applications using Thymeleaf views
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+
+    // Java API To Access Microsoft Format Files
+    compile group: 'org.apache.poi', name: 'poi', version: '3.15'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
+
+    // Autenticación social
+    compile group: 'org.springframework.social', name: 'spring-social-security', version: '1.1.4.RELEASE'
+    compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '3.0.0.M1'
+    compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
+
+    // Integración con PayPal
+    compile('com.paypal.sdk:rest-api-sdk:1.9.3') {
+        exclude group: 'org.slf4j'
+        exclude group: 'org.apache.logging.log4j'
+    }
+
+}
+
+compileJava.dependsOn(processResources)
+
+clean {
+    delete "target"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
+
+task stage(dependsOn: 'bootRepackage') {
+}

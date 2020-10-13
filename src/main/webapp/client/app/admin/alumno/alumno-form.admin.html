@@ -1,0 +1,91 @@
+<form name="form" role="form" ng-submit="ctrl.save()" novalidate>
+    <div class="form-body">
+
+        <div class="row">
+            <!--Imagen de perfil-->
+            <div class="col-sm-4 form-group">
+                <imagen-perfil ng-model="ctrl.item.imagen"
+                               ruta-carpeta-imagen="upload/usuarios/{{ctrl.item.id}}/perfil"
+                               on-remove-image="ctrl.onRemoveImage()"></imagen-perfil>
+            </div>
+
+            <div ng-if="ctrl.empresa" class="col-sm-8 form-group" align="right">
+                <label>{{'admin.alumno.form.creditosmaximos' | translate}}: {{ctrl.empresa.creditosDisponibles}}</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Nombre-->
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label-form key="admin.alumno.form.nombre" for="nombre" required="true"></label-form>
+                    <input class="form-control" id="nombre" type="text" ng-model="ctrl.item.nombre" required="true">
+                </div>
+            </div>
+
+            <!--Apellidos-->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label-form key="admin.alumno.form.apellidos" for="apellidos" required="true"></label-form>
+                    <input class="form-control" id="apellidos" type="text" ng-model="ctrl.item.apellidos"
+                           required="true">
+                </div>
+            </div>
+
+            <!--Créditos-->
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label-form key="admin.alumno.form.creditosdisponibles" for="creditos"></label-form>
+                    <input class="form-control" id="creditos" type="number"
+                           ng-model="ctrl.item.creditosDisponibles" min="0" max="{{ctrl.creditosMaximos}}">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Email-->
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label-form key="admin.alumno.form.email" for="email" required="true"></label-form>
+                    <input class="form-control" id="email" type="email" ng-model="ctrl.item.email" required="true"
+                           ng-disabled="ctrl.mode == 'edit'">
+                </div>
+            </div>
+
+            <!--Skype-->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label-form key="admin.alumno.form.skype" for="skype" required="true"></label-form>
+                    <input class="form-control" id="skype" type="text" ng-model="ctrl.item.skype" required="true">
+                </div>
+            </div>
+
+            <!--Teléfono móvil-->
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label-form key="admin.empresa.form.telefonomovil" for="telefonoMovil"
+                                required="true"></label-form>
+                    <input class="form-control" id="telefonoMovil" type="text" ng-model="ctrl.item.telefonoMovil"
+                           required="true" maxlength="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Observaciones-->
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <text-area label="admin.empresa.form.observaciones" model="ctrl.item.observaciones"
+                               id="observaciones"></text-area>
+                </div>
+            </div>
+        </div>
+        
+        <!-- En caso de ser alumno sin empresa, pues se muestran los datos fiscales -->
+        <ng-include ng-if="!ctrl.empresa" src="'app/admin/datosfacturacion/datos-facturacion.form.html'"></ng-include>
+
+        <!--Botones-->
+        <buttons can-save="ctrl.canSave" mode="ctrl.mode"></buttons>
+    </div>
+</form>
+

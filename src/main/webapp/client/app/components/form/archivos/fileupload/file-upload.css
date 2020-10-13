@@ -1,0 +1,24 @@
+/**/
+.oculto {
+    display: none !important;
+}
+
+.datos-archivo {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.progreso-archivo {
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+.eliminar-archivo {
+    cursor: pointer;
+    margin-left: 5px;
+    top: 2px;
+}
+
+.mensaje-error {
+    color: #b94a48;
+}

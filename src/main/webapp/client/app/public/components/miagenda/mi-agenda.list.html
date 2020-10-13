@@ -1,0 +1,58 @@
+<div class="text-right form-group" has-any-authority="ROLE_ALUMNO">
+    <label-form key="reserva.creditos.disponibles" sufijo=":"></label-form>
+    <span>{{ctrl.usuarioAutenticado.creditosDisponibles}}</span>
+    &nbsp;&nbsp;
+    <label-form key="reserva.creditos.consumidos" sufijo=":"></label-form>
+    <span>{{ctrl.usuarioAutenticado.creditosConsumidos}}</span>
+</div>
+
+<div id="calendar" class="calendar" calendar="myCalendar" config="uiConfig.calendar"
+     ui-calendar="uiConfig.calendar"></div>
+
+<div class="row leyenda">
+    <div class="col-sm-4" ng-hide="alumnoViendose && rol === 'ROLE_ALUMNO' || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style="{background:COLOR_CLASE_LIBRE}"></span>
+        {{'enum.color.COLOR_CLASE_LIBRE' | translate}}
+    </div>
+    <div class="col-sm-4" ng-hide="!usuarioLogueado || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style='{background:COLOR_RESERVA_SIN_CONTESTAR}'></span>
+        {{'enum.color.COLOR_RESERVA_SIN_CONTESTAR' | translate}}
+        <reserva-count estados="ctrl.countEstados" estado="SIN_CONTESTAR"></reserva-count>
+    </div>
+
+    <div class="col-sm-4"
+         ng-hide="(alumnoViendose && rol === 'ROLE_ALUMNO') || rol === 'ROLE_PROFESOR' || canceladasRechazadas === 'true'">
+        <span class="leyenda-elemento" ng-style='{background:COLOR_CLASE_OCUPADA}'></span>
+        {{'enum.color.COLOR_CLASE_OCUPADA' | translate}}
+    </div>
+    <div class="col-sm-4" ng-hide="!usuarioLogueado || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style='{background:COLOR_RESERVA_CONFIRMADA}'></span>
+        {{'enum.color.COLOR_RESERVA_CONFIRMADA' | translate}}
+        <reserva-count estados="ctrl.countEstados" estado="CONFIRMADA"></reserva-count>
+    </div>
+
+    <div class="col-sm-4" ng-hide="!usuarioLogueado || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style='{background:COLOR_RESERVA_PENDIENTE}'></span>
+        {{'enum.color.COLOR_RESERVA_PENDIENTE' | translate}}
+        <reserva-count estados="ctrl.countEstados" estado="PENDIENTE"></reserva-count>
+    </div>
+
+    <div class="col-sm-4" ng-hide="!usuarioLogueado || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style='{background:COLOR_RESERVA_REALIZADA}'></span>
+        {{'enum.color.COLOR_RESERVA_REALIZADA' | translate}}
+        <reserva-count estados="ctrl.countEstados" estado="REALIZADA"></reserva-count>
+    </div>
+
+    <div class="col-sm-4" ng-hide="!usuarioLogueado || canceladasRechazadas === 'true'"><span
+        class="leyenda-elemento" ng-style='{background:COLOR_RESERVA_INCIDENCIA}'></span>
+        {{'enum.color.COLOR_RESERVA_INCIDENCIA' | translate}}
+        <reserva-count estados="ctrl.countEstados" estado="INCIDENCIA"></reserva-count>
+    </div>
+
+    <div class="col-sm-4" ng-show="usuarioLogueado && canceladasRechazadas === 'true'"><span class="leyenda-elemento"
+                                                                                             ng-style='{background:COLOR_RESERVA_NO_CONTESTADA_RECHAZADA_CANCELADA_POR_ALUMNO_O_PROFESOR}'></span>
+        {{'enum.color.COLOR_RESERVA_NO_CONTESTADA_RECHAZADA_CANCELADA_POR_ALUMNO_O_PROFESOR' | translate}}
+    </div>
+</div>
+
+

@@ -1,0 +1,25 @@
+/**/
+#header .container {
+    position: relative;
+}
+
+#idiomas {
+    /*position: absolute;*/
+    right: 10px;
+    top: 2px;
+}
+
+#idiomas .idioma:hover {
+    font-weight: bold;
+}
+
+#idiomas .seleccionado {
+    font-weight: bold;
+    cursor: text;
+}
+
+@media (max-width: 767px) {
+    #idiomas {
+        display: none;
+    }
+}

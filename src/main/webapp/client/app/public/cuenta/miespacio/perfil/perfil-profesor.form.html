@@ -1,0 +1,173 @@
+<!-- Datos personales -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4>{{'admin.profesor.form.datospersonales' | translate}}</h4>
+    </div>
+</div>
+
+<div class="row">
+    <!--Imagen de perfil-->
+    <div class="col-sm-4 form-group">
+        <imagen-perfil ng-model="ctrl.item.imagen"
+                       ruta-carpeta-imagen="upload/usuarios/{{ctrl.item.id}}/perfil"
+                       on-remove-image="ctrl.onRemoveImage()"></imagen-perfil>
+    </div>
+</div>
+
+<div class="row">
+    <!--Nombre-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.nombre" for="nombre" required="true"></label-form>
+            <input class="form-control" id="nombre" type="text" ng-model="ctrl.item.nombre" required>
+        </div>
+    </div>
+
+    <!--Apellidos-->
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.apellidos" for="apellidos" required="true"></label-form>
+            <input class="form-control" id="apellidos" type="text" ng-model="ctrl.item.apellidos" required>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Skype-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.skype" for="skype" required="true"></label-form>
+            <input class="form-control" id="skype" type="text" ng-model="ctrl.item.skype" required>
+        </div>
+    </div>
+
+    <!--Email-->
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.email" for="email" required="true"></label-form>
+            <input class="form-control" id="email" type="email" ng-model="ctrl.item.email" required disabled>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Teléfono móvil-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.telefonomovil" for="telefonoMovil" required="true"></label-form>
+            <input class="form-control" id="telefonoMovil" type="text" ng-model="ctrl.item.telefonoMovil" required>
+        </div>
+    </div>
+
+    <!--País de origen-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <tesauro id="pais" ng-model="ctrl.item.pais"
+                     resource="ctrl.paisService" method="query"
+                     restricted="true" multiple="false" min-length="0"
+                     label="admin.profesor.form.paisorigen" eliminable="true"
+                     parameters="{sortProperty: 'nombre', size: 20}" required="true"></tesauro>
+        </div>
+    </div>
+
+    <!--Fecha de nacimiento-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <date-picker id="fechanacimiento" model="ctrl.item.fechaNacimiento"
+                         label="admin.profesor.form.fechanacimiento" required="true"
+                         options="{minDate: '', maxDate: 'today', datepickerMode: 'day'}">
+            </date-picker>
+        </div>
+    </div>
+</div>
+
+<!-- Datos profesionales -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4>{{'admin.profesor.form.datosprofesionales' | translate}}</h4>
+    </div>
+</div>
+
+<!--<div class="row">-->
+<!--&lt;!&ndash;Disponibilidad&ndash;&gt;-->
+<!--<div class="col-sm-4">-->
+<!--<div class="form-group">-->
+<!--<enum-select id="disponibilidad" label="admin.profesor.form.disponibilidad" model="ctrl.item.disponibilidad"-->
+<!--options="ctrl.disponibilidades" base="enum.disponibilidad" required="true"></enum-select>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;Otras capacidades&ndash;&gt;-->
+<!--<div class="col-sm-8">-->
+<!--<div class="form-group">-->
+<!--&lt;!&ndash;<button-create click="ctrl.openCapacidadModal"></button-create>&ndash;&gt;-->
+<!--<multi-select label="admin.profesor.form.capacidades" id="capacidades" options="ctrl.capacidades"-->
+<!--model="ctrl.item.capacidades"-->
+<!--display="nombre"-->
+<!--template="'{{option.nombre}}'"></multi-select>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-sm-4">-->
+<!--<div class="form-group">-->
+<!--<select-form id="zonasHorarias" model="ctrl.item.zonaHoraria" label="admin.profesor.form.zonahoraria"-->
+<!--options="ctrl.zonasHorarias" display="gmt" empty="multiselect.default" required="true"></select-form>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="row">
+    <!--Idiomas y niveles del profesor-->
+    <div class="col-sm-12">
+        <div class="form-group">
+            <list-form label="admin.profesor.form.idiomas" list="ctrl.item.idiomas"
+                       resolve="{idiomaService: ctrl.idiomaService, niveles: ctrl.niveles}"
+                       template-url="profesor.idiomas.html"></list-form>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="profesor.idiomas.html">
+    <!--Idioma-->
+    <div class="col-sm-11">
+        <div class="form-group">
+            <tesauro id="profesor_idioma_{{$index}}" ng-model="element.idioma"
+                     resource="ctrl.resolve.idiomaService" method="findAll"
+                     restricted="true" multiple="false" min-length="0"
+                     label="admin.profesor.form.idioma" eliminable="true"
+                     parameters="{sortProperty: 'nombre'}" required="true"></tesauro>
+        </div>
+    </div>
+    <!--Nivel-->
+    <!--<div class="col-sm-5">-->
+    <!--<div class="form-group">-->
+    <!--<multi-select label="admin.profesor.form.niveles" id="idioma_nivel_{{$index}}" options="ctrl.resolve.niveles"-->
+    <!--model="element.niveles" display="nombre" template="'{{option.nombre}}'">-->
+    <!--</multi-select>-->
+    <!--</div>-->
+    <!--</div>-->
+</script>
+
+<div class="row">
+    <!--Texto de presentación-->
+    <div class="col-sm-12">
+        <div class="form-group">
+            <text-area label="admin.profesor.form.textopresentacion" model="ctrl.item.textoPresentacion"
+                       id="textopresentacion" required="true"></text-area>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Descripción de las capacidades-->
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label-form key="admin.profesor.form.descripcioncapacidades"
+                        for="descripcionCapacidades"></label-form>
+            <input class="form-control" id="descripcionCapacidades" type="text"
+                   ng-model="ctrl.item.descripcionCapacidades">
+        </div>
+    </div>
+</div>
