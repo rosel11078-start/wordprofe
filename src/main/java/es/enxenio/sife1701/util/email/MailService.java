@@ -34,7 +34,6 @@ import java.util.Locale;
  * </p>
  */
 @Service
-@EnableAsync
 public class MailService {
 
     private static final String USER = "user";

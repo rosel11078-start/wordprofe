@@ -106,6 +106,7 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-config'
     compile group: 'org.springframework.security', name: 'spring-security-data'
     compile group: 'org.springframework.security', name: 'spring-security-web'
+    compile group: 'org.springframework.boot', name:'spring-boot-starter-aop'
 
     compile group: 'org.hibernate', name: 'hibernate-core', version: hibernate_version
     compile group: 'org.hibernate', name: 'hibernate-java8', version: hibernate_version
