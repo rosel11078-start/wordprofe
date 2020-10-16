@@ -44,15 +44,15 @@ spring:
         auth: true
         starttls.enable: false
 
-    social:
-        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
-      google:
-        clientId: xxxxxxxx
-        clientSecret: xxxxxxxx
-        # see https://developers.facebook.com/docs/facebook-login
-      facebook:
-        clientId: xxxxxxxx
-        clientSecret: xxxxxxxx
+    # social:
+    #     # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+    #   google:
+    #     clientId: xxxxxxxx
+    #     clientSecret: xxxxxxxx
+    #     # see https://developers.facebook.com/docs/facebook-login
+    #   facebook:
+    #     clientId: xxxxxxxx
+    #     clientSecret: xxxxxxxx
 
 properties:
   paypal:
@@ -61,10 +61,19 @@ properties:
     clientSecret: xxxxxxxx
     environment: sandbox
 
+  # social:
+  #   redirectAfterSignIn: "/social-auth"
+  #   redirectAfterSignUp: "/social-register"
+
   mail:
     from: xxxxxxxx
     name: Probas Correo
 
-    social:
-        redirectAfterSignIn: "http://localhost:9000/#/social-auth"
-        redirectAfterSignUp: "http://localhost:9000/#/social-register"
+  social:
+    redirectAfterSignIn: "http://localhost:9000/#/social-auth"
+    redirectAfterSignUp: "http://localhost:9000/#/social-register"
+
+server:
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json

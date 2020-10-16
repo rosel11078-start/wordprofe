@@ -14,6 +14,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -33,6 +34,7 @@ import java.util.Locale;
  * </p>
  */
 @Service
+@EnableAsync
 public class MailService {
 
     private static final String USER = "user";

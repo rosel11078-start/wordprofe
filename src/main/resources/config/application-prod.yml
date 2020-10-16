@@ -1,5 +1,5 @@
 # ===================================================================
-# Spring Boot configuration for the "prod" profile.
+# Spring Boot configuracion for the "dev" profile.
 #
 # This configuracion overrides the application.yml file.
 # ===================================================================
@@ -12,53 +12,59 @@
 
 spring:
 
-  # Configuración de la BASE DE DATOS
-  datasource:
-    dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-    url: jdbc:postgresql://10.0.0.1:5432/sife1701db
-    username: postgres
-    password: postgres
-    maximum-pool-size: 5
+    # Configuración de la BASE DE DATOS
+    datasource:
+        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+        url: jdbc:postgresql://localhost:5432/sife1701
+        username: postgres
+        password: postgres
+        maximum-pool-size: 5
 
-  application:
-    url: http://sife1701.cli.enxenio.net # URL en la que se aloja la aplicación
-  profiles:
-    active: prod
-  devtools:
-    restart:
-      enabled: false
-    livereload:
-      enabled: false
-  jpa:
-    show-sql: false
+    application:
+        url: http://localhost:8080
+    profiles:
+        active: dev
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use gulp + BrowserSync for livereload
 
-  mail: # Configuración del servidor de correo
-    host: xxxxxxxx
-    port: xxxxxxxx
-    username: xxxxxxxx
-    password: xxxxxxxx
-    protocol: smtp
-    default-encoding: UTF-8
-    properties.mail.smtp:
-      auth: true
-      starttls.enable: false
+    jpa:
+      show-sql: false
+
+    mail:
+      host: xxxxxxxx
+      port: 587
+      username: xxxxxxxx
+      password: xxxxxxxx
+      protocol: smtp
+      default-encoding: UTF-8
+      properties.mail.smtp:
+        auth: true
+        starttls.enable: false
+
+    social:
+        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+      google:
+        clientId: xxxxxxxx
+        clientSecret: xxxxxxxx
+        # see https://developers.facebook.com/docs/facebook-login
+      facebook:
+        clientId: xxxxxxxx
+        clientSecret: xxxxxxxx
 
 properties:
   paypal:
-    # Claves de producción creadas con cuenta info@db-asesores.es
-    clientID: AbKY6x2WwTioiaGYFk-SHeBJlKkPf7hcpiZrKCnJN0tlbDBpC8WmtB-7Ck7hYccCyI9Wt_X-sX2BBUWe
-    clientSecret: EFmaScqa-sRZMs1MtVQ00cyI9U5IVPyJpbHJftTWq8vpHK36t8Xss6m4STMPWyT6XbCVSzfKSVTAdL0b
-    environment: live
+    # Datos de desarrollo
+    clientID: xxxxxxxx
+    clientSecret: xxxxxxxx
+    environment: sandbox
 
   mail:
-    from: xxxxxxxx # Configuración del email de envío
-    name: WORLDPROFE
-  social:
-    redirectAfterSignIn: "/social-auth"
-    redirectAfterSignUp: "/social-register"
+    from: xxxxxxxx
+    name: Probas Correo
 
-server:
-  compression:
-    enabled: true
-    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
-
+    social:
+        redirectAfterSignIn: "http://localhost:9000/#/social-auth"
+        redirectAfterSignUp: "http://localhost:9000/#/social-register"
