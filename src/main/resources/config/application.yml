@@ -15,9 +15,9 @@
 
 server:
     port: 8080
-    # compression:
-    # enabled: true
-    # mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+    compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
 
 
 spring:
@@ -89,8 +89,7 @@ properties:
 
 javamelody:
   advisor-auto-proxy-creator-enabled: false
-
-init-parameters:
+  init-parameters:
     application-name: SIFE1701
     authorized-users: admin:worldprofe
     monitoring-path: /monitoring
