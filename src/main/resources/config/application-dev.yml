@@ -10,8 +10,17 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-spring:
+# locale:
+#     default: es
 
+server:
+    port: 8080
+    compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+
+
+spring:
     # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
@@ -55,6 +64,11 @@ spring:
     #     clientSecret: xxxxxxxx
 
 properties:
+  async:
+      corePoolSize: 2
+      maxPoolSize: 50
+      queueCapacity: 10000
+
   paypal:
     # Datos de desarrollo
     clientID: xxxxxxxx
@@ -73,7 +87,11 @@ properties:
     redirectAfterSignIn: "http://localhost:9000/#/social-auth"
     redirectAfterSignUp: "http://localhost:9000/#/social-register"
 
-server:
-  compression:
-    enabled: true
-    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+javamelody:
+  advisor-auto-proxy-creator-enabled: false
+  init-parameters:
+    application-name: SIFE1701
+    authorized-users: admin:worldprofe
+    monitoring-path: /monitoring
+    log: false
+    url-exclude-pattern: (/resources/.*|/upload/.*|/templates/.*)
