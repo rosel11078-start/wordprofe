@@ -1,9 +1,17 @@
 package es.enxenio.sife1701.config;
 
 
-import es.enxenio.sife1701.config.util.CachingHttpHeadersFilter;
-import es.enxenio.sife1701.config.util.Constants;
-import es.enxenio.sife1701.config.util.MyProperties;
+import java.io.File;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.EnumSet;
+
+import javax.inject.Inject;
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.apache.catalina.webresources.StandardRoot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,15 +24,9 @@ import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
-import javax.inject.Inject;
-import javax.servlet.DispatcherType;
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.EnumSet;
+import es.enxenio.sife1701.config.util.CachingHttpHeadersFilter;
+import es.enxenio.sife1701.config.util.Constants;
+import es.enxenio.sife1701.config.util.MyProperties;
 
 /**
  * Configuration of web application with Servlet 3.0 APIs.

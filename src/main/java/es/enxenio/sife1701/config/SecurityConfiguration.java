@@ -1,9 +1,7 @@
 package es.enxenio.sife1701.config;
 
-import es.enxenio.sife1701.config.jwt.JWTConfigurer;
-import es.enxenio.sife1701.config.jwt.TokenProvider;
-import es.enxenio.sife1701.model.usuario.Rol;
-import es.enxenio.sife1701.model.usuario.UsuarioService;
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +16,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
 
-import javax.inject.Inject;
+import es.enxenio.sife1701.config.jwt.JWTConfigurer;
+import es.enxenio.sife1701.config.jwt.TokenProvider;
+import es.enxenio.sife1701.model.usuario.Rol;
+import es.enxenio.sife1701.model.usuario.UsuarioService;
 
 /**
  * Created by crodriguez on 18/05/2016.

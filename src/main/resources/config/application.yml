@@ -21,6 +21,9 @@ server:
 
 
 spring:
+    message:
+        basename: i18n/messages
+        encoding: UTF-8
     # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource

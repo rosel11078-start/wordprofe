@@ -21,6 +21,9 @@ server:
 
 
 spring:
+    message:
+        basename: i18n/messages
+        encoding: UTF-8
     # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
@@ -43,15 +46,15 @@ spring:
       show-sql: false
 
     mail:
-      host: xxxxxxxx
+      host: smtp.google.com
       port: 587
-      username: xxxxxxxx
-      password: xxxxxxxx
+      username: rosel11078
+      password: Daniel2020*
       protocol: smtp
       default-encoding: UTF-8
       properties.mail.smtp:
         auth: true
-        starttls.enable: false
+        starttls.enable: true
 
     # social:
     #     # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
@@ -80,9 +83,9 @@ properties:
   #   redirectAfterSignUp: "/social-register"
 
   mail:
-    from: xxxxxxxx
-    name: Probas Correo
-
+    from: rosel11078
+    name: Pruebas de Correo
+      
   social:
     redirectAfterSignIn: "http://localhost:9000/#/social-auth"
     redirectAfterSignUp: "http://localhost:9000/#/social-register"

@@ -10,6 +10,7 @@ import org.apache.commons.lang3.CharEncoding;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -20,12 +21,26 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
 import javax.inject.Inject;
+import javax.mail.Message;
+import javax.mail.NoSuchProviderException;
+import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
+
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Service for sending e-mails.
@@ -47,10 +62,10 @@ public class MailService {
     @Inject
     private MyProperties properties;
 
-    @Inject
+    @Autowired
     private JavaMailSenderImpl javaMailSender;
 
-    @Inject
+    @Autowired
     private MessageSource messageSource;
 
     @Inject
@@ -65,19 +80,64 @@ public class MailService {
             isHtml, to, subject, content);
 
         // Prepare message using a Spring helper
-        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        prepareAndSendEmail(content, to,subject);
+//        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+//        try {
+//            MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, CharEncoding.UTF_8);
+//            message.setTo(to);
+//            message.setFrom(new InternetAddress(properties.getMail().getFrom(), properties.getMail().getName()));
+//            message.setSubject(subject);
+//            message.setText(content, isHtml);
+//            //javaMailSender.setHost(properties.);
+//            javaMailSender.send(mimeMessage);
+//            log.debug("Enviado email al Usuario '{}'", to);
+//        } catch (Exception e) {
+//            log.warn("El email no se ha podido enviar a '{}', la excepción es: {}", to, e.getMessage());
+//            throw new EnvioEmailException(to, e);
+//        }
+    }
+    
+    public final void prepareAndSendEmail(String htmlMessage, String toMailId,String subject) {
+
+        //final OneMethod oneMethod = new OneMethod();
+        //final List<char[]> resourceList = oneMethod.getValidatorResource();
+
+        //Spring Framework JavaMailSenderImplementation    
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(465);
+
+        //setting username and password
+        mailSender.setUsername("rosel11078");
+        mailSender.setPassword("Daniel2020*");
+
+        //setting Spring JavaMailSenderImpl Properties
+        Properties mailProp = mailSender.getJavaMailProperties();
+        mailProp.put("mail.transport.protocol", "smtp");
+        mailProp.put("mail.smtp.auth", "true");
+        mailProp.put("mail.smtp.starttls.enable", "true");
+        mailProp.put("mail.smtp.starttls.required", "true");
+        mailProp.put("mail.debug", "true");
+        mailProp.put("mail.smtp.ssl.enable", "true");
+        mailProp.put("mail.smtp.user", properties.getMail().getFrom());
+
+        //preparing Multimedia Message and sending
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
         try {
-            MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, CharEncoding.UTF_8);
-            message.setTo(to);
-            message.setFrom(new InternetAddress(properties.getMail().getFrom(), properties.getMail().getName()));
-            message.setSubject(subject);
-            message.setText(content, isHtml);
-            javaMailSender.send(mimeMessage);
-            log.debug("Enviado email al Usuario '{}'", to);
-        } catch (Exception e) {
-            log.warn("El email no se ha podido enviar a '{}', la excepción es: {}", to, e.getMessage());
-            throw new EnvioEmailException(to, e);
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, false,CharEncoding.UTF_8);
+            helper.setTo(toMailId);
+            helper.setSubject(subject);
+            helper.setText(htmlMessage, true);//setting the html page and passing argument true for 'text/html'
+
+            //Checking the internet connection and therefore sending the email
+            //if(OneMethod.isNetConnAvailable())
+            mailSender.send(mimeMessage);
+            //else
+                //JOptionPane.showMessageDialog(null, "No Internet Connection Found...");
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
+
     }
 
     // Email para verificar la cuenta de email del usuario. No es asíncrono ya que si el email no se envía, no se va a

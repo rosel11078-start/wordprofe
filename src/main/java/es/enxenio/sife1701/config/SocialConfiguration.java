@@ -1,8 +1,7 @@
 package es.enxenio.sife1701.config;
 
-import es.enxenio.sife1701.controller.publica.usuario.social.CustomSignInAdapter;
-import es.enxenio.sife1701.model.social.CustomSocialUsersConnectionRepository;
-import es.enxenio.sife1701.model.social.SocialUserConnectionRepository;
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +22,9 @@ import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 
-import javax.inject.Inject;
+import es.enxenio.sife1701.controller.publica.usuario.social.CustomSignInAdapter;
+import es.enxenio.sife1701.model.social.CustomSocialUsersConnectionRepository;
+import es.enxenio.sife1701.model.social.SocialUserConnectionRepository;
 
 /**
  * Basic Spring Social configuration.
