@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.reserva.cancelacion.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<h3 th:text="#{email.reserva.cancelacion.saludo(${user.nombre})}"></h3>
+
+<p th:if="${reserva.estado.toString() == 'CANCELADA_POR_PROFESOR'}">
+    <span
+        th:utext="#{email.reserva.cancelacion.porprofesor(${reserva.profesor.nombre + ' ' + reserva.profesor.apellidos}, ${baseUrl})}"></span>
+</p>
+
+<p th:if="${reserva.estado.toString() == 'CANCELADA_POR_ALUMNO'}">
+    <span
+        th:utext="#{email.reserva.cancelacion.poralumno(${reserva.alumno.nombre + ' ' + reserva.alumno.apellidos}, ${baseUrl})}"></span>
+</p>
+
+<p>
+    <span th:text=" #{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>
