@@ -14,7 +14,7 @@
 #     default: es
 
 server:
-    port: 8080
+    port: 9000
     compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
@@ -27,13 +27,13 @@ spring:
     # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: jdbc:postgresql://localhost:5432/sife1701
+        url: jdbc:postgresql://172.0.0.1:5432/sife1701db
         username: postgres
         password: postgres
         maximum-pool-size: 5
 
     application:
-        url: http://localhost:8080
+        url: http://localhost:9000
     profiles:
         active: dev
     devtools:

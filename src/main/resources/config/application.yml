@@ -1,7 +1,8 @@
 # ===================================================================
-# Spring Boot configuracion for the "dev" profile.
+# Spring Boot configuration.
 #
-# This configuracion overrides the application.yml file.
+# This configuracion will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
 # ===================================================================
 
 # ===================================================================
@@ -10,85 +11,49 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-# locale:
-#     default: es
+locale:
+    default: es
 
 server:
-    port: 8080
-    compression:
-    enabled: true
-    mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
-
+    port: 80
 
 spring:
-    message:
-        basename: i18n/messages
-        encoding: UTF-8
-    # Configuración de la BASE DE DATOS
-    datasource:
-        dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: jdbc:postgresql://localhost:5432/sife1701
-        username: postgres
-        password: postgres
-        maximum-pool-size: 5
-
-    application:
-        url: http://localhost:8080
-    profiles:
-        active: dev
-    devtools:
-        restart:
-            enabled: true
-        livereload:
-            enabled: false # we use gulp + BrowserSync for livereload
-
     jpa:
-      show-sql: false
-
-    mail:
-      host: xxxxxxxx
-      port: 587
-      username: xxxxxxxx
-      password: xxxxxxxx
-      protocol: smtp
-      default-encoding: UTF-8
-      properties.mail.smtp:
-        auth: true
-        starttls.enable: false
-
-    # social:
-    #     # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
-    #   google:
-    #     clientId: xxxxxxxx
-    #     clientSecret: xxxxxxxx
-    #     # see https://developers.facebook.com/docs/facebook-login
-    #   facebook:
-    #     clientId: xxxxxxxx
-    #     clientSecret: xxxxxxxx
+        database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+        database: POSTGRESQL
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.id.new_generator_mappings: true
+            hibernate.current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    http:
+      multipart:
+        max-file-size: 20Mb
+        max-request-size: 20Mb
+    messages:
+      basename: i18n/messages
+    thymeleaf:
+      mode: XHTML
 
 properties:
-  async:
-      corePoolSize: 2
-      maxPoolSize: 50
-      queueCapacity: 10000
-
-  paypal:
-    # Datos de desarrollo
-    clientID: xxxxxxxx
-    clientSecret: xxxxxxxx
-    environment: sandbox
-
-  # social:
-  #   redirectAfterSignIn: "/social-auth"
-  #   redirectAfterSignUp: "/social-register"
-
-  mail:
-    from: xxxxxxxx
-    name: Probas Correo
-
-  social:
-    redirectAfterSignIn: "http://localhost:9000/#/social-auth"
-    redirectAfterSignUp: "http://localhost:9000/#/social-register"
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    security:
+        authentication:
+            jwt:
+                secret: c2t3f0c5dXF6bV9tOV45X2RpdmlzYQ==
+                # Token is valid 24 hours
+                tokenValidityInSeconds: 86400
+                tokenValidityInSecondsForRememberMe: 2592000
 
 javamelody:
   advisor-auto-proxy-creator-enabled: false
@@ -98,3 +63,4 @@ javamelody:
     monitoring-path: /monitoring
     log: false
     url-exclude-pattern: (/resources/.*|/upload/.*|/templates/.*)
+
