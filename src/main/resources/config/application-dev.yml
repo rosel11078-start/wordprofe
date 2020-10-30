@@ -48,8 +48,8 @@ spring:
     mail:
       host: smtp.google.com
       port: 587
-      username: rosel11078
-      password: Daniel2020*
+      username: rosel11078@gmail.com
+      password: 
       protocol: smtp
       default-encoding: UTF-8
       properties.mail.smtp:
@@ -83,8 +83,8 @@ properties:
   #   redirectAfterSignUp: "/social-register"
 
   mail:
-    from: rosel11078
-    name: Pruebas de Correo
+    from: admin@worldprofe.com
+    name: Worldprofe
       
   social:
     redirectAfterSignIn: "http://localhost:9000/#/social-auth"

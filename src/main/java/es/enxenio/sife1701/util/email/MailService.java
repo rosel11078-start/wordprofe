@@ -26,6 +26,8 @@ import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -81,35 +83,40 @@ public class MailService {
 
         // Prepare message using a Spring helper
         prepareAndSendEmail(content, to,subject);
-//        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
-//        try {
-//            MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, CharEncoding.UTF_8);
-//            message.setTo(to);
-//            message.setFrom(new InternetAddress(properties.getMail().getFrom(), properties.getMail().getName()));
-//            message.setSubject(subject);
-//            message.setText(content, isHtml);
-//            //javaMailSender.setHost(properties.);
-//            javaMailSender.send(mimeMessage);
-//            log.debug("Enviado email al Usuario '{}'", to);
-//        } catch (Exception e) {
-//            log.warn("El email no se ha podido enviar a '{}', la excepción es: {}", to, e.getMessage());
-//            throw new EnvioEmailException(to, e);
-//        }
+        /*javaMailSender.setHost("smtp.google.com");
+        javaMailSender.setPort(465);
+        //setting username and password
+        javaMailSender.setUsername("rosel11078");
+        javaMailSender.setPassword("");
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        
+        try {
+            MimeMessageHelper message = new MimeMessageHelper(mimeMessage, isMultipart, CharEncoding.UTF_8);
+            message.setTo(to);
+            message.setFrom(new InternetAddress(properties.getMail().getFrom(), properties.getMail().getName()));
+            message.setSubject(subject);
+            message.setText(content, isHtml);
+            //javaMailSender.setHost(properties.);
+            javaMailSender.send(mimeMessage);
+            log.debug("Enviado email al Usuario '{}'", to);
+        } catch (Exception e) {
+            log.warn("El email no se ha podido enviar a '{}', la excepción es: {}", to, e.getMessage());
+            throw new EnvioEmailException(to, e);
+        }*/
     }
     
-    public final void prepareAndSendEmail(String htmlMessage, String toMailId,String subject) {
+    public final void prepareAndSendEmail(String htmlMessage, String toMailId,String subject) throws EnvioEmailException{
 
         //final OneMethod oneMethod = new OneMethod();
         //final List<char[]> resourceList = oneMethod.getValidatorResource();
 
         //Spring Framework JavaMailSenderImplementation    
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(465);
-
+        mailSender.setHost("smtp.ionos.es");
+        mailSender.setPort(587);
         //setting username and password
-        mailSender.setUsername("rosel11078");
-        mailSender.setPassword("Daniel2020*");
+        mailSender.setUsername("admin@worldprofe.com");
+        mailSender.setPassword("$Adminworldprofe.2020$");
 
         //setting Spring JavaMailSenderImpl Properties
         Properties mailProp = mailSender.getJavaMailProperties();
@@ -118,13 +125,14 @@ public class MailService {
         mailProp.put("mail.smtp.starttls.enable", "true");
         mailProp.put("mail.smtp.starttls.required", "true");
         mailProp.put("mail.debug", "true");
-        mailProp.put("mail.smtp.ssl.enable", "true");
-        mailProp.put("mail.smtp.user", properties.getMail().getFrom());
+        mailProp.put("mail.smtp.ssl.enable", "false");
+        mailProp.put("mail.smtp.user", "admin@worldprofe.com");
 
         //preparing Multimedia Message and sending
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, false,CharEncoding.UTF_8);
+            helper.setFrom(new InternetAddress(properties.getMail().getFrom(), properties.getMail().getName()));
             helper.setTo(toMailId);
             helper.setSubject(subject);
             helper.setText(htmlMessage, true);//setting the html page and passing argument true for 'text/html'
@@ -134,7 +142,7 @@ public class MailService {
             mailSender.send(mimeMessage);
             //else
                 //JOptionPane.showMessageDialog(null, "No Internet Connection Found...");
-        } catch (MessagingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -189,7 +197,7 @@ public class MailService {
 
     // Email de solicitud de contraseña a nuevos usuarios
     @Async
-    public void sendCreacionMail(Usuario user, String baseUrl, Locale locale) throws EnvioEmailException {
+    public void sendCreacionMail(Usuario user, String baseUrl, Locale locale) throws EnvioEmailException{
         log.debug("Sending creation e-mail to '{}'", user.getEmail());
         Context context = new Context(locale);
         context.setVariable(USER, user);
@@ -215,7 +223,7 @@ public class MailService {
     // facturación
     @Async
     public void sendAdminConfirmacionCompraEmail(Compra compra, String to, String baseUrl, Locale locale)
-        throws EnvioEmailException {
+        throws EnvioEmailException{
         Context context = new Context();
         context.setVariable(USER, compra.getUsuario());
         context.setVariable(COMPRA, compra);
@@ -243,7 +251,7 @@ public class MailService {
     // Email de aceptación de una reserva
     @Async
     public void sendAceptacionReservaEmail(Reserva reserva, String baseUrl, Locale locale)
-        throws EnvioEmailException {
+        throws EnvioEmailException{
         Context context = new Context();
         context.setVariable(USER, reserva.getAlumno());
         context.setVariable(RESERVA, reserva);
