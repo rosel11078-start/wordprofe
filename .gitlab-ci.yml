@@ -23,7 +23,6 @@ deploy:
   when: always     
   only: 
     - master
-    - develop
 
 deploy_war:
   stage: war
