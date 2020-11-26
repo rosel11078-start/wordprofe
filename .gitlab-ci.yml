@@ -1,0 +1,14 @@
+---
+stages:
+  - deploy
+
+deploy_dnsUPR:
+  stage: deploy
+  script:
+   - echo "${CI_COMMIT_REF_NAME}"
+  tags:
+   - plataformawp
+  when: always     
+  environment:
+    name: ${CI_COMMIT_REF_NAME}
+
