@@ -1,5 +1,7 @@
 ---
 ## CI/CO para desplegar el .war de la plataforma
+before_script:
+  - echo "$SSH_PRIVATE_KEY"
 stages:
   - deploy
 
