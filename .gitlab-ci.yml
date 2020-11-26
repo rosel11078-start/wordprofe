@@ -23,8 +23,8 @@ deploy_war:
 deploy_jar:
   stage: jar
   script:
-   -  echo "${CI_COMMIT_REF_NAME}"
-   -  sudo jar -xvf /root/worldprofe/war/SIFE1701-0.0.1-SNAPSHOT.war ./   
+   -  echo "${CI_COMMIT_REF_NAME}"     
+   -  sudo cd /root/worldprofe/war && jar -xvf *.war 
   tags:
    - plataformawp
   when: always
