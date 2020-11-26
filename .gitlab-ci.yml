@@ -6,10 +6,8 @@ stages:
 deploy_war:
   stage: deploy
   script:
-   - echo "${CI_COMMIT_REF_NAME}"
+   - echo "Hello"
   tags:
    - plataformawp
   when: always     
-  environment:
-    name: ${CI_COMMIT_REF_NAME}
 
