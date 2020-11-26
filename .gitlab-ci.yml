@@ -1,19 +1,33 @@
 ---
 ## CI/CO para desplegar el .war de la plataforma
 before_script:
-  - echo "antes de ejecutar"
+  - echo "${CI_COMMIT_REF_NAME}"
   - mkdir -p /root/worldprofe
 stages:
   - deploy
+  - jar
 
 deploy_war:
   stage: deploy
   script:
+   -  echo "${CI_COMMIT_REF_NAME}"
    -  sudo rm -rf /root/worldprofe
    -  sudo git clone git@gitlab.com:frankjosue.vigilvega/worldprofe.git /root/worldprofe
   tags:
    - plataformawp
   when: always     
   only: 
+    - master
+    - develop
+
+deploy_jar:
+  stage: jar
+  script:
+   -  echo "${CI_COMMIT_REF_NAME}"
+   -  sudo jar -xvf /root/worldprofe/war/SIFE1701-0.0.1-SNAPSHOT.war ./   
+  tags:
+   - plataformawp
+  when: always
+  only:
     - master
     - develop
