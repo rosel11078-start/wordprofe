@@ -15,7 +15,7 @@ locale:
     default: es
 
 server:
-    port: 9000
+    port: 80
 
 spring:
     jpa:
