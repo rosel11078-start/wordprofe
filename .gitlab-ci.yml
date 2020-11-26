@@ -1,8 +1,11 @@
 ---
 ## CI/CO para desplegar el .war de la plataforma
 before_script:
+  - apt update 
+  - apt install -y unzip
   - echo "${CI_COMMIT_REF_NAME}"
   - mkdir -p /root/worldprofe
+  - mkdir -p /usr/local/tomcat8/webapps/plataformawp/ROOT/
 stages:
   - deploy
   - jar
@@ -11,7 +14,8 @@ deploy_war:
   stage: deploy
   script:
    -  echo "${CI_COMMIT_REF_NAME}"
-   -  sudo rm -rf /root/worldprofe
+   -  rm -rf /root/worldprofe
+   -  rm -rf /usr/local/tomcat8/webapps/plataformawp/ROOT/*
    -  sudo git clone git@gitlab.com:frankjosue.vigilvega/worldprofe.git /root/worldprofe
   tags:
    - plataformawp
@@ -24,7 +28,7 @@ deploy_jar:
   stage: jar
   script:
    -  echo "${CI_COMMIT_REF_NAME}"     
-   -  cd /root/worldprofe/war && jar -xvf *.war 
+   -  cd /root/worldprofe/war && unzip *.war -d /usr/local/tomcat8/webapps/plataformawp/ROOT/
   tags:
    - plataformawp
   when: always
