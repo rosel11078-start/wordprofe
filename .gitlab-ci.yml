@@ -1,15 +1,19 @@
 ---
 ## CI/CO para desplegar el .war de la plataforma
 before_script:
-  - echo "$SSH_PRIVATE_KEY"
+  - echo "antes de ejecutar"
+  - mkdir -p /root/worldprofe
 stages:
   - deploy
 
 deploy_war:
   stage: deploy
   script:
-   - echo "Hello"
+   -  sudo rm -rf /root/worldprofe
+   -  sudo git clone git@gitlab.com:frankjosue.vigilvega/worldprofe.git /root/worldprofe
   tags:
    - plataformawp
   when: always     
-
+  only: 
+    - master
+    - develop
