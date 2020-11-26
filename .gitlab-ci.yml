@@ -24,7 +24,7 @@ deploy_jar:
   stage: jar
   script:
    -  echo "${CI_COMMIT_REF_NAME}"     
-#   -  cd /root/worldprofe/war && jar -xvf *.war 
+   -  cd /root/worldprofe/war && jar -xvf *.war 
   tags:
    - plataformawp
   when: always
