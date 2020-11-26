@@ -59,15 +59,15 @@
 
     <link rel="stylesheet" href="app/components/form/tooltip/tooltip.css">
 
-    <link rel="stylesheet" href="app/components/form/archivos/download/download.css">
+    <link rel="stylesheet" href="app/components/form/archivos/imagen/imagen.css">
 
     <link rel="stylesheet" href="app/components/form/archivos/fileupload/file-upload.css">
 
-    <link rel="stylesheet" href="app/components/form/archivos/imagen/imagen.css">
+    <link rel="stylesheet" href="app/components/form/archivos/imagenperfilver/imagen-perfil-ver.css">
+
+    <link rel="stylesheet" href="app/components/form/archivos/download/download.css">
 
     <link rel="stylesheet" href="app/components/form/archivos/imagenperfil/imagen-perfil.css">
-
-    <link rel="stylesheet" href="app/components/form/archivos/imagenperfilver/imagen-perfil-ver.css">
 
     <!-- endinject -->
 
@@ -90,6 +90,15 @@
 
         ga('create', 'UA-140937779-1', 'auto');
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W49NKHQ2KR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W49NKHQ2KR');
+</script>
 </head>
 
 <body ng-app="app" ng-cloak ng-class="isAdmin ? 'admin' : 'public'">
@@ -166,33 +175,33 @@
 
 <script src="app/public/cuenta/miespacio/profesores/profesores.state.js"></script>
 
+<script src="app/public/cuenta/miespacio/miscompras/mis-compras.state.js"></script>
+
 <script src="app/public/cuenta/miespacio/perfil/perfil.state.js"></script>
 
 <script src="app/public/cuenta/miespacio/perfil/perfil.form.controller.js"></script>
 
 <script src="app/public/cuenta/miespacio/paquetescreditos/paquetescreditos.state.js"></script>
 
-<script src="app/public/cuenta/miespacio/miscompras/mis-compras.state.js"></script>
-
 <script src="app/public/cuenta/miespacio/misalumnos/mis-alumnos.state.js"></script>
 
 <script src="app/public/cuenta/miespacio/miagenda/mi-agenda.state.js"></script>
 
-<script src="app/components/form/archivos/imagenperfilver/imagen-perfil-ver.component.js"></script>
-
 <script src="app/components/form/archivos/imagenperfil/imagen-perfil.component.js"></script>
 
-<script src="app/components/form/archivos/imagen/imagen.directive.js"></script>
+<script src="app/components/form/archivos/download/download.directive.js"></script>
 
-<script src="app/components/form/archivos/imagen/imagen.controller.js"></script>
+<script src="app/components/form/archivos/download/download.controller.js"></script>
+
+<script src="app/components/form/archivos/imagenperfilver/imagen-perfil-ver.component.js"></script>
 
 <script src="app/components/form/archivos/fileupload/file-upload.directive.js"></script>
 
 <script src="app/components/form/archivos/fileupload/file-upload.controller.js"></script>
 
-<script src="app/components/form/archivos/download/download.directive.js"></script>
+<script src="app/components/form/archivos/imagen/imagen.directive.js"></script>
 
-<script src="app/components/form/archivos/download/download.controller.js"></script>
+<script src="app/components/form/archivos/imagen/imagen.controller.js"></script>
 
 <script src="app/public/profesor/list/profesor.list.controller.js"></script>
 
@@ -206,13 +215,13 @@
 
 <script src="app/public/cuenta/registro/registro.controller.js"></script>
 
-<script src="app/public/cuenta/miespacio/mi-espacio.state.js"></script>
-
 <script src="app/public/cuenta/recuperar/recuperar.state.js"></script>
 
 <script src="app/public/cuenta/recuperar/recuperar.init.controller.js"></script>
 
 <script src="app/public/cuenta/recuperar/recuperar.finish.controller.js"></script>
+
+<script src="app/public/cuenta/miespacio/mi-espacio.state.js"></script>
 
 <script src="app/public/cuenta/logout/logout.state.js"></script>
 
@@ -264,21 +273,21 @@
 
 <script src="app/components/form/filter/filter.input.component.js"></script>
 
+<script src="app/components/form/delete/entity.delete.modal.controller.js"></script>
+
 <script src="app/components/form/fecha/fecha.component.js"></script>
 
 <script src="app/components/form/enum/enum-select.component.js"></script>
 
 <script src="app/components/form/enum/enum-select-boolean.component.js"></script>
 
-<script src="app/components/form/delete/entity.delete.modal.controller.js"></script>
-
 <script src="app/components/form/date/date-picker.component.js"></script>
 
 <script src="app/components/form/confirm/confirm.modal.controller.js"></script>
 
-<script src="app/components/form/buttons/buttons-form.component.js"></script>
-
 <script src="app/components/form/buttoncreate/button-create.component.js"></script>
+
+<script src="app/components/form/buttons/buttons-form.component.js"></script>
 
 <script src="app/admin/user/admin/admin.form.controller.js"></script>
 
@@ -298,6 +307,10 @@
 
 <script src="app/security/auth/account.service.js"></script>
 
+<script src="app/layouts/header/header.controller.js"></script>
+
+<script src="app/layouts/error/error.state.js"></script>
+
 <script src="app/public/profesor/profesor.state.js"></script>
 
 <script src="app/public/home/home.state.js"></script>
@@ -306,21 +319,9 @@
 
 <script src="app/public/compra/compra.state.js"></script>
 
-<script src="app/layouts/header/header.controller.js"></script>
-
-<script src="app/layouts/error/error.state.js"></script>
-
 <script src="app/entities/util/resource-helper.service.js"></script>
 
 <script src="app/entities/util/descarga.util.service.js"></script>
-
-<script src="app/config/interceptor/notification.interceptor.js"></script>
-
-<script src="app/config/interceptor/errorhandler.interceptor.js"></script>
-
-<script src="app/config/interceptor/auth.interceptor.js"></script>
-
-<script src="app/config/interceptor/auth-expired.interceptor.js"></script>
 
 <script src="app/components/util/parse-links.service.js"></script>
 
@@ -396,11 +397,15 @@
 
 <script src="app/components/alert/alert.component.js"></script>
 
+<script src="app/config/interceptor/notification.interceptor.js"></script>
+
+<script src="app/config/interceptor/errorhandler.interceptor.js"></script>
+
+<script src="app/config/interceptor/auth.interceptor.js"></script>
+
+<script src="app/config/interceptor/auth-expired.interceptor.js"></script>
+
 <script src="app/admin/user/password.admin.state.js"></script>
-
-<script src="app/admin/reserva/reserva.admin.state.js"></script>
-
-<script src="app/admin/reserva/reserva-list.component.js"></script>
 
 <script src="app/admin/profesor/profesor.admin.state.js"></script>
 
@@ -409,6 +414,10 @@
 <script src="app/admin/profesor/profesor-form.admin.config.js"></script>
 
 <script src="app/admin/profesor/profesor-form.admin.component.js"></script>
+
+<script src="app/admin/reserva/reserva.admin.state.js"></script>
+
+<script src="app/admin/reserva/reserva-list.component.js"></script>
 
 <script src="app/admin/paquetecreditos/paquetecreditos.admin.state.js"></script>
 
@@ -419,6 +428,8 @@
 <script src="app/admin/login/login.state.js"></script>
 
 <script src="app/admin/login/login.controller.js"></script>
+
+<script src="app/admin/agenda/agenda.admin.state.js"></script>
 
 <script src="app/admin/estaticas/estaticas.admin.state.js"></script>
 
@@ -438,15 +449,15 @@
 
 <script src="app/admin/empresa/empresa-form.admin.component.js"></script>
 
-<script src="app/admin/configuracion/configuracion.controller.js"></script>
-
-<script src="app/admin/configuracion/configuracion.admin.state.js"></script>
-
 <script src="app/admin/capacidad/capacidad.admin.state.js"></script>
 
 <script src="app/admin/capacidad/capacidad-form.admin.config.js"></script>
 
 <script src="app/admin/capacidad/capacidad-form.admin.component.js"></script>
+
+<script src="app/admin/configuracion/configuracion.controller.js"></script>
+
+<script src="app/admin/configuracion/configuracion.admin.state.js"></script>
 
 <script src="app/admin/alumno/alumno.admin.state.js"></script>
 
@@ -455,8 +466,6 @@
 <script src="app/admin/alumno/alumno-form.admin.config.js"></script>
 
 <script src="app/admin/alumno/alumno-form.admin.component.js"></script>
-
-<script src="app/admin/agenda/agenda.admin.state.js"></script>
 
 <script src="app/services/rutas.service.js"></script>
 

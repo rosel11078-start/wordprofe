@@ -1,10 +1,9 @@
 package es.enxenio.sife1701.config;
 
-import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-import es.enxenio.sife1701.model._modelBasePackage;
-import es.enxenio.sife1701.util.SObject;
+import java.util.Arrays;
+
+import javax.sql.DataSource;
+
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.ApplicationContextException;
@@ -18,8 +17,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.sql.DataSource;
-import java.util.Arrays;
+import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import es.enxenio.sife1701.model._modelBasePackage;
+import es.enxenio.sife1701.util.SObject;
 
 
 /**

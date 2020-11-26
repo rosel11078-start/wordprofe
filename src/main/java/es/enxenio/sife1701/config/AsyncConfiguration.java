@@ -1,7 +1,9 @@
 package es.enxenio.sife1701.config;
 
-import es.enxenio.sife1701.config.async.ExceptionHandlingAsyncTaskExecutor;
-import es.enxenio.sife1701.config.util.MyProperties;
+import java.util.concurrent.Executor;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
@@ -13,8 +15,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import javax.inject.Inject;
-import java.util.concurrent.Executor;
+import es.enxenio.sife1701.config.async.ExceptionHandlingAsyncTaskExecutor;
+import es.enxenio.sife1701.config.util.MyProperties;
 
 @Configuration
 @EnableAsync

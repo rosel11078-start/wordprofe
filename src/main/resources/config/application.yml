@@ -15,7 +15,7 @@ locale:
     default: es
 
 server:
-    port: 8080
+    port: 80
 
 spring:
     jpa:
@@ -63,3 +63,5 @@ javamelody:
     monitoring-path: /monitoring
     log: false
     url-exclude-pattern: (/resources/.*|/upload/.*|/templates/.*)
+
+

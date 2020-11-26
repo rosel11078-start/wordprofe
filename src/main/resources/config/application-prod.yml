@@ -15,13 +15,13 @@ spring:
   # Configuración de la BASE DE DATOS
   datasource:
     dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-    url: jdbc:postgresql://10.0.0.1:5432/sife1701db
+    url: jdbc:postgresql://127.0.0.1:5432/sife1701db
     username: postgres
     password: postgres
     maximum-pool-size: 5
 
   application:
-    url: http://sife1701.cli.enxenio.net # URL en la que se aloja la aplicación
+    url: http://plataformawp.es # URL en la que se aloja la aplicación
   profiles:
     active: prod
   devtools:
@@ -33,15 +33,15 @@ spring:
     show-sql: false
 
   mail: # Configuración del servidor de correo
-    host: xxxxxxxx
-    port: xxxxxxxx
-    username: xxxxxxxx
-    password: xxxxxxxx
+    host: smtp.ionos.es
+    port: 587 
+    username: admin@worldprofe.com
+    password: $Adminworldprofe.2020$
     protocol: smtp
     default-encoding: UTF-8
     properties.mail.smtp:
       auth: true
-      starttls.enable: false
+      starttls.enable: false 
 
 properties:
   paypal:
@@ -51,7 +51,7 @@ properties:
     environment: live
 
   mail:
-    from: xxxxxxxx # Configuración del email de envío
+    from: admin@worldprofe.com # Configuración del email de envío
     name: WORLDPROFE
   social:
     redirectAfterSignIn: "/social-auth"
@@ -61,4 +61,3 @@ server:
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
-

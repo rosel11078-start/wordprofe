@@ -1,10 +1,18 @@
 buildscript {
-    repositories {
-        mavenLocal()
+    // repositories {
+    //     mavenLocal()
+    //     jcenter()
+    //     maven { url 'http://repo.spring.io/plugins-release' }
+    //     maven { url 'http://repo.spring.io/milestone' }
+    //     maven { url "https://plugins.gradle.org/m2/" }
+    // }
+     repositories {
+    	mavenCentral()
         jcenter()
+    	maven { url 'https://repo.spring.io/plugins-snapshot' }
+		maven { url 'https://plugins.gradle.org/m2/' }
+        maven { url 'http://repo.spring.io/milestone/' }
         maven { url 'http://repo.spring.io/plugins-release' }
-        maven { url 'http://repo.spring.io/milestone' }
-        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath group: 'net.ltgt.gradle', name: 'gradle-apt-plugin', version: '0.6'
@@ -61,12 +69,13 @@ configurations {
 
 repositories {
     mavenLocal()
-    maven { url 'http://repo.spring.io/milestone' }
-    maven { url 'http://repo.spring.io/snapshot' }
-    maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
-    maven { url 'https://oss.sonatype.org/content/repositories/releases' }
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url 'http://repo.maven.apache.org/maven2' }
+	mavenCentral()
+    // maven { url 'http://repo.spring.io/milestone' }
+    // maven { url 'http://repo.spring.io/snapshot' }
+    // maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
+    // maven { url 'https://oss.sonatype.org/content/repositories/releases' }
+    // maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    // maven { url 'http://repo.maven.apache.org/maven2' }
 }
 
 dependencies {
@@ -97,6 +106,7 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-config'
     compile group: 'org.springframework.security', name: 'spring-security-data'
     compile group: 'org.springframework.security', name: 'spring-security-web'
+    compile group: 'org.springframework.boot', name:'spring-boot-starter-aop'
 
     compile group: 'org.hibernate', name: 'hibernate-core', version: hibernate_version
     compile group: 'org.hibernate', name: 'hibernate-java8', version: hibernate_version
@@ -127,8 +137,9 @@ dependencies {
 
     // Autenticación social
     compile group: 'org.springframework.social', name: 'spring-social-security', version: '1.1.4.RELEASE'
-    compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '3.0.0.M1'
+    compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '1.1.1.RELEASE'
     compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
+    compile group: 'org.springframework.social', name: 'spring-social-config', version: '1.1.6.RELEASE'
 
     // Integración con PayPal
     compile('com.paypal.sdk:rest-api-sdk:1.9.3') {
