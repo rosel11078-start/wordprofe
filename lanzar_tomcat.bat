@@ -1,11 +1,11 @@
 :: Genera un WAR, lo copia en Tomcat y lo ejecuta con el contexto ROOT
 
 call npm run build
-call gradlew war
+call gradlew war 
 
 :: Rutas a configurar
-SET tomcat="C:\MisProgramas\apache-tomcat-8.5.28"
-SET newWar="build\libs\SIFE1701-0.0.1-SNAPSHOT.war"
+SET tomcat="C:\COSAS\JESUS\apache-tomcat-8.5.28"
+SET newWar="C:\COSAS\JESUS\JAVA\wordprofe\build\libs\wordprofe-0.0.1-SNAPSHOT.war"
 
 SET fileWar= %tomcat%"\webapps\ROOT.war"
 
