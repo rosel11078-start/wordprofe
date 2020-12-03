@@ -12,6 +12,7 @@
 
 # locale:
 #     default: es
+# ++++++++++++++++++
 
 server:
     port: 8080
