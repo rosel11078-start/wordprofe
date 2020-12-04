@@ -86,7 +86,11 @@
     "title": "Entrar",
     "info": {
       "titulo": "Registro",
+<<<<<<< HEAD
+      "mensaje": "Si NO eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
+=======
       "mensaje": "Si no eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
+>>>>>>> d09843e915049721670bb7619fd5b5fa1efde72e
       "registrate": "Regístrate"
     },
     "tipo": {
