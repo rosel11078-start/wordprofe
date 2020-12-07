@@ -38,8 +38,21 @@ deploy_war:
 deploy_reset:
   stage: reset
   script:
-   -  sh /usr/local/tomcat/bin/shutdown.sh
-   -  sh /usr/local/tomcat/bin/startup.sh
+   -  sh /usr/local/tomcat8/bin/shutdown.sh
+   -  sh /usr/local/tomcat8/bin/startup.sh
+  tags:
+   - plataformawp
+  when: always
+  only:
+    - master
+
+
+deploy_optional:
+  stage: optinoal
+  script:
+   -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/WEB-INF/classes/config/* /usr/local/tomcat8/webapps/plataformawp/ROOT/WEB-INF/classes/config/*
+   -  rm  /usr/local/tomcat8/webapps/plataformawp/ROOT/index.html
+   -  cp  /usr/local/tomcat8/webapps/plataformawp2/ROOT/index.html /usr/local/tomcat8/webapps/plataformawp/ROOT/index.html
   tags:
    - plataformawp
   when: always
