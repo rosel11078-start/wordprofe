@@ -52,6 +52,8 @@ deploy_optional:
   stage: optinoal
   script:
    -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/WEB-INF/classes/config/* /usr/local/tomcat8/webapps/plataformawp/ROOT/WEB-INF/classes/config/
+   -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/app/* /usr/local/tomcat8/webapps/plataformawp/ROOT/app/
+   -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/assets/* /usr/local/tomcat8/webapps/plataformawp/ROOT/assets/
    -  rm  /usr/local/tomcat8/webapps/plataformawp/ROOT/index.html
    -  cp  /usr/local/tomcat8/webapps/plataformawp2/ROOT/index.html /usr/local/tomcat8/webapps/plataformawp/ROOT/index.html
   tags:
