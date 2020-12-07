@@ -116,7 +116,7 @@ public class MailService {
         mailSender.setPort(587);
         //setting username and password
         mailSender.setUsername("admin@worldprofe.com");
-        mailSender.setPassword("$Adminworldprofe.2020$");
+        mailSender.setPassword("i80k8WP46$");
 
         //setting Spring JavaMailSenderImpl Properties
         Properties mailProp = mailSender.getJavaMailProperties();
