@@ -1,0 +1,16 @@
+<li
+    ng-class="{divider: leaf.label == 'divider'}"
+    ui-sref-active="active">
+
+    <a ng-if="leaf.label !== 'divider' && !leaf.state && !leaf.link">
+        <ng-include src="'menuItemContent.html'"></ng-include>
+    </a>
+
+    <a ui-sref="{{leaf.state}}" ng-if="leaf.state && leaf.label !== 'divider'">
+        <ng-include src="'menuItemContent.html'"></ng-include>
+    </a>
+
+    <a href="{{leaf.link}}" ng-if="leaf.link && leaf.label !== 'divider'">
+        <ng-include src="'menuItemContent.html'"></ng-include>
+    </a>
+</li>

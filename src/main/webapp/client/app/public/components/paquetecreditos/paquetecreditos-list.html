@@ -1,0 +1,66 @@
+<h1 ng-if="ctrl.usuarioAutenticado.rol !== 'ROLE_ADMIN'" translate="global.menu.paquetescreditos"></h1>
+
+<div ng-if="ctrl.usuarioAutenticado.rol === 'ROLE_ADMIN'" class="btn-ctrl">
+    <a class="btn btn-primary btn-crear" ui-sref="admin/paquetecreditos/create">
+        <span translate="admin.paquetecreditos.create.title"></span>
+    </a>
+</div>
+
+<div class="empty" ng-show="ctrl.empty" translate="admin.paquetecreditos.empty"></div>
+
+<table ng-show="ctrl.usuarioAutenticado.rol === 'ROLE_ADMIN' && !ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'admin.paquetecreditos.form.creditos' | translate" sortable="'creditos'" align="right">
+            <a ng-if="ctrl.usuarioAutenticado.rol === 'ROLE_ADMIN'"
+               ui-sref="admin/paquetecreditos/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.creditos}}
+            </a>
+            <span ng-if="ctrl.usuarioAutenticado.rol !== 'ROLE_ADMIN'">{{element.creditos}}</span>
+        </td>
+
+        <td data-title="'admin.paquetecreditos.form.coste' | translate" sortable="'coste'" align="right">
+            {{element.coste | number:2}} €
+        </td>
+
+        <td ng-if="ctrl.usuarioAutenticado.rol === 'ROLE_ADMIN'" class="col-md-1 text-center button-icons">
+            <a ui-sref="admin/paquetecreditos/edit({id: element.id})" class="button glyphicon glyphicon-pencil"
+               title="{{'admin.form.button.edit' | translate}}"></a>
+            <a ng-click="ctrl.showRemoveConfirmation(element.id)" class="button glyphicon glyphicon-remove"
+               title="{{'admin.form.button.delete' | translate}}"></a>
+        </td>
+
+        <td ng-if="ctrl.usuarioAutenticado.rol !== 'ROLE_ADMIN'" class="col-md-1 text-center button-icons">
+            <a ng-click="ctrl.comprarPaquetecreditos(element.id)" class="button glyphicon glyphicon-shopping-cart"
+               title="{{'compra.comprar' | translate}}"></a>
+        </td>
+    </tr>
+</table>
+
+<div ng-show="ctrl.usuarioAutenticado.rol !== 'ROLE_ADMIN' && !ctrl.empty">
+    <p translate="compra.form.info"></p>
+
+    <div class="paquetecredito" ng-repeat="element in ctrl.tableParams.data">
+        <div class="titulo">
+            {{element.creditos}}
+        </div>
+        <div class="subtitulo">
+            <span ng-if="element.creditos == 1" translate="compra.form.credito"></span>
+            <span ng-if="element.creditos > 1" translate="compra.form.creditos"></span>
+        </div>
+        <div class="coste">
+            <button type="button" class="btn btn-primary btn-confirm btn-block"
+                    ng-disabled="ctrl.usuarioAutenticado.rol !== 'ROLE_ALUMNO'"
+                    ng-click="ctrl.comprarPaquetecreditos(element.id)">
+                {{element.coste | number:2}} €
+            </button>
+        </div>
+    </div>
+
+    <h4 style="color: #a94442" translate="compra.form.promo"></h4>
+</div>
+
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

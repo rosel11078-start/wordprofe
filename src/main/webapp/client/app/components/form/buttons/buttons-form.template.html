@@ -1,0 +1,14 @@
+<!--Botones de atrás/cancelar y crear/guardar-->
+<div class="form-bottom-buttons" ng-switch="::ctrl.canSave">
+    <button type="button" class="btn btn-default" ng-click="ctrl.back()">
+        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;
+        <span translate="admin.form.button.back" ng-switch-when="false"></span>
+        <span translate="admin.form.button.cancel" ng-switch-when="true"></span>
+    </button>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="!ctrl.canSave">
+        <span class="glyphicon glyphicon-ok"></span>&nbsp;
+        <span translate="admin.form.button.create" ng-if="ctrl.mode == 'create'"></span>
+        <span translate="admin.form.button.save" ng-if="ctrl.mode == 'edit'"></span>
+    </button>
+</div>

@@ -1,0 +1,7 @@
+processResources {
+    filesMatching('**/log4j**') {
+        filter {
+            it.replace('${log4j.loglevel}', logbackLoglevel)
+        }
+    }
+}

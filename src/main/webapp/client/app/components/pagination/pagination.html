@@ -1,0 +1,8 @@
+<ul uib-pagination
+    total-items="ctrl.totalElements"
+    ng-model="ctrl.currentPage"
+    ng-change="ctrl.pageChanged()"
+    items-per-page="ctrl.itemsPerPage"
+    previous-text="{{'global.pagination.previous' | translate}}"
+    next-text="{{'global.pagination.next' | translate}}"
+    ng-if="ctrl.itemsPerPage < ctrl.totalElements"></ul>

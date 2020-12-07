@@ -1,0 +1,96 @@
+<h1>{{ctrl.empresa.nombre}}</h1>
+
+<div ng-if="ctrl.empresaId" class="btn-ctrl">
+    <a class="btn btn-primary btn-crear" ui-sref="admin/empresa/alumno/create({empresaId: ctrl.empresaId})">
+        <span translate="admin.alumno.create.title"></span>
+    </a>
+</div>
+
+<div ng-if="ctrl.empresaId && !ctrl.empty" class="btn-ctrl">
+    <a class="btn btn-default btn-crear" ng-click="ctrl.empresaAlumnosExcel(ctrl.empresaId)">
+        <span translate="admin.empresa.generarexcel"></span>
+    </a>
+</div>
+
+<!--<div ng-if="!ctrl.empresaId" class="btn-ctrl">-->
+<!--<a class="btn btn-default btn-crear" ng-click="ctrl.filter.eliminado = !ctrl.filter.eliminado">-->
+<!--<span ng-if="!ctrl.filter.eliminado" translate="admin.alumno.vereliminados"></span>-->
+<!--<span ng-if="ctrl.filter.eliminado" translate="admin.alumno.veractivos"></span>-->
+<!--</a>-->
+<!--</div>-->
+
+<div class="row">
+    <div class="col-sm-3">
+        <filter filter="ctrl.filter.key"></filter>
+    </div>
+    <div class="col-sm-4">
+        <usuario-gestion-eliminados filter="ctrl.filter"></usuario-gestion-eliminados>
+    </div>
+</div>
+
+<div class="empty" ng-show="ctrl.empty" translate="admin.alumno.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'admin.alumno.form.nombre' | translate" sortable="'nombre'">
+            <a ng-if="element.empresa == null" ui-sref="admin/alumno/edit({id: element.id})"
+               title="{{'admin.form.button.edit' | translate}}">
+                {{element.nombre}} {{element.apellidos}}
+            </a>
+            <a ng-if="element.empresa != null" ui-sref="admin/empresa/alumno/edit({id: element.id})"
+               title="{{'admin.form.button.edit' | translate}}">
+                {{element.nombre}} {{element.apellidos}}
+            </a>
+        </td>
+
+        <td data-title="'admin.alumno.form.email' | translate" sortable="'email'">
+            <a ng-if="element.empresa == null" ui-sref="admin/alumno/edit({id: element.id})"
+               title="{{'admin.form.button.edit' | translate}}">
+                {{element.email}}
+            </a>
+            <a ng-if="element.empresa != null" ui-sref="admin/empresa/alumno/edit({id: element.id})"
+               title="{{'admin.form.button.edit' | translate}}">
+                {{element.email}}
+            </a>
+        </td>
+
+        <td data-title="'admin.alumno.form.login' | translate" sortable="'login'" ng-if="false">
+            {{element.login}}
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.alumno.form.fecharegistro' | translate"
+            sortable="'fechaRegistro'">
+            <date model="element.fechaRegistro"></date>
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.alumno.form.fechaultimoacceso' | translate"
+            sortable="'fechaUltimoAcceso'">
+            <date model="element.fechaUltimoAcceso"></date>
+        </td>
+
+        <td data-title="'admin.alumno.form.creditostotales' | translate" sortable="'creditosTotales'"
+            class="text-center col-sm-1">
+            {{element.creditosTotales}}
+        </td>
+
+        <td data-title="'admin.alumno.form.creditosdisponibles' | translate" sortable="'creditosDisponibles'"
+            class="text-center col-sm-1">
+            {{element.creditosDisponibles}}
+        </td>
+
+        <td data-title="'admin.alumno.form.creditosconsumidos' | translate" sortable="'creditosConsumidos'"
+            class="text-center col-sm-1">
+            {{element.creditosConsumidos}}
+        </td>
+
+        <td class="col-md-1 text-center button-icons">
+            <usuario-gestion-columna table-params="ctrl.tableParams" element="element"
+                                     entidad="{{ctrl.estadoEditar}}"></usuario-gestion-columna>
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

@@ -1,0 +1,13 @@
+<div class="multi-select">
+
+    <label-form key="{{ctrl.label}}" for="{{ctrl.id}}" required="ctrl.required" tooltip="{{ctrl.tooltip}}"></label-form>
+
+    <div ng-dropdown-multiselect="" id="{{ctrl.id}}"
+         ng-class="{'enum': ctrl.enumBase}"
+         options="ctrl.options"
+         selected-model="ctrl.model"
+         extra-settings="ctrl.extraSettings"
+         translation-texts="ctrl.translations"
+         events="{onItemSelect: ctrl.onItemSelect}"></div>
+
+</div>

@@ -1,0 +1,35 @@
+<fieldset class="fieldset-border form-group">
+    <legend ng-if="!ctrl.label && ctrl.prefijo === 'nacimiento'" translate="fecha.legendnacimiento"></legend>
+    <legend ng-if="!ctrl.label && ctrl.prefijo === 'muerte'" translate="fecha.legendmuerte"></legend>
+    <legend ng-if="!ctrl.label && ctrl.prefijo !== 'nacimiento' && ctrl.prefijo !== 'muerte'"
+            translate="fecha.legendfecha"></legend>
+    <legend ng-if="ctrl.label" translate="{{ctrl.label}}"></legend>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="fecha.dia" for="{{ctrl.prefijo}}dia"></label-form>
+            <input class="form-control" id="{{ctrl.prefijo}}dia" type="number"
+                   ng-model="ctrl.model[ctrl.prefijo + 'Dia']" min="1" max="31">
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="fecha.mes" for="{{ctrl.prefijo}}mes"
+                        required="ctrl.model[ctrl.prefijo + 'Dia']"></label-form>
+            <input class="form-control" id="{{ctrl.prefijo}}mes" type="number"
+                   ng-model="ctrl.model[ctrl.prefijo + 'Mes']" min="1" max="12"
+                   ng-required="ctrl.model[ctrl.prefijo + 'Dia']">
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="fecha.ano" for="{{ctrl.prefijo}}ano"
+                        required="ctrl.model[ctrl.prefijo + 'Dia'] || ctrl.model[ctrl.prefijo + 'Mes']"></label-form>
+            <input class="form-control" id="{{ctrl.prefijo}}ano" type="number"
+                   ng-model="ctrl.model[ctrl.prefijo + 'Ano']" min="1" max="3000"
+                   ng-required="ctrl.model[ctrl.prefijo + 'Dia'] || ctrl.model[ctrl.prefijo + 'Mes']">
+        </div>
+    </div>
+</fieldset>

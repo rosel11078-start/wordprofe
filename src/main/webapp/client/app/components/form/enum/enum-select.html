@@ -1,0 +1,12 @@
+<label-form key="{{ctrl.label}}" for="{{ctrl.id}}" required="ctrl.required"></label-form>
+
+<select class="form-control" id="ctrl.id"
+        ng-model="ctrl.model"
+        ng-disabled="ctrl.disabled"
+        ng-required="ctrl.required"
+        ng-change="ctrl.change(ctrl.model)">
+    <option value="" ng-if="!ctrl.required">{{ctrl.empty | translate}}</option>
+    <option ng-repeat="value in ctrl.options track by value" value="{{value}}" required>
+        {{ctrl.display ? ctrl.base + '.' + value[ctrl.display] : ctrl.base + '.' + value | translate}}</span>
+    </option>
+</select>

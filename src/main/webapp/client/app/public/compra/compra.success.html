@@ -1,0 +1,6 @@
+<h1>{{'compra.fin' | translate }}</h1>
+
+<div class="lead text-center" ng-show="ctrl.loading">{{'compra.finalizando' | translate}}</div>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+
+<div class="lead" ng-if="ctrl.error">{{'compra.error.compra' | translate}}</div>

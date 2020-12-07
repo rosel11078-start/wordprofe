@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>{{'miespacio.miperfil.title' | translate}}</h1>
+
+        <form name="form" role="form" ng-submit="ctrl.save(ctrl.item)" novalidate>
+
+            <div class="form-body">
+
+                <!--Alumno-->
+                <div ng-if="ctrl.item.type == 'alumno'">
+                    <ng-include src="'app/public/cuenta/miespacio/perfil/perfil-alumno.form.html'"></ng-include>
+                </div>
+
+                <!--Profesor-->
+                <div ng-if="ctrl.item.type == 'profesor'">
+                    <ng-include src="'app/public/cuenta/miespacio/perfil/perfil-profesor.form.html'"></ng-include>
+                </div>
+
+                <!--Empresa-->
+                <div ng-if="ctrl.item.type == 'empresa'">
+                    <ng-include src="'app/public/cuenta/miespacio/perfil/perfil-empresa.form.html'"></ng-include>
+                </div>
+
+                <div ng-if="ctrl.item.type == 'profesor' || ctrl.item.type == 'empresa'">
+                    <ng-include
+                        src="'app/public/cuenta/miespacio/perfil/perfil-datos-facturacion.form.html'"></ng-include>
+                </div>
+
+                <!--Campos obligatorios-->
+                <div class="message-required">{{'global.form.required' | translate}}</div>
+
+                <!--Botones-->
+                <div class="form-bottom-buttons">
+                    <a class="btn btn-default btn-sm" ng-click="ctrl.confirmarBaja()"
+                       ng-if="ctrl.item.type == 'alumno'">
+                        <span translate="miespacio.miperfil.baja.titulo"></span>
+                    </a>
+
+                    <a class="btn btn-default btn-sm" ui-sref="miespacio/perfil/contrasena">
+                        <span translate="miespacio.miperfil.cambiarcontrasena"></span>
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok"></span>&nbsp;
+                        <span translate="admin.form.button.save"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

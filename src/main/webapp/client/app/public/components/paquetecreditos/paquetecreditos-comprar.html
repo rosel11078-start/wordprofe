@@ -1,0 +1,35 @@
+<h1 translate="global.menu.paquetescreditos"></h1>
+
+<div class="form-group">
+    <div>
+        <label translate="paquetecreditos.comprar.numero"></label>
+        {{ctrl.paqueteCreditos.creditos}}
+    </div>
+
+    <div>
+        <label translate="paquetecreditos.comprar.precio"></label>
+        {{ctrl.paqueteCreditos.coste | number:2}} €
+    </div>
+</div>
+
+<form name="form" role="form" ng-submit="ctrl.comprar()" novalidate>
+    <div class="form-group">
+        <label class="noselect">
+            <input type="checkbox" ng-model="ctrl.solicitarFactura">
+            {{'paquetecreditos.comprar.solicitarfactura' | translate}}
+        </label>
+    </div>
+
+    <div class="form-body" ng-if="ctrl.solicitarFactura">
+        <ng-include src="'app/public/cuenta/miespacio/perfil/perfil-datos-facturacion.form.html'"></ng-include>
+    </div>
+
+    <div class="form-bottom-buttons">
+        <!--Botones-->
+        <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;<span
+            translate="paquetecreditos.comprar.comprar"></span>
+        </button>
+    </div>
+</form>
+

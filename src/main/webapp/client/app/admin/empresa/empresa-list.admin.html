@@ -1,0 +1,78 @@
+<div class="btn-ctrl">
+    <a class="btn btn-primary btn-crear" ui-sref="admin/empresa/create">
+        <span translate="admin.empresa.create.title"></span>
+    </a>
+</div>
+
+<div class="btn-ctrl">
+    <a class="btn btn-default btn-crear" ng-click="ctrl.empresasExcel()">
+        <span translate="admin.empresa.generarexcel"></span>
+    </a>
+</div>
+
+<usuario-gestion-eliminados filter="ctrl.filter"></usuario-gestion-eliminados>
+
+<div class="empty" ng-show="ctrl.empty" translate="admin.empresa.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'admin.datosfacturacion.nombre' | translate">
+            <a ui-sref="admin/empresa/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.datosFacturacion.nombre}}
+            </a>
+        </td>
+
+        <td data-title="'admin.datosfacturacion.cifnif' | translate">
+            <a ui-sref="admin/empresa/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.datosFacturacion.nif}}
+            </a>
+        </td>
+
+        <td data-title="'admin.empresa.form.email' | translate" sortable="'email'">
+            <a ui-sref="admin/empresa/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.email}}
+            </a>
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.empresa.form.fecharegistro' | translate"
+            sortable="'fechaRegistro'">
+            <date model="element.fechaRegistro"></date>
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.empresa.form.fechaultimoacceso' | translate"
+            sortable="'fechaUltimoAcceso'">
+            <date model="element.fechaUltimoAcceso"></date>
+        </td>
+
+        <td data-title="'admin.empresa.form.creditostotales' | translate" sortable="'creditosTotales'"
+            class="text-center col-sm-1">
+            {{element.creditosTotales}}
+        </td>
+
+        <td data-title="'admin.empresa.form.creditosdisponibles' | translate" sortable="'creditosDisponibles'"
+            class="text-center col-sm-1">
+            {{element.creditosDisponibles}}
+        </td>
+
+        <td data-title="'admin.empresa.form.creditosdistribuidos' | translate" sortable="'creditosDistribuidos'"
+            class="text-center col-sm-1">
+            {{element.creditosDistribuidos}}
+        </td>
+
+        <!--<td class="text-center" data-title="'admin.empresa.form.fechacaducidad' | translate" sortable="'caducidad'">
+            <date model="element.caducidad"></date>
+        </td>-->
+
+        <td class="text-center button-icons col-icons-4">
+            <a ui-sref="admin/empresa/alumno({empresaId: element.id})" class="button glyphicon glyphicon-user"
+               title="{{'admin.alumno.list.title' | translate}}"></a>
+            <usuario-gestion-columna table-params="ctrl.tableParams" element="element"
+                                     entidad="empresa"></usuario-gestion-columna>
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

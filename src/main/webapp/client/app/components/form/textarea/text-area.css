@@ -1,0 +1,10 @@
+/**/
+
+/*Ocultar el botón para ver el código HTML*/
+text-angular button[name = 'html'] {
+    display: none;
+}
+
+text-angular.error .ta-scroll-window {
+    border-color: red ! important;
+}

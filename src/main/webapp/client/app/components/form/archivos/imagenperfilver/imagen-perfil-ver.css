@@ -1,0 +1,30 @@
+/**/
+.imagen-perfil {
+    display: initial;
+}
+
+.imagen-perfil img {
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.imagen-perfil img.mini {
+    width: 25px;
+}
+
+.imagen-perfil img.normal {
+    width: 50px;
+}
+
+.imagen-perfil span {
+    vertical-align: middle;
+}
+
+.imagen-perfil span.mini {
+    font-size: 25px;
+}
+
+.imagen-perfil span.normal {
+    width: 50px;
+    font-size: 50px;
+}

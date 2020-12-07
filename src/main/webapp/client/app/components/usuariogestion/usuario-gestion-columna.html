@@ -1,0 +1,19 @@
+<!--Editar-->
+<a ui-sref="admin/{{ctrl.entidad}}/edit({id: ctrl.element.id})" class="button glyphicon glyphicon-pencil"
+   ng-if="!ctrl.element.baja"
+   title="{{'admin.form.button.edit' | translate}}"></a>
+
+<!--Desactivar y baja-->
+<a ng-click="ctrl.showDesactivarConfirmation(ctrl.element)" class="button glyphicon glyphicon-remove"
+   ng-if="!ctrl.element.eliminado && !ctrl.element.baja"
+   title="{{'admin.list-users.desactivar.title' | translate}}"></a>
+<a ng-click="ctrl.showBajaConfirmation(ctrl.element)" class="button glyphicon glyphicon-trash"
+   ng-if="!ctrl.element.eliminado && !ctrl.element.baja"
+   title="{{'admin.list-users.delete.title' | translate}}"></a>
+
+<!--Activar-->
+<a ng-click="ctrl.showRestaurarConfirmation(ctrl.element)" class="button glyphicon glyphicon-ok"
+   ng-if="ctrl.element.eliminado && !ctrl.element.baja"
+   title="{{'admin.list-users.restaurar.title' | translate}}"></a>
+
+<span class="info" ng-if="ctrl.element.baja">[{{'admin.list-users.eliminado' | translate}}]</span>

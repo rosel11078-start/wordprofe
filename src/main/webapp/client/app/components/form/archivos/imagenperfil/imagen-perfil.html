@@ -1,0 +1,45 @@
+<div class="form-group imagen-perfil">
+    <ng-form name="imagenPerfilForm">
+
+        <div class="enxe-boton-elegir"
+             ng-show="!ctrl.editPreview && !ctrl.ngModel.path && !ctrl.progresoImagen || !ctrl.myCroppedImage">
+            <button type="button" class="btn btn-default"
+                    ng-disabled="ctrl.progresoImagen" ng-click="ctrl.clickUpload()">
+                {{'imagen.form.uploadperfil' | translate}}
+            </button>
+        </div>
+
+        <div class="imagen imagen-profile" ng-show="ctrl.ngModel.path || ctrl.editPreview && ctrl.myCroppedImage">
+            <div class="imagen-wrap">
+                <span class="glyphicon glyphicon-remove clickable close"
+                      ng-click="ctrl.eliminarImagen()"
+                      title="{{'admin.form.button.delete' | translate}}"
+                      ng-show="!ctrl.editPreview"></span>
+
+                <img class="enxe-img pull-left redonda" ng-src="{{ctrl.myCroppedImage}}" ng-show="!ctrl.editPreview"/>
+
+                <div class="crop-area pull-left" ng-show="ctrl.editPreview">
+                    <ui-cropper image="ctrl.myImage" area-type="circle" result-image="ctrl.myCroppedImage"
+                                live-view="ctrl.blockingObject" aspect-ratio="1"
+                                area-min-size="50" result-image-size="200"></ui-cropper>
+                </div>
+            </div>
+        </div>
+
+        <loading is-loading="ctrl.progresoImagen"></loading>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default btn-confirm"
+                        ng-show="ctrl.editPreview && ctrl.myCroppedImage"
+                        ng-click="ctrl.onImagenSelect(ctrl.myCroppedImage, imagenPerfilForm)">
+                    {{'imagen.form.setperfil' | translate}}
+                </button>
+            </div>
+        </div>
+
+        <input id="inputFoto{{ctrl.indice}}" type="file" ngf-select="" class="oculto" ngf-change="ctrl.preview($files)"
+               accept=".jpg,.png,.gif,.jpeg"/>
+
+    </ng-form>
+</div>

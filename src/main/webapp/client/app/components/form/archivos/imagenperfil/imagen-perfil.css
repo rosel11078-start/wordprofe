@@ -1,0 +1,25 @@
+/**/
+.imagen-perfil .crop-area {
+    background: none;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+
+.imagen-perfil .redonda {
+    border-radius: 50%;
+}
+
+.imagen-perfil .imagen {
+    width: 200px;
+    height: 200px;
+}
+
+.imagen-perfil .imagen img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.imagen-perfil .btn-confirm {
+    margin-top: 10px;
+}

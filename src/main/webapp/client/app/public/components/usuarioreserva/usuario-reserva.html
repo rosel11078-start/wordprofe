@@ -1,0 +1,57 @@
+<div class="profesor-reducido">
+    <h1 ng-if="ctrl.usuario.type === 'profesor'">{{'profesor.title' | translate}}</h1>
+    <h1 ng-if="ctrl.usuario.type === 'alumno'">{{'global.alumno' | translate}}</h1>
+    <div class="col-sm-3 foto">
+        <img ng-src="upload/usuarios/{{ctrl.usuario.id}}/perfil/n_{{ctrl.usuario.foto}}" ng-if="ctrl.usuario.foto"/>
+        <img ng-src="assets/images/foto_perfil.png" ng-if="!ctrl.usuario.foto"/>
+    </div>
+    <div class="col-sm-9 info">
+        <div>
+            <label-form key="profesor.nombre" sufijo=":"></label-form>
+            {{ctrl.usuario.nombre}}
+        </div>
+        <div>
+            <label-form key="profesor.apellidos" sufijo=":"></label-form>
+            {{ctrl.usuario.apellidos}}
+        </div>
+        <div
+            ng-if="ctrl.reserva.estado != 'SIN_CONTESTAR' && ctrl.reserva.estado != 'NO_CONTESTADA' && ctrl.reserva.estado != 'CANCELADA_POR_ALUMNO'">
+            <label-form key="profesor.skype" sufijo=":"></label-form>
+            {{ctrl.usuario.skype}}
+        </div>
+    </div>
+
+    <h1>{{'reserva.title' | translate}}</h1>
+    <div class="col-sm-12">
+        <div>
+            <label-form key="reserva.form.fechainicio" sufijo=":"></label-form>
+            <date model="ctrl.reserva.start.valueOf()/1000"></date>
+        </div>
+        <div>
+            <label-form key="reserva.form.fechafin" sufijo=":"></label-form>
+            <date model="ctrl.reserva.end.valueOf()/1000"></date>
+        </div>
+        <div ng-if="ctrl.reserva.estado">
+            <label-form key="reserva.form.estado" sufijo=":"></label-form>
+            {{'enum.estado.' + ctrl.reserva.estado | translate}}
+        </div>
+
+        <!--Clases canceladas/rechazadas-->
+        <div ng-if="ctrl.cancelada">
+            <label-form key="reserva.form.motivo" sufijo=":"></label-form>
+            <span ng-if="ctrl.reserva.estado === 'RECHAZADA'">{{ctrl.reserva.motivoProfesor}}</span>
+            <span ng-if="ctrl.reserva.estado === 'CANCELADA_POR_ALUMNO'">{{ctrl.reserva.motivoAlumno}}</span>
+            <span ng-if="ctrl.reserva.estado === 'CANCELADA_POR_PROFESOR'">{{ctrl.reserva.motivoProfesor}}</span>
+        </div>
+
+        <!--Resultados de las clases finalizadas-->
+        <div ng-if="ctrl.evaluada && ctrl.reserva.motivoProfesor.length">
+            <label-form key="reserva.motivo.profesor.title" sufijo=":"></label-form>
+            {{ctrl.reserva.motivoProfesor}}
+        </div>
+        <div ng-if="ctrl.evaluada && ctrl.reserva.motivoAlumno.length">
+            <label-form key="reserva.motivo.alumno.title" sufijo=":"></label-form>
+            {{ctrl.reserva.motivoAlumno}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.activacion.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<h3 th:text="#{email.bienvenido(${user.nombre})}"></h3>
+
+<p>
+    <span th:text="#{email.activacion.text1}"></span>
+</p>
+
+<p>
+    <span th:text="#{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>

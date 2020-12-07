@@ -1,0 +1,139 @@
+$brand-primary: #2196f3;
+
+.admin {
+
+    @import "checkbox.scss";
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* ==========================================================================
+    Formularios
+    ========================================================================== */
+
+
+    /* ==========================================================================
+    Tablas y listas
+    ========================================================================== */
+
+    .empty {
+        font-size: 15px;
+        color: #999;
+        padding: 10px 0;
+    }
+
+    a.disabled {
+        cursor: default;
+        opacity: 0.65;
+        pointer-events: none;
+        text-decoration: none;
+    }
+
+    .btn-ctrl {
+        .btn-crear {
+            margin-bottom: 20px;
+            margin-left: 10px;
+            float: right;
+        }
+    }
+
+    .head-ctrl {
+        margin-bottom: 20px;
+
+        .form-group {
+            margin-right: 20px;
+        }
+
+    }
+
+    table {
+        label {
+            font-size: 14px;
+            margin-top: 0;
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+
+        .button-icons {
+            .glyphicon {
+                font-size: 15px;
+                margin-right: 5px;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+
+            .info {
+                font-size: 12px;
+                color: #666;
+            }
+        }
+
+        .col-fecha {
+            width: 136px;
+        }
+
+        .col-icons-4 {
+            width: 100px;
+        }
+    }
+
+    /* ==========================================================================
+    Modal
+    ========================================================================== */
+
+    .close:focus {
+        outline: none;
+    }
+
+    /* ==========================================================================
+    Acordeón
+    ========================================================================== */
+
+    uib-accordion {
+        a.accordion-toggle {
+            display: block;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .panel {
+            margin-top: 10px;
+        }
+    }
+
+    /* ==========================================================================
+    Footer
+    ========================================================================== */
+
+    .footer {
+        //position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+    }
+
+}

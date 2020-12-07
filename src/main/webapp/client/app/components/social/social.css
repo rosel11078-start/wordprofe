@@ -1,0 +1,41 @@
+/* ==========================================================================
+Social Buttons
+========================================================================== */
+.btn-social {
+    margin-bottom: 5px;
+}
+
+.btn-social-mini {
+    border-radius: 60px;
+    height: 35px;
+    width: 35px;
+    padding: 0;
+}
+
+.btn-google {
+    background-color: #dd4b39;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.btn-social-mini:hover, .btn-social-mini:active, .btn-social-mini:focus {
+    outline: none;
+}
+
+.btn-google:hover, .btn-google:focus, .btn-google:active, .btn-google.active, .open > .dropdown-toggle.btn-google {
+    background-color: #c23321;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
+    background-color: #2d4373;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}

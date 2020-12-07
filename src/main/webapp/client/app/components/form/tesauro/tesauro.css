@@ -1,0 +1,115 @@
+/*************************** TESAUROS ***************************/
+
+/* Estilo Etiquetas */
+
+.bootstrap .host {
+    margin: 0;
+}
+
+.tesauro .bootstrap .tags {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.bootstrap .tags.focused {
+    border-color: #66afe9;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/* Colores de una etiqueta */
+
+.bootstrap .tags .tag-item {
+    border-radius: 4px;
+    color: #333;
+    background: none;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 1px 10px;
+    line-height: 22px;
+}
+
+/* Elemento marcado para eliminar */
+
+.bootstrap .tags .tag-item.selected {
+    background: #d9534f;
+    border: 1px solid #d43f3a;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Para etiquetas que se muestran en forma de lista (.as-list) */
+
+.bootstrap.as-list .tags .tag-item {
+    float: none;
+    display: block;
+    margin: 4px 2px;
+}
+
+/* Botón de eliminar etiqueta */
+
+.bootstrap .tags .tag-item .remove-button {
+    margin: 0;
+    font-size: 22px;
+    float: right;
+    margin-left: 5px;
+}
+
+.bootstrap .tags .tag-item .remove-button:hover,
+.bootstrap .tags .tag-item .remove-button:focus,
+.bootstrap .tags .tag-item .remove-button:active {
+    text-decoration: none;
+    color: #c9302c;
+}
+
+.bootstrap .tags .tag-item button {
+    background: transparent;
+    color: #000;
+    opacity: .4;
+}
+
+.bootstrap .autocomplete {
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* Sugerencia activa */
+
+.bootstrap .autocomplete .suggestion-item.selected {
+    background-color: #337ab7;
+}
+
+/* Trozo de texto que concuerda con la búsqueda */
+
+.bootstrap .autocomplete .suggestion-item em {
+    font-weight: normal;
+    background-color: #ffffff;
+}
+
+.bootstrap .autocomplete .suggestion-item.selected em {
+    color: #262626;
+    background-color: #ffffff;
+}
+
+/* ****** Autocompletado simple (de Bootstrap) ****** */
+
+.tesauro .input-group .form-control {
+    z-index: 2;
+}
+
+.tesauro .dropdown-menu {
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tesauro .input-group .form-control:not(first-child):not(last-child) {
+    border-bottom-left-radius: 5px ! important;
+    border-top-left-radius: 5px ! important;
+}
+
+.tesauro .input-group-addon a:hover {
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+$icon-font-path: "../fonts/";
+
+@import "variables";
+//@import "../bower_components/bootswatch/paper/_variables.scss";
+
+/* Sass bower components will be injected here */
+// bower:scss
+@import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+//@import "../bower_components/bootswatch/paper/_bootswatch.scss";
+
+

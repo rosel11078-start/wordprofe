@@ -1,0 +1,511 @@
+.well {
+    background: none;
+    position: relative;
+    padding-top: 10px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+#loading-bar {
+    .bar {
+        height: 3px;
+    }
+
+    .peg {
+        height: 3px;
+    }
+}
+
+.disabled {
+    cursor: default;
+    opacity: 0.65;
+}
+
+a.disabled {
+    pointer-events: none ! important;
+    text-decoration: none;
+}
+
+.button-icons {
+    a {
+        cursor: pointer;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+/* ==========================================================================
+Alerts
+========================================================================== */
+
+.alerts {
+    margin-top: -23px;
+    min-height: 45px;
+
+    > div:not(:last-child) {
+        .alert {
+            border-radius: 0;
+        }
+    }
+
+    .alert {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 8px 35px 8px 15px;
+        margin-bottom: 0;
+    }
+}
+
+.modal {
+    .alerts {
+        margin-top: -15px;
+        min-height: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==========================================================================
+Notificaciones
+========================================================================== */
+
+.btn-notificacion {
+    font-size: 24px;
+    position: relative;
+    padding: 8px 0;
+    cursor: pointer;
+
+    .contador {
+        position: absolute;
+        background-color: #e9641b;
+        color: #fff;
+        user-select: none;
+        text-align: center;
+        border-radius: 22px;
+        bottom: -3px;
+        right: -15px;
+        height: 22px;
+        width: 22px;
+        padding: 5px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+}
+
+.popover.notificacionespop {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 5px;
+
+    &.bottom > .arrow {
+        border-bottom-color: rgba(0, 0, 0, 0.12);
+    }
+
+}
+
+.navbar {
+    .btn-notificacion {
+        padding: 24px 8px;
+        color: #666;
+        font-size: 18px;
+
+        .contador {
+            bottom: 15px;
+            right: -1px;
+            border-radius: 18px;
+            height: 17px;
+            width: 17px;
+            padding: 5px 0;
+            font-size: 11px;
+            line-height: 9px;
+        }
+    }
+}
+
+.notificaciones {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 15px;
+    margin-left: -15px;
+    margin-top: -9px;
+    margin-bottom: -10px;
+    margin-right: -15px;
+    padding-right: 15px;
+
+    .popover-content {
+        padding: 0px;
+    }
+
+    .notificacion {
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border: none
+        }
+
+        &.noleida {
+            background-color: #eef7fb;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 10px;
+            width: 100%;
+            position: relative;
+
+            .texto {
+                padding-right: 20px;
+                float: left;
+                width: 100%;
+            }
+
+            .fecha {
+                padding-right: 20px;
+                font-size: 11px;
+                color: #999;
+                width: 100%;
+            }
+
+            .acciones {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 0px) and (max-width: 700px) {
+    .popover.notificacionespop {
+        left: 0 !important;
+        max-height: 330px;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+Estadísticas
+========================================================================== */
+
+.datos-usuario {
+    margin-bottom: 20px;
+}
+
+.estadisticas {
+    .estadisticas-basicas {
+        margin-bottom: 30px;
+    }
+
+    .libros-adquiridos {
+        margin-bottom: 30px;
+    }
+
+    .estadisticas-avanzadas {
+        margin-bottom: 40px;
+
+        .filtro {
+            margin-bottom: 10px;
+
+            .periodos {
+                text-align: right;
+            }
+        }
+
+        canvas {
+            width: 200px;
+        }
+    }
+
+    .progress {
+        float: left;
+        height: 15px;
+        width: 100px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        margin-left: 5px;
+        border-radius: 3px;
+
+        .progress-bar {
+            border-radius: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+Formularios
+========================================================================== */
+
+label {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+label.titulo {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+}
+
+label.label-destacada {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.has-feedback .form-control {
+    padding-right: 24px;
+}
+
+.has-feedback .form-control::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.has-feedback label-form ~ .form-control-feedback {
+    top: 25px;
+}
+
+select ~ .form-control-feedback {
+    display: none;
+}
+
+.has-error .input-group-addon.control-feedback {
+    display: none;
+}
+
+.help-block {
+    font-size: 12px;
+}
+
+form {
+    .form-bottom-buttons {
+        text-align: right;
+    }
+
+    button.btn-full {
+        width: 100%;
+    }
+
+    .form-center-vertical {
+        top: 28px;
+    }
+}
+
+.button-icons {
+    a {
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+/* Fieldgset */
+fieldset.element {
+    width: 100%;
+
+    legend {
+        padding-top: 5px;
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: #333;
+
+        a.glyphicon {
+            margin-left: 5px;
+            cursor: pointer;
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* TextAngular */
+.ta-root {
+    .ta-toolbar {
+        background-color: #F0F0F0;
+        padding: 7px;
+        margin-left: 0;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .ta-editor {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        min-height: 100px;
+        border: 1px solid #ccc;
+
+        .ta-bind {
+            min-height: 100px;
+        }
+    }
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.btn {
+    &.bottom-label {
+        margin-top: 38px;
+    }
+
+    /* Loading dentro de un botón */
+    .loading.loading-img {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+/* Evitar resaltado de texto */
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+radio {
+    margin-right: 10px;
+}
+
+.form-bottom-buttons {
+    text-align: right;
+
+    > :not(:last-child) {
+        margin-right: 5px;
+    }
+}
+
+.fixed-height {
+    height: 66px;
+
+    .btn {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 7px;
+    }
+}
+
+fieldset.fieldset-border {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0 10px;
+
+    legend {
+        width: auto;
+        padding: 0 10px;
+        font-size: 15px;
+        color: #999;
+    }
+
+    .title {
+        padding-bottom: 5px;
+        padding-top: 5px;
+
+        label {
+            font-size: 15px;
+        }
+    }
+}
+
+/* ==========================================================================
+Nav-tabs
+========================================================================== */
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+Tablas
+========================================================================== */
+
+.pagination {
+    margin: 0;
+}
+
+/* ==========================================================================
+Agenda
+========================================================================== */
+
+.eventosPasados {
+    opacity: 0.3
+}
+
+.fc-time-grid-event.fc-short .fc-content {
+    font-size: 13px;
+    top: 5px;
+}
+
+.fc-ltr .fc-time-grid .fc-event-container {
+    margin: 0;
+}
+
+.fc-time-grid .fc-slats td {
+    height: 24px;
+}
+
+/* ==========================================================================
+Leyenda
+========================================================================== */
+
+.leyenda {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    .reserva-count {
+        font-size: 11px;
+        color: #999;
+        vertical-align: bottom;
+    }
+}
+
+.leyenda-elemento {
+    display: inline-block;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: -3px;
+}
+
+/* ==========================================================================
+Componentes que se reutilizan en la administración
+========================================================================== */
+
+/* Apaño temporal: Al minimizar el CSS se añade un ; después del CSS de loading-bar, por lo que la clase .rzslider se puerde. */
+.rzslider {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    margin: 35px 0 15px;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}

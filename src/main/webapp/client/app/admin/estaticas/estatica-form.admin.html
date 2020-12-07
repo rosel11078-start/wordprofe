@@ -1,0 +1,35 @@
+<form name="form" role="form" ng-submit="ctrl.save()" novalidate>
+    <div class="form-body">
+
+        <h3>{{'estaticas.pagina.' + ctrl.estatica.nombre | translate}}</h3>
+
+        <uib-tabset active="ctrl.active">
+            <uib-tab ng-repeat="idioma in ctrl.idiomas" index="$index"
+                     heading="{{'estaticas.idioma.' + idioma | translate}}"
+                     ng-init="ctrl.init(ctrl.estatica, $index, idioma)">
+                <div class="row">
+                    <!--Título-->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label-form key="estaticas.i18n.titulo" required="true"></label-form>
+                            <input type="text" class="form-control" required
+                                   ng-model="(ctrl.estatica.estaticasI18n | filter: {idioma: idioma})[0].titulo"/>
+                        </div>
+                    </div>
+
+                    <!--Contenido-->
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label-form key="estaticas.i18n.contenido"></label-form>
+                            <text-area id="contenido-estaticas"
+                                       model="(ctrl.estatica.estaticasI18n | filter: {idioma: idioma})[0].contenido"
+                                       tipo="estatica"></text-area>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+
+        <buttons can-save="ctrl.canSave" mode="ctrl.mode"></buttons>
+    </div>
+</form>

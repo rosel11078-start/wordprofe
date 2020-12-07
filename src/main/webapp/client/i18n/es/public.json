@@ -1,0 +1,366 @@
+{
+  "global": {
+    "title": "WORLDPROFE",
+    "administradores": "Administradores",
+    "register": "Crear administrador",
+    "logout": "Salir",
+    "profesores": "Profesores/as",
+    "empresas": "Empresas",
+    "alumnos": "Alumnos/as",
+    "alumno": "Alumno/a",
+    "profesor": "Profesor/a",
+    "menu": {
+      "home": "Inicio",
+      "account": {
+        "main": "Cuenta"
+      },
+      "administradores": "Administradores",
+      "register": "Crear administrador",
+      "logout": "Salir",
+      "profesores": "Profesores/as",
+      "empresas": "Empresas",
+      "alumnos": "Alumnos/as registrados/as",
+      "usuarios": "Usuarios",
+      "reserva": {
+        "title": "Reservas",
+        "todas": "Todas",
+        "revisadas": "Revisadas",
+        "norevisadas": "No revisadas"
+      },
+      "miespacio": {
+        "miagenda": "Mi agenda",
+        "miscompras": "Mis compras",
+        "misalumnos": "Mis alumnos",
+        "perfil": "Perfil",
+        "title": "Mi espacio"
+      },
+      "configuracion": "Configuración",
+      "paquetescreditos": "Compra de clases"
+    },
+    "button": {
+      "accept": "Aceptar",
+      "confirm": "Confirmar",
+      "close": "Cerrar",
+      "cancel": "Cancelar",
+      "clear": "Limpiar",
+      "currentday": "Hoy",
+      "remove": "Eliminar",
+      "details": "Ver detalles",
+      "open": "Abrir en nueva pestaña"
+    },
+    "form": {
+      "required": "Los campos marcados con asterisco (*) son obligatorios"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "login": {
+    "title": "Administración",
+    "form": {
+      "username": {
+        "label": "Correo electrónico"
+      },
+      "password": {
+        "label": "Contraseña"
+      },
+      "rememberme": "Recuérdame",
+      "button": "Entrar",
+      "error": {
+        "authentication": "El nombre de usuario o la contraseña no son correctos."
+      }
+    },
+    "password": {
+      "forgot": "¿Olvidaste tu contraseña?"
+    }
+  },
+  "upload": {
+    "file": {
+      "title": "Adjuntar archivo",
+      "vacio": "No hay ningún archivo seleccionado",
+      "subiendo": "Debes esperar a que se suba el archivo"
+    }
+  },
+  "registro": {
+    "title": "Entrar",
+    "info": {
+      "titulo": "Registro",
+<<<<<<< HEAD
+      "mensaje": "Si NO eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
+=======
+      "mensaje": "Si no eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
+>>>>>>> d09843e915049721670bb7619fd5b5fa1efde72e
+      "registrate": "Regístrate"
+    },
+    "tipo": {
+      "alumno": "Registro alumno/a"
+    },
+    "form": {
+      "tipo": {
+        "alumno": "Registro alumno/a",
+        "profesor": "Registro profesor/a",
+        "administrador": "Registro administrador"
+      },
+      "save": "Registrarse",
+      "foto": "Foto",
+      "nombre": "Nombre",
+      "apellidos": "Apellidos",
+      "login": "Nickname",
+      "fechanacimiento": "Fecha de nacimiento",
+      "sexo": "Sexo",
+      "email": "Correo electrónico",
+      "movil": "Teléfono móvil",
+      "fijo": "Teléfono fijo",
+      "direccion": "Dirección",
+      "cif": "CIF",
+      "anoInauguracion": "Año de inauguración",
+      "modalidad": "Modalidad",
+      "contacto": "Nombre de la persona de contacto",
+      "contrasena": "Contraseña",
+      "repetircontrasena": "Repetir contraseña",
+      "centro": "Centro educativo",
+      "acepto": "Acepto las condiciones",
+      "packs": "Comprar packs premium",
+      "fecharegistro": "Fecha de registro"
+    },
+    "error": {
+      "acepto": "Debe aceptar las condiciones de uso para poder registrarse",
+      "emailalreadyused": "La cuenta de correo electrónico indicado ya se encuentra en uso",
+      "emailerror": "Se ha producido un error y no se ha podido enviar el email de activación. Vuelva a intentar registrarse y si el error persiste, contacte con el administrador",
+      "loginalreadyused": "El nickname indicado ya se encuentra en uso",
+      "skypealreadyused": "El usuario de Skype indicado ya se encuentra en uso",
+      "creditosinsuficientes": "No se puede asignar esa cantidad de créditos"
+    },
+    "success": {
+      "email": "Se ha enviado un email de activación a la cuenta de correo electrónico registrada por Usted. Hasta que no active su cuenta no podrá acceder a los servicios de WORLD PROFE."
+    }
+  },
+  "activacion": {
+    "title": "Activación de la cuenta",
+    "success": {
+      "activado": "La cuenta ha sido activada correctamente. Por favor, introduzca sus datos de acceso en el formulario de login",
+      "pendiente": "La cuenta ha sido activada correctamente. Una persona se pondrá en contacto para verificar los datos de la cuenta y finalizar el proceso de registro"
+    },
+    "error": {
+      "clave": "La clave introducida no es correcta. Si su cuenta ya había sido activada con anterioridad, introduzca sus datos de acceso en el formulario de login"
+    }
+  },
+  "recuperar": {
+    "title": "Recuperar contraseña",
+    "info": "Si olvidaste tu contraseña, introduce aquí tu dirección de correo electrónico con el que te registraste y te enviaremos un correo con las instrucciones para solicitar una nueva contraseña.",
+    "submit": "Recuperar",
+    "success": "Se ha enviado un email a la cuenta de correo indicada",
+    "error": "Se ha producido un error al solicitar la recuperación de la contraseña",
+    "finish": {
+      "info": "Introduce tu nueva contraseña.",
+      "success": "Su contraseña se ha modificado correctamente",
+      "error": "No se ha podido modificar su contraseña"
+    }
+  },
+  "social": {
+    "btn": "{{label}}",
+    "success": {
+      "registro": "Bienvenido a WORLDPROFE"
+    },
+    "error": {
+      "registro": "No se ha podido finalizar el registro. Vuelve a intentarlo",
+      "login": "Se ha producido un error al iniciar sesión"
+    }
+  },
+  "perfil": {
+    "editar": {
+      "success": "Su información se ha actualizado correctamente",
+      "error": {
+        "instancenotfound": "No se ha podido encontrar un usuario con ese identificador"
+      }
+    }
+  },
+  "buscador": {
+    "buscar": "Buscar",
+    "avanzada": "Búsqueda avanzada",
+    "simple": {
+      "placeholder": "Buscar por título o autor"
+    },
+    "resultados": "Resultados de la búsqueda",
+    "form": {
+      "titulo": "Título"
+    }
+  },
+  "imagen": {
+    "form": {
+      "upload": "Subir nueva imagen",
+      "uploadperfil": "Subir imagen de perfil",
+      "setperfil": "Confirmar"
+    }
+  },
+  "profesor": {
+    "apellidos": "Apellidos",
+    "busqueda": "Búsqueda de profesores/as",
+    "capacidades": "Capacidades",
+    "cif": "CIF",
+    "cp": "CP",
+    "datosfacturacion": "Datos de facturación",
+    "de": "De",
+    "dia": "Día",
+    "direccion": "Dirección",
+    "disponibilidad": "Disponibilidad",
+    "empty": "No hay profesores/as registrados/as",
+    "ensena": "Enseña",
+    "fechafin": "Fecha de fin de la clase",
+    "fechainicio": "Fecha de comienzo de la clase",
+    "fechanacimiento": "Fecha de nacimiento",
+    "horadia": "Franja horaria",
+    "idioma": "Cualquier idioma",
+    "idiomas": "Idiomas",
+    "listado": "Listado de profesores/as",
+    "localidad": "Localidad",
+    "nif": "NIF",
+    "nivel": "Nivel",
+    "niveles": "Niveles",
+    "nombre": "Nombre",
+    "pais": "País",
+    "provincia": "Provincia",
+    "skype": "Skype",
+    "textopresentacion": "Texto de presentación",
+    "descripcioncapacidades": "Capacidades",
+    "title": "Profesor/a",
+    "zonahoraria": "Su zona horaria actual es {{gmt}}"
+  },
+  "multiselect": {
+    "default": "Seleccionar",
+    "search": "Buscar...",
+    "selectioncount": "seleccionados"
+  },
+  "reserva": {
+    "acciones": {
+      "cancelar": "Cerrar sin guardar",
+      "confirmar": "Confirmar",
+      "guardar": "Guardar",
+      "rechazar": "Rechazar",
+      "reservar": "Reservar"
+    },
+    "cancelar": "Cancelar reserva",
+    "contestar": "Confirmar/rechazar reserva",
+    "create": {
+      "success": "Se ha creado la reserva",
+      "title": "Crear reserva"
+    },
+    "creditos": {
+      "aceptar": "Sí",
+      "devolver": "Devolver créditos al alumno/a",
+      "disponibles": "Créditos disponibles",
+      "consumidos": "Créditos consumidos",
+      "gastar": "Créditos de la reserva",
+      "rechazar": "No"
+    },
+    "delete": {
+      "confirm": "¿Está seguro de que desea eliminar la reserva <b>{{id}}</b>? Esta operación no se puede deshacer.",
+      "success": "Se ha eliminado la reserva correctamente",
+      "title": "Eliminar reserva"
+    },
+    "edit": {
+      "success": "La reserva se ha modificado correctamente",
+      "title": "Editar reserva"
+    },
+    "empty": "No se han encontrado reservas",
+    "error": {
+      "anterior": "No se pueden gestionar clases disponibles o reservas pendientes de contestar pasadas",
+      "email": "No se ha podido enviar el email de la reserva"
+    },
+    "estado": {
+      "realizada": {
+        "titulo": "Realizada",
+        "info": "<p>La clase ha tenido lugar según lo previsto.</p>"
+      },
+      "incidencia": {
+        "titulo": "Incidencia",
+        "info": "<p>Indique a continuación el motivo por el que la clase no se ha podido llevar a cabo.</p><p>Realizando esta acción se le devolverá el crédito de la clase al alumno.</p>"
+      },
+      "pendiente": "<p>Una vez el profesor evalúe la clase, podrás indicar que te ha parecido.</p>"
+    },
+    "evaluar": "Evaluar clase",
+    "form": {
+      "estado": "Estado",
+      "fechafin": "Fecha de fin",
+      "fechainicio": "Fecha de comienzo",
+      "motivo": "Motivo"
+    },
+    "gestionar": "Gestionar reserva",
+    "info": "Información de la reserva",
+    "motivo": {
+      "alumno": {
+        "cancelacion": "<p>Escriba un motivo por el cual quiere cancelar la clase. Este motivo será visible para WorldProfe y para el profesor. Téngalo en cuenta a la hora de redactarlo.</p>",
+        "evaluar": "<p>Indique qué le ha parecido la clase.</p><p>Este texto será visible para WorldProfe y para el profesor. Téngalo en cuenta a la hora de redactarlo.</p>",
+        "title": "Evaluación del/de la alumno/a"
+      },
+      "profesor": {
+        "cancelacion": "<p>Si cancela la clase avise al administrador de WorldProfe. Además, una vez cancele esta clase no podrá aceptar otra en esta franja horaria.</p><p>Escriba un motivo por el cual quiere cancelar la clase. Este motivo será visible para WorldProfe y para el alumno. Téngalo en cuenta a la hora de redactarlo.</p>",
+        "rechazo": "<p>Si rechaza la clase avise al administrador de WorldProfe. Además, una vez rechace esta clase no podrá aceptar otra en esta franja horaria.</p><p>Escriba un motivo por el cual quiere rechazar la clase. Este motivo será visible para WorldProfe y para el alumno. Téngalo en cuenta a la hora de redactarlo.</p>",
+        "title": "Evaluación del/de la profesor/a"
+      }
+    },
+    "norevisadas": "No revisadas",
+    "revisadas": "Revisadas",
+    "title": "Reserva",
+    "todas": "Todas",
+    "update": {
+      "confirm": "¿Está seguro de que desea actualizar la reserva <b>{{id}}</b>? Esta operación no se puede deshacer.",
+      "title": "Actualizar reserva"
+    }
+  },
+  "compra": {
+    "comprar": "Comprar",
+    "empty": "No hay compras realizadas",
+    "form": {
+      "info": "Cada clase equivale a media hora de docencia.",
+      "promo": "Promoción válida hasta el 31 de diciembre de 2020",
+      "creditos": "clases",
+      "credito": "clase",
+      "fecha": "Fecha",
+      "iva": "IVA",
+      "precio": "Precio",
+      "precioiva": "Precio con IVA"
+    },
+    "resumen": {
+      "title": "Resumen de la compra",
+      "pago": {
+        "paypal": "Pagar con PayPal"
+      }
+    },
+    "fin": "Finalizando compra",
+    "finalizando": "Finalizando compra...",
+    "cancel": "Se ha interrumpido el proceso de compra",
+    "success": "La compra se ha realizado correctamente",
+    "successcentro": "El registro ha sido correcto y la compra se ha realizado correctamente",
+    "error": {
+      "paypal": "Se ha producido un error al realizar el pago con PayPal. Vuelva a intentarlo.",
+      "compra": "Se ha producido un error al realizar la compra. Por favor, vuelva a intentarlo."
+    }
+  },
+  "paquetecreditos": {
+    "comprar": {
+      "numero": "Número de clases:",
+      "precio": "Precio:",
+      "solicitarfactura": "Si quiere que le enviemos una factura de esta compra, marque esta casilla y cubra los datos fiscales.",
+      "comprar": "Comprar"
+    }
+  },
+  "header": {
+    "title1": "WORLDPROFE",
+    "subtitulo": "recursos educativos digitales",
+    "frase": "\"Solo aprendemos si nos emocionamos,<br/> solo aprendemos si leemos\"",
+    "login": "Entrar",
+    "logout": "Salir"
+  },
+  "contacto": {
+    "telefono": "000 000 000",
+    "email": "worldprofe@worldprofe.es"
+  },
+  "textangular": {
+    "codigo": "Insertar código"
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

@@ -1,0 +1,416 @@
+$panel_heading_height: 36px;
+@import "variables.scss";
+
+.public {
+
+    .empty {
+        font-size: 15px;
+        color: #999;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    /* Barra de carga */
+    #loading-bar {
+        .bar {
+            background: $brand-primary;
+        }
+    }
+
+    #loading-bar-spinner {
+        .spinner-icon {
+            border-top-color: white;
+            border-left-color: white;
+        }
+    }
+
+    .anchomax {
+        max-width: 100%;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    /* ==========================================================================
+    Header
+    ========================================================================== */
+
+    #header {
+        margin: 10px 0;
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .logo, .titulo {
+            display: inline-block;
+        }
+
+        .titulo {
+            h5 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+
+        .logo {
+            img {
+                height: 50px;
+                vertical-align: middle;
+            }
+        }
+
+        .usuario {
+            padding: 8px 0;
+
+            .info-usuario {
+                display: inline;
+                margin-right: 20px;
+            }
+        }
+
+    }
+
+    /* ==========================================================================
+    Footer
+    ========================================================================== */
+
+    #footer {
+        .footer {
+            color: #333333;
+            height: 60px;
+            font-size: 16px;
+        }
+
+        .container {
+            padding: 18px 0;
+
+            .info {
+                & > span {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    /* ==========================================================================
+    Menú
+    ========================================================================== */
+
+    .navbar-right {
+        float: none ! important;
+        margin-left: -15px;
+    }
+
+    .navbar {
+        background-color: #0088C7;
+        border-color: #0088C7;
+
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+        color: #fff;
+        background-color: #006695;
+    }
+
+    .navbar .menu-perfil {
+        float: right;
+    }
+
+    /* ==========================================================================
+
+    ========================================================================== */
+
+    h1 {
+        border-bottom: 1px solid $brand-primary;
+        clear: both;
+        font-weight: normal;
+        padding-bottom: 5px;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: $brand-primary;
+    }
+
+    h2 {
+        color: #666;
+        font-size: 22px;
+    }
+
+    h3 {
+        clear: both;
+        color: #7aaee2;
+        font-size: 20px;
+        font-weight: normal;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 5px;
+    }
+
+    h4 {
+        color: #666;
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+        color: #666;
+    }
+
+    /* ==========================================================================
+    Formularios
+    ========================================================================== */
+
+    /* ==========================================================================
+    Botones
+    ========================================================================== */
+
+    .btn-ctrl {
+        float: right;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* ==========================================================================
+    Modal
+    ========================================================================== */
+
+    .modal-header {
+        background: $brand-primary;
+
+        * {
+            color: white;
+        }
+
+        .close {
+            //margin-top: 10px;
+        }
+    }
+
+    .close:focus {
+        outline: none;
+    }
+
+    /* ==========================================================================
+    Página principal
+    ========================================================================== */
+
+    .main {
+        .right {
+            img {
+                max-width: 160px;
+            }
+        }
+    }
+
+    /* ==========================================================================
+    Listado de profesores
+    ========================================================================== */
+
+    .profesores {
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    /* ==========================================================================
+    Bloque profesor
+    ========================================================================== */
+
+    .profesor {
+        display: inline-flex;
+        cursor: pointer;
+        color: #787b83;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .15);
+        margin-top: 10px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        padding-top: 5px;
+        font-size: 14px;
+        width: 100%;
+
+        .foto {
+            padding-top: 5px;
+            text-align: center;
+            width: 183px;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        .info {
+            padding-top: 5px;
+
+            .nombre {
+                line-height: 1.1;
+                color: #4f5457;
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .presentacion {
+                margin-top: 15px;
+                padding-top: 15px;
+                padding-bottom: 10px;
+                border-top: 1px solid #ddd;
+
+                p {
+                    margin: 0 0 5px;
+                }
+            }
+        }
+
+        label {
+            margin-bottom: 0px;
+        }
+    }
+
+    .profesor:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .profesor-reducido {
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        .foto {
+            text-align: center;
+
+            img {
+                border-radius: 50%;
+                width: 77%;
+            }
+        }
+
+        .info {
+            .nombre {
+                line-height: 1.1;
+                color: #4f5457;
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            margin-bottom: 30px;
+        }
+    }
+
+    /* ==========================================================================
+    Gestionar reserva
+    ========================================================================== */
+
+    .gestionar-reserva {
+        border-left: 1px solid rgb(219, 219, 219);
+        border-bottom: 1px solid rgb(219, 219, 219);
+        border-right: 1px solid rgb(219, 219, 219);
+    }
+
+    /* ==========================================================================
+    Registro
+    ========================================================================== */
+
+    .registro {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .login {
+            margin-bottom: 40px;
+        }
+    }
+
+
+    /* ==========================================================================
+    text-angular
+    ========================================================================== */
+    .ta-root {
+        .ta-toolbar {
+            background-color: #F0F0F0;
+            padding: 7px;
+            margin-left: 0;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .ta-editor {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            min-height: 100px;
+            border: 1px solid #ccc;
+
+            .ta-bind {
+                min-height: 100px;
+            }
+        }
+    }
+
+    /* ==========================================================================
+    Paquete de créditos
+    ========================================================================== */
+    .paquetecredito {
+        display: inline-block;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        border: 1px solid #afb3bc;
+        color: #545557;
+        margin: 15px;
+        margin-top: 5px;
+
+        .titulo {
+            font-size: 50px;
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
+        }
+
+        .subtitulo {
+            text-transform: lowercase;
+            margin-top: 10px;
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .coste {
+            padding: 10px;
+            margin-top: 10px;
+
+            button {
+                //background-color: #0088C7;
+
+                span {
+                    //color: white;
+                    //font-size: 15px;
+                }
+            }
+        }
+    }
+
+    /* ==========================================================================
+    Responsive
+    ========================================================================== */
+
+    @media (max-width: 992px) {
+    }
+
+    @media (max-width: 767px) {
+        .navbar .menu-perfil {
+            float: none;
+        }
+    }
+
+}
+
+

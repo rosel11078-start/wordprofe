@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.compra.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<h3 th:text="#{email.compra.saludo(${user.nombre})}"></h3>
+
+<p>
+    <span th:text="#{email.compra.text1}"></span>
+</p>
+
+<h4 th:text="#{email.compra.detalles.title}"></h4>
+
+<p>
+    <span th:text="#{email.compra.detalles.fecha}"></span>
+    <span th:text="${#calendars.format(compra.fecha, 'dd/MM/yyyy, HH:mm')}"></span>
+</p>
+
+<p>
+    <span th:text="#{email.compra.detalles.creditos}"></span>
+    <span th:text="${compra.creditos}"></span>
+</p>
+
+<div>
+    <p>
+        <span th:text="#{email.compra.total}"></span>
+        <span th:text="${#numbers.formatDecimal(compra.precioConIva, 0, 'COMMA', 2, 'POINT')}"></span> €
+    </p>
+</div>
+
+<p>
+    <span th:text=" #{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>

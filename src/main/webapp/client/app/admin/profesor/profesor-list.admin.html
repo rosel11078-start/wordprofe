@@ -1,0 +1,95 @@
+<div class="btn-ctrl">
+    <a class="btn btn-primary btn-crear" ui-sref="admin/profesor/create">
+        <span translate="admin.profesor.create.title"></span>
+    </a>
+</div>
+
+<div class="btn-ctrl">
+    <a class="btn btn-default btn-crear" ng-click="ctrl.profesoresExcel()">
+        <span translate="admin.profesor.generarexcel"></span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <filter filter="ctrl.filter.key"></filter>
+    </div>
+    <div class="col-sm-3">
+        <usuario-gestion-eliminados filter="ctrl.filter"></usuario-gestion-eliminados>
+    </div>
+</div>
+
+<div class="row form-group">
+    <!--Meses-->
+    <div class="col-sm-offset-6 col-sm-4">
+        <div class="form-inline">
+            <div class="form-group">
+                <label-form key="admin.profesor.list.meses"></label-form>
+                <select id="months" ng-model="ctrl.filter.mes" class="form-control">
+                    <option value="" translate="enum.all"></option>
+                    <option ng-repeat="month in ctrl.months" value="{{month}}">
+                        {{'enum.mes.' + month | translate}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!--Años-->
+    <div class="col-sm-2">
+        <div class="form-inline">
+            <div class="form-group">
+                <label-form key="admin.profesor.list.anos"></label-form>
+                <select id="years" ng-model="ctrl.filter.ano" class="form-control">
+                    <option value="" translate="enum.all"></option>
+                    <option ng-repeat="year in ctrl.years" value="{{year}}">{{year}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="empty" ng-show="ctrl.empty" translate="profesor.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams"
+       class="table table-condensed table-bordered table-striped table-hover" class="ng-cloak">
+
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'admin.profesor.form.nombre' | translate" sortable="'nombre'">
+            <a ui-sref="admin/profesor/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.nombre}} {{element.apellidos}}
+            </a>
+        </td>
+
+        <td data-title="'admin.profesor.form.email' | translate" sortable="'email'">
+            <a ui-sref="admin/profesor/edit({id: element.id})" title="{{'admin.form.button.edit' | translate}}">
+                {{element.email}}
+            </a>
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.profesor.form.fecharegistro' | translate"
+            sortable="'fechaRegistro'">
+            <date model="element.fechaRegistro"></date>
+        </td>
+
+        <td class="text-center col-fecha" data-title="'admin.profesor.form.fechaultimoacceso' | translate"
+            sortable="'fechaUltimoAcceso'">
+            <date model="element.fechaUltimoAcceso"></date>
+        </td>
+
+
+        <td data-title="'admin.profesor.form.clasesimpartidas' | translate" align="center">
+            {{element.clasesImpartidas}}
+        </td>
+
+        <td class="text-center button-icons col-icons-4">
+            <a ui-sref="admin/profesor/agenda({usuarioId: element.id, mes:ctrl.filter.mes})"
+               class="button glyphicon glyphicon-eur"
+               title="{{'admin.profesor.list.agenda' | translate}}"></a>
+
+            <usuario-gestion-columna table-params="ctrl.tableParams" element="element"
+                                     entidad="profesor"></usuario-gestion-columna>
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

@@ -1,0 +1,30 @@
+/**/
+.multi-select .multiselect-parent,
+.multi-select .multiselect-parent button {
+    width: 100%;
+    position: relative;
+}
+
+.multi-select button.btn {
+    text-align: left;
+    overflow: hidden;
+}
+
+.multi-select button.btn .caret {
+    float: right;
+    bottom: 0;
+    top: 0;
+    right: 12px;
+    margin: auto;
+    position: absolute;
+}
+
+.multi-select ul.dropdown-menu {
+    max-height: 400px;
+}
+
+.multi-select .enum button.btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

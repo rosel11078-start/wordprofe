@@ -1,0 +1,68 @@
+<form name="form" role="form" ng-submit="ctrl.save()" novalidate>
+    <div class="form-body">
+
+        <div class="row">
+            <!--Email-->
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label-form key="admin.empresa.form.email" for="email" required="true"></label-form>
+                    <input class="form-control" id="email" type="email" ng-model="ctrl.item.email" required="true"
+                           ng-disabled="ctrl.mode == 'edit'">
+                </div>
+            </div>
+
+            <!--Nombre-->
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label-form key="admin.empresa.form.nombre" for="nombre" required="true"></label-form>
+                    <input class="form-control" id="nombre" type="text" ng-model="ctrl.item.nombre" required="true">
+                </div>
+            </div>
+
+            <!--Teléfono móvil-->
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label-form key="admin.empresa.form.telefonomovil" for="telefonoMovil"
+                                required="true"></label-form>
+                    <input class="form-control" id="telefonoMovil" type="text" ng-model="ctrl.item.telefonoMovil"
+                           required="true" maxlength="20">
+                </div>
+            </div>
+
+            <!--Créditos-->
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label-form key="admin.empresa.form.creditosdisponibles" for="creditos"></label-form>
+                    <input class="form-control" id="creditos" type="number"
+                           ng-model="ctrl.item.creditosDisponibles" min="0">
+                </div>
+            </div>
+
+            <!--&lt;!&ndash;Fecha de caducidad&ndash;&gt;-->
+            <!--<div class="col-sm-3">-->
+            <!--<div class="form-group">-->
+            <!--<date-picker id="caducidad" model="ctrl.item.caducidad"-->
+            <!--label="admin.empresa.form.fechacaducidad" required="true"-->
+            <!--options="{minDate: 'today', maxDate: '', datepickerMode: 'day'}">-->
+            <!--</date-picker>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+
+        <div class="row">
+            <!--Observaciones-->
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <text-area label="admin.empresa.form.observaciones" model="ctrl.item.observaciones"
+                               id="observaciones"></text-area>
+                </div>
+            </div>
+        </div>
+
+        <ng-include src="'app/admin/datosfacturacion/datos-facturacion.form.html'"></ng-include>
+
+        <!--Botones-->
+        <buttons can-save="ctrl.canSave" mode="ctrl.mode"></buttons>
+    </div>
+</form>
+

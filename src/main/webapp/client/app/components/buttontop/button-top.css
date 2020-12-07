@@ -1,0 +1,19 @@
+#button-top {
+    display: none;
+    position: fixed;
+    width: 53px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #2196f3;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#button-top:hover {
+    background-color: #0b76cc;
+}

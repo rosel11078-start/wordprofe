@@ -1,0 +1,27 @@
+<fieldset class="fieldset-border form-group list-form">
+    <div class="row title">
+        <div class="col-xs-8">
+            <label-form key="{{ctrl.label}}" tooltip="{{ctrl.tooltip}}"></label-form>
+        </div>
+
+        <div class="col-xs-4 text-right">
+            <button type="button" ng-click="ctrl.addElement()" class="btn btn-default"
+                    title="{{'admin.form.button.add' | translate}}">
+                <span class="glyphicon glyphicon-plus"></span>
+                {{'admin.form.button.add' | translate}}
+            </button>
+        </div>
+    </div>
+
+    <div class="row element" ng-repeat="element in ctrl.list track by $index"
+         ng-class="ctrl.acordeon ? 'acordeon' : 'sin-acordeon'">
+
+        <ng-include src="ctrl.templateUrl"></ng-include>
+
+        <!--Eliminar-->
+        <div class="remove button-icons form-center-vertical">
+            <a ng-click="ctrl.removeElement(element)" class="glyphicon glyphicon-remove"
+               title="{{'admin.form.button.delete' | translate}}"></a>
+        </div>
+    </div>
+</fieldset>

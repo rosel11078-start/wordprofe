@@ -1,0 +1,65 @@
+<!-- Datos fiscales -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4>{{'admin.datosfacturacion.title' | translate}}</h4>
+    </div>
+</div>
+
+<!-- Los campos son obligatorios si marcamos el check de solicitud de la factura => ctrl.solicitarFactura -->
+
+<div class="row">
+    <!--Nombre-->
+    <div class="col-sm-9">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.nombre" for="dfnombre" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dfnombre" type="text" ng-model="ctrl.item.datosFacturacion.nombre" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+
+    <!--CIF-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.cifnif" for="dfcif" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dfcif" type="text" ng-model="ctrl.item.datosFacturacion.nif" maxLength="20" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Provincia-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.provincia" for="dfprovincia" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dfprovincia" type="text"
+                   ng-model="ctrl.item.datosFacturacion.provincia" maxLength="50" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+
+    <!--Localidad-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.localidad" for="dflocalidad" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dflocalidad" type="text"
+                   ng-model="ctrl.item.datosFacturacion.localidad" maxLength="50" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+
+    <!--CP-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.cp" for="dfcp" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dfcp" type="text" ng-model="ctrl.item.datosFacturacion.codigoPostal"
+                   maxLength="10" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+
+    <!--Dirección-->
+    <div class="col-sm-3">
+        <div class="form-group">
+            <label-form key="admin.datosfacturacion.direccion" for="dfdireccion" required="ctrl.solicitarFactura"></label-form>
+            <input class="form-control" id="dfdireccion" type="text"
+                   ng-model="ctrl.item.datosFacturacion.direccion" maxLength="500" ng-required="ctrl.solicitarFactura">
+        </div>
+    </div>
+</div>

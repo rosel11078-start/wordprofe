@@ -1,0 +1,30 @@
+<h1 translate="miespacio.miscompras.title"></h1>
+
+<div class="empty" ng-show="ctrl.empty" translate="compra.empty"></div>
+
+<table ng-show="!ctrl.empty" ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-hover"
+       class="ng-cloak">
+    <tr ng-repeat="element in $data track by element.id" class="animate">
+        <td data-title="'compra.form.fecha' | translate" sortable="'fecha'" align="center">
+            <date model="element.fecha"></date>
+        </td>
+
+        <td data-title="'compra.form.creditos' | translate" sortable="'creditos'" align="right">
+            {{element.creditos}}
+        </td>
+
+        <td data-title="'compra.form.precio' | translate" sortable="'precio'" align="right">
+            {{element.precio | number:2}} €
+        </td>
+
+        <td data-title="'compra.form.precioiva' | translate" sortable="'precioConIva'" align="right">
+            {{element.precioConIva | number:2}} €
+        </td>
+
+        <td data-title="'compra.form.iva' | translate" sortable="'porcentajeIva'" align="right">
+            {{element.porcentajeIva}} %
+        </td>
+    </tr>
+</table>
+<loading is-loading="ctrl.loading" class="center-block"></loading>
+

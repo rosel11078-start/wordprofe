@@ -1,0 +1,22 @@
+<label-form key="{{ctrl.label}}" for="{{ctrl.id}}" required="ctrl.required"></label-form>
+
+<div class="input-group date-picker">
+    <input type="text" class="form-control" id="{{ctrl.id}}" uib-datepicker-popup="{{ctrl.format}}"
+           ng-change="ctrl.change(ctrl.model)"
+           ng-focus="ctrl.openDatePicker()"
+           ng-model="ctrl.model"
+           is-open="ctrl.opened"
+           datepicker-options="ctrl.dateOptions"
+           ng-required="ctrl.required"
+           close-text="{{'datepicker.close' | translate}}" current-text="{{'datepicker.currentday' | translate}}"
+           clear-text="{{'datepicker.clear' | translate}}"
+           show-button-bar="ctrl.showBar"
+           ng-disabled="$ctrl.disabled"
+           ng-readonly="ctrl.readonly"/>
+
+    <span class="input-group-btn" ng-if="!$ctrl.disabled">
+        <button type="button" class="btn btn-default" ng-click="ctrl.openDatePicker()">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+    </span>
+</div>

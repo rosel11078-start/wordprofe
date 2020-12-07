@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-9">
+        <h1 data-translate="activacion.title"></h1>
+
+        <div class="alert alert-success" ng-show="ctrl.success" translate="activacion.success.activado"
+             translate-compile ng-if="ctrl.rol == 'ROLE_ALUMNO'"></div>
+<!--        <div class="alert alert-info" ng-show="ctrl.success" translate="activacion.success.pendiente" translate-compile
+             ng-if="ctrl.rol == 'ROLE_CENTRO' || ctrl.rol == 'ROLE_LIBRERIA' || ctrl.rol == 'ROLE_PROFESOR'"></div>-->
+
+        <div class="alert alert-warning" ng-show="ctrl.error" translate="activacion.error.clave"></div>
+    </div>
+
+    <div class="col-md-3">
+        <login></login>
+    </div>
+</div>

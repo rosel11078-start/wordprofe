@@ -1,0 +1,46 @@
+<div class="row">
+    <!--Imagen de perfil-->
+    <div class="col-sm-4 form-group">
+        <imagen-perfil ng-model="ctrl.item.imagen"
+                       ruta-carpeta-imagen="upload/usuarios/{{ctrl.item.id}}/perfil"
+                       on-remove-image="ctrl.onRemoveImage()"></imagen-perfil>
+    </div>
+</div>
+
+<div class="row">
+    <!--Nombre-->
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label-form key="admin.alumno.form.nombre" for="nombre" required="true"></label-form>
+            <input class="form-control" id="nombre" type="text" ng-model="ctrl.item.nombre" required>
+        </div>
+    </div>
+
+    <!--Apellidos-->
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label-form key="admin.alumno.form.apellidos" for="apellidos" required="true"></label-form>
+            <input class="form-control" id="apellidos" type="text" ng-model="ctrl.item.apellidos" required>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!--Email-->
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label-form key="admin.alumno.form.email" for="email" required="true"></label-form>
+            <input class="form-control" id="email" type="email" ng-model="ctrl.item.email" required>
+        </div>
+    </div>
+
+    <!--Skype-->
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label-form key="admin.alumno.form.skype" for="skype" required="true"></label-form>
+            <input class="form-control" id="skype" type="text" ng-model="ctrl.item.skype" required>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'bloque-password.html'"></ng-include>

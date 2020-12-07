@@ -1,0 +1,26 @@
+/**/
+.list-form .element {
+    position: relative;
+}
+
+.list-form .remove {
+    position: absolute;
+    right: 45px;
+}
+
+.list-form .acordeon .remove {
+    top: 19px ! important;
+}
+
+.list-form .acordeon .panel-title {
+    font-size: 14px;
+    color: #666;
+}
+
+.list-form .sin-acordeon .remove {
+    top: 30px ! important;
+}
+
+.list-form .remove a {
+    color: #e51c23;
+}
