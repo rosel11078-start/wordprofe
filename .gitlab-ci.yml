@@ -29,24 +29,12 @@ deploy_war:
   stage: war
   script:
    -  echo "${CI_COMMIT_REF_NAME}"     
-   -  cd /root/worldprofe/war && unzip *.war -d /usr/local/tomcat8/webapps/plataformawp/ROOT/   
+   -  unzip /root/worldprofe/war/*.war -d /usr/local/tomcat8/webapps/plataformawp/ROOT/   
   tags:
    - plataformawp
   when: always
   only:
     - master
-
-deploy_reset:
-  stage: reset
-  script:
-   -  sh /usr/local/tomcat8/bin/shutdown.sh
-   -  sh /usr/local/tomcat8/bin/startup.sh
-  tags:
-   - plataformawp
-  when: always
-  only:
-    - master
-
 
 deploy_optional:
   stage: optinoal
@@ -59,6 +47,19 @@ deploy_optional:
    -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/app/* /usr/local/tomcat8/webapps/plataformawp/ROOT/app/
    -  cp -r /usr/local/tomcat8/webapps/plataformawp2/ROOT/assets/* /usr/local/tomcat8/webapps/plataformawp/ROOT/assets/
    -  cp  /usr/local/tomcat8/webapps/plataformawp2/ROOT/index.html /usr/local/tomcat8/webapps/plataformawp/ROOT/index.html
+  tags:
+   - plataformawp
+  when: always
+  only:
+    - master
+
+
+deploy_reset:
+  stage: reset
+  script:
+   -  sh /usr/local/tomcat8/bin/shutdown.sh
+   -  chmod -R 777 /usr/local/tomcat8/webapps/plataformawp/
+   -  sh /usr/local/tomcat8/bin/startup.sh
   tags:
    - plataformawp
   when: always
