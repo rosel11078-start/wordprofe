@@ -11,6 +11,7 @@ stages:
   - deploy
   - war
   - reset
+  - optinoal
 deploy:
   stage: deploy
   script:
