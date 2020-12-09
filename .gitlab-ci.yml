@@ -23,7 +23,7 @@ deploy:
    - plataformawp
   when: always     
   only: 
-    - master
+    - master   
 
 deploy_war:
   stage: war
