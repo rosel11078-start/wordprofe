@@ -28,7 +28,7 @@ spring:
     # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
-        url: jdbc:postgresql://localhost:5432/sife1701
+        url: jdbc:postgresql://localhost:5432/sife1701db
         username: postgres
         password: postgres
         maximum-pool-size: 5

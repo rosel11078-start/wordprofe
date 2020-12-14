@@ -125,7 +125,7 @@ public class MailService {
         mailProp.put("mail.smtp.starttls.enable", "true");
         mailProp.put("mail.smtp.starttls.required", "true");
         mailProp.put("mail.debug", "true");
-        mailProp.put("mail.smtp.ssl.enable", "true");
+        mailProp.put("mail.smtp.ssl.enable", "false");
         mailProp.put("mail.smtp.user", "admin@worldprofe.com");
 
         //preparing Multimedia Message and sending
