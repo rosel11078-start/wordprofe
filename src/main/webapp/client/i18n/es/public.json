@@ -85,12 +85,8 @@
   "registro": {
     "title": "Entrar",
     "info": {
-      "titulo": "Registro",
-<<<<<<< HEAD
-      "mensaje": "Si NO eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
-=======
+      "titulo": "Registro",      
       "mensaje": "Si no eres un alumno y quieres recibir clases de idiomas, regístrate de manera gratuíta. ",
->>>>>>> d09843e915049721670bb7619fd5b5fa1efde72e
       "registrate": "Regístrate"
     },
     "tipo": {
@@ -314,7 +310,7 @@
     "empty": "No hay compras realizadas",
     "form": {
       "info": "Cada clase equivale a media hora de docencia.",
-      "promo": "Promoción válida hasta el 31 de diciembre de 2020",
+      "promo": "Promoción válida hasta el 31 de enero de 2021",
       "creditos": "clases",
       "credito": "clase",
       "fecha": "Fecha",
