@@ -113,7 +113,7 @@ public class MailService {
         //Spring Framework JavaMailSenderImplementation    
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.ionos.es");
-        mailSender.setPort(587);
+        mailSender.setPort(465);
         //setting username and password
         mailSender.setUsername("admin@worldprofe.com");
         mailSender.setPassword("i80k8WP46$");
