@@ -45,5 +45,8 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
 
     @Query(value = "SELECT r FROM Reserva r WHERE r.claseLibre.id = :id")
     List<Reserva> findByClaseLibre(@Param("id") Long id);
+    
+    
+    List<Reserva> findAllByEstado(Estado estado);
 
 }
