@@ -1,0 +1,67 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuracion will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+locale:
+    default: es
+
+server:
+    port: 80
+
+spring:
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+        database: POSTGRESQL
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.id.new_generator_mappings: true
+            hibernate.current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+    http:
+      multipart:
+        max-file-size: 20Mb
+        max-request-size: 20Mb
+    messages:
+      basename: i18n/messages
+    thymeleaf:
+      mode: XHTML
+
+properties:
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    security:
+        authentication:
+            jwt:
+                secret: c2t3f0c5dXF6bV9tOV45X2RpdmlzYQ==
+                # Token is valid 24 hours
+                tokenValidityInSeconds: 86400
+                tokenValidityInSecondsForRememberMe: 2592000
+
+javamelody:
+  advisor-auto-proxy-creator-enabled: false
+  init-parameters:
+    application-name: SIFE1701
+    authorized-users: admin:worldprofe
+    monitoring-path: /monitoring
+    log: false
+    url-exclude-pattern: (/resources/.*|/upload/.*|/templates/.*)
+
+

@@ -1,0 +1,20 @@
+{
+  "error": {
+    "error": {
+      "title": "Error",
+      "content": "Se ha producido un error."
+    },
+    "accessdenied": {
+      "title": "Acceso denegado",
+      "content": "Acceso denegado. No dispone de permisos para acceder a esta sección."
+    },
+    "notfound": "No se ha podido encontrar la dirección URL",
+    "servernotreachable": "No se ha podido establecer conexión con el servidor",
+    "internalservererror": "Error interno del servidor",
+    "unauthorized": "No tiene acceso a este recurso",
+    "notnulls": "Compruebe que ha introducido todos los campos obligatorios",
+    "size": "Compruebe que todos los campos cumplen las restricciones",
+    "invalidextension": "La extensión del archivo {{archivo}} no es válida",
+    "email": "Se ha producido un error y no se ha podido enviar el email"
+  }
+}

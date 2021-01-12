@@ -1,0 +1,36 @@
+{
+  "miespacio": {
+    "login": "Iniciar sesión",
+    "miagenda": {
+      "title": "Mi agenda",
+      "RECHAZADAS_O_CANCELADAS": "Canceladas",
+      "TODOS": "Todas"
+    },
+    "miscompras": {
+      "title": "Mis compras"
+    },
+    "misalumnos": {
+      "empty": "Ningún alumno pertenece a esta empresa",
+      "nombre": "Nombre",
+      "apellidos": "Apellidos",
+      "email": "Correo electronico",
+      "creditosTotales": "Creditos totales",
+      "creditosConsumidos": "Créditos consumidos",
+      "creditosDisponibles": "Créditos disponibles",
+      "empresa": {
+        "creditosTotales": "Creditos totales adquiridos:",
+        "creditosDisponibles": "Créditos disponibles:",
+        "creditosDistribuidos": "Créditos distribuidos:"
+      }
+    },
+    "miperfil": {
+      "title": "Mis datos",
+      "cambiarcontrasena": "Modificar contraseña",
+      "baja": {
+        "titulo": "Darse de baja",
+        "confirmacion": "¿Está seguro de que desea darse de baja de WORLDPROFE? Se eliminarán todos sus datos y registros de clases. Esta acción no se puede deshacer.",
+        "success": "Se ha dado de baja de WORLDPROFE correctamente."
+      }
+    }
+  }
+}

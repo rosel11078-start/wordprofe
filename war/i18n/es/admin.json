@@ -1,0 +1,350 @@
+{
+  "admin": {
+    "admin": {
+      "create": {
+        "success": "Se ha creado el usuario",
+        "title": "Crear administrador"
+      },
+      "edit": {
+        "accessdenied": "No tiene permisos suficientes para editar este usuario",
+        "success": "El usuario se ha modificado correctamente",
+        "title": "Editar usuario"
+      },
+      "error": {
+        "alreadyexists": "Ya existe un usuario con ese e-mail",
+        "alreadyexistslogin": "Ya existe un usuario con ese login"
+      },
+      "form": {
+        "confirmpassword": "Confirmar contraseña",
+        "email": "Email",
+        "fecharegistro": "Fecha de registro",
+        "login": "Nombre de usuario",
+        "password": "Contraseña",
+        "rol": "Rol",
+        "username": "Nombre de usuario",
+        "fechaultimoacceso": "Fecha último login"
+      },
+      "list": {
+        "title": "Administradores"
+      },
+      "success": {
+        "create": "Se le ha enviado un email al usuario para que establezca su contraseña",
+        "edit": "Se ha actualizado la información del usuario"
+      }
+    },
+    "alumno": {
+      "create": {
+        "success": "Se ha creado el/la alumno/a",
+        "title": "Crear alumno/a"
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que desea eliminar el/la alumno/a <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "success": "Se ha eliminado el/la alumno/a correctamente",
+        "title": "Eliminar alumno/a"
+      },
+      "edit": {
+        "success": "El/La alumno/a se ha modificado correctamente",
+        "title": "Editar alumno/a"
+      },
+      "empty": "No hay alumnos/as registrados/as",
+      "form": {
+        "apellidos": "Apellidos",
+        "contrasena": "Contraseña",
+        "contrasenarepetir": "Repetir contraseña",
+        "creditos": "Créditos",
+        "creditosconsumidos": "Créditos consumidos",
+        "creditosdisponibles": "Créditos disponibles",
+        "creditosmaximos": "Créditos disponibles de la empresa",
+        "creditostotales": "Créditos totales",
+        "datosfacturacion": {
+          "cif": "CIF",
+          "cp": "CP",
+          "direccion": "Dirección",
+          "localidad": "Localidad",
+          "nif": "NIF",
+          "nombre": "Nombre",
+          "provincia": "Provincia",
+          "title": "Datos fiscales"
+        },
+        "email": "Correo electrónico",
+        "fecharegistro": "Fecha de registro",
+        "fechaultimoacceso": "Fecha último login",
+        "login": "Nickname",
+        "nombre": "Nombre",
+        "skype": "Skype",
+        "telefonomovil": "Teléfono móvil",
+        "tipo": "Tipo"
+      },
+      "list": {
+        "title": "Alumnos/as"
+      },
+      "veractivos": "Ver alumnos/as activos/as",
+      "vereliminados": "Ver alumnos/as eliminados/as"
+    },
+    "capacidad": {
+      "create": {
+        "title": "Nueva capacidad"
+      },
+      "form": {
+        "nombre": "Nombre de la capacidad"
+      }
+    },
+    "changepassword": {
+      "confirmpassword": "Confirmar contraseña",
+      "error": {
+        "incorrect": "La contraseña introducida no es correcta"
+      },
+      "newpassword": "Nueva contraseña",
+      "oldpassword": "Contraseña",
+      "success": "Contraseña actualizada correctamente",
+      "title": "Modificar contraseña"
+    },
+    "claselibre": {
+      "bloque": {
+        "delete": {
+          "confirm": "¿Está seguro de que desea eliminar la clase libre seleccionada?",
+          "success": "Se ha eliminado la clase libre correctamente",
+          "title": "Eliminar clase libre"
+        }
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que desea eliminar la clase libre <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "success": "Se ha eliminado la clase libre correctamente",
+        "title": "Eliminar clase libre"
+      }
+    },
+    "configuracion": {
+      "create": {
+        "success": "La configuración ha sido actualizada"
+      },
+      "edit": {
+        "success": "La configuración ha sido actualizada"
+      },
+      "correoNotificaciones": "Correo electrónico de un administrador al que se le enviarán algunas notificaciones",
+      "iva": "IVA (%)",
+      "tiempoantesiniciocancelar": "Margen de tiempo entre poder cancelar una reserva y su comienzo (en horas)",
+      "tiempomaximoactualizarincidencia": "Tiempo máximo para actualizar una incidencia por un profesor o un alumno (en horas)",
+      "tiempomaximorespuesta": "Tiempo máximo de respuesta de un/a profesor/a a una reserva de un alumno (en horas)",
+      "title": "Configuración"
+    },
+    "form": {
+      "button": {
+        "add": "Añadir",
+        "back": "Atrás",
+        "cancel": "Cancelar",
+        "close": "Cerrar",
+        "create": "Crear",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "generate": "Generar",
+        "remove": "Quitar",
+        "save": "Guardar",
+        "send": "Enviar",
+        "update": "Actualizar"
+      },
+      "error": {
+        "alreadyexists": "Ya existe esta entidad",
+        "fail": "Algo ha salido mal. Compruebe los datos del formulario y si el error persiste, contacte con el administrador"
+      },
+      "filter": "Filtrar",
+      "id": "ID"
+    },
+    "list-users": {
+      "alta": "Dar de alta",
+      "desactivar": {
+        "confirm": "¿Está seguro de que quiere desactivar el usuario <b>{{id}}</b>? El usuario no se eliminará de la base de datos, pero no podrá seguir accediendo a la plataforma. Su correo tampoco se podrá utilizar para nuevos registros. ",
+        "confirmempresa": "<p>¿Está seguro de que quiere desactivar el usuario <b>{{id}}</b>? El usuario no se eliminará de la base de datos, pero no podrá seguir accediendo a la plataforma. Su correo tampoco se podrá utilizar para nuevos registros.</p><p>También se bloqueará el acceso a los alumnos asociados a esta empresa.</p>",
+        "error": "No se ha podido desactivar el usuario",
+        "success": "Usuario desactivado correctamente",
+        "title": "Desactivar usuario"
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que quiere eliminar el usuario <b>{{id}}</b>? Se anonimizarán sus datos y se liberará su correo electrónico para permitir nuevos registros. Esta operación no se puede deshacer.",
+        "confirmadmin": "¿Está seguro de que quiere eliminar el usuario <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "confirmempresa": "<p>¿Está seguro de que quiere eliminar el usuario <b>{{id}}</b>? Se anonimizarán sus datos y se liberará su correo electrónico para permitir nuevos registros. Esta operación no se puede deshacer.</p><p>Además, como se trata de una empresa, <b>se eliminarán todos los alumnos</b> que tenga asociados. Por este motivo, revise primero la lista de alumnos para estar seguro de que se puede eliminar definitivamente.</p>",
+        "error": "No se ha podido eliminar el usuario",
+        "success": "Usuario eliminado",
+        "title": "Eliminar usuario"
+      },
+      "eliminado": "Eliminado",
+      "error": {
+        "notfound": "No se ha encontrado el usuario"
+      },
+      "gestion": {
+        "restaurar": {
+          "success": "El usuario ha sido restaurado correctamente"
+        }
+      },
+      "restaurar": {
+        "confirm": "¿Está seguro de quiere recuperar el usuario <b>{{id}}</b>? El usuario podrá volver a acceder a la plataforma con sus credenciales.",
+        "success": "El usuario se ha recuperado correctamente",
+        "title": "Recuperar usuario"
+      },
+      "vereliminados": "Ver usuarios eliminados"
+    },
+    "datosfacturacion": {
+      "cif": "CIF",
+      "cifnif": "CIF / NIF",
+      "cp": "CP",
+      "direccion": "Dirección",
+      "localidad": "Localidad",
+      "nif": "NIF",
+      "nombre": "Nombre",
+      "provincia": "Provincia",
+      "title": "Datos fiscales"
+    },
+    "empresa": {
+      "create": {
+        "success": "Se ha creado la empresa",
+        "title": "Crear empresa"
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que desea eliminar la empresa <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "success": "Se ha eliminado la empresa correctamente",
+        "title": "Eliminar empresa"
+      },
+      "edit": {
+        "success": "La empresa se ha modificado correctamente",
+        "title": "Editar empresa"
+      },
+      "empty": "No hay empresas registradas",
+      "error": {
+        "notfound": "No se ha encontrado la empresa"
+      },
+      "form": {
+        "contrasena": "Contraseña",
+        "contrasenarepetir": "Repetir contraseña",
+        "creditos": "Créditos",
+        "creditosdisponibles": "Créditos disponibles",
+        "creditosdistribuidos": "Créditos distribuidos",
+        "creditosmaximos": "Créditos disponibles de la empresa",
+        "creditostotales": "Créditos totales",
+        "datospersonales": "Datos personales",
+        "datosprofesionales": "Datos profesionales",
+        "email": "Correo electrónico",
+        "fechacaducidad": "Fecha de caducidad",
+        "fecharegistro": "Fecha de registro",
+        "fechaultimoacceso": "Fecha último login",
+        "login": "Nickname",
+        "nombre": "Persona de contacto",
+        "observaciones": "Observaciones",
+        "telefonomovil": "Teléfono móvil",
+        "tipo": "Tipo"
+      },
+      "generarexcel": "Generar excel",
+      "list": {
+        "title": "Empresas"
+      }
+    },
+    "paquetecreditos": {
+      "create": {
+        "success": "Se ha creado el paquete de créditos",
+        "title": "Crear paquete de créditos"
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que desea eliminar el paquete de créditos <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "success": "Se ha eliminado el paquete de créditos correctamente",
+        "title": "Eliminar paquete de créditos"
+      },
+      "edit": {
+        "success": "El paquete de créditos se ha modificado correctamente",
+        "title": "Editar paquete de créditos"
+      },
+      "empty": "No hay paquetes de créditos disponibles",
+      "form": {
+        "coste": "Coste (en €)",
+        "creditos": "Créditos"
+      },
+      "list": {
+        "title": "Paquetes de créditos"
+      }
+    },
+    "profesor": {
+      "create": {
+        "success": "Se ha creado el/la profesor/a",
+        "title": "Crear profesor/a"
+      },
+      "edit": {
+        "success": "El/La profesor/a se ha modificado correctamente",
+        "title": "Editar profesor/a"
+      },
+      "form": {
+        "apellidos": "Apellidos",
+        "capacidades": "Capacidades",
+        "clasesimpartidas": "Clases impartidas",
+        "contrasena": "Contraseña",
+        "contrasenarepetir": "Repetir contraseña",
+        "datospersonales": "Datos personales",
+        "datosprofesionales": "Datos profesionales",
+        "disponibilidad": "Disponibilidad",
+        "email": "Correo electrónico",
+        "fechanacimiento": "Fecha de nacimiento",
+        "fecharegistro": "Fecha de registro",
+        "fechaultimoacceso": "Fecha último login",
+        "idioma": "Idioma",
+        "idiomas": "Idiomas",
+        "login": "Nickname",
+        "nivel": "Nivel",
+        "niveles": "Niveles",
+        "nombre": "Nombre",
+        "paisorigen": "País de origen",
+        "skype": "Skype",
+        "telefonomovil": "Teléfono móvil",
+        "textopresentacion": "Texto de presentación",
+        "descripcioncapacidades": "Capacidades",
+        "tipo": "Tipo",
+        "zonahoraria": "Zona horaria"
+      },
+      "generarexcel": "Generar excel",
+      "list": {
+        "title": "Profesores/as",
+        "agenda": "Ver agenda",
+        "meses": "Clases impartidas en el mes",
+        "anos": "y en el año"
+      },
+      "agenda": {
+        "title": "Agenda"
+      }
+    },
+    "register": {
+      "error": {
+        "alreadyexists": "Ya existe un usuario con ese nombre",
+        "dontmatch": "Las contraseñas no coinciden",
+        "fail": "Algo ha salido mal. Comprueba los datos del formulario."
+      },
+      "password.strength": "Seguridad de la contraseña",
+      "success": "Usuario creado",
+      "title": "Crear usuario"
+    },
+    "reserva": {
+      "create": {
+        "success": "Se ha creado la reserva",
+        "title": "Crear reserva"
+      },
+      "delete": {
+        "confirm": "¿Está seguro de que desea eliminar la reserva <b>{{id}}</b>? Esta operación no se puede deshacer.",
+        "success": "Se ha eliminado la reserva correctamente",
+        "title": "Eliminar reserva"
+      },
+      "duplicar": {
+        "semana": "La semana actual se ha duplicado correctamente",
+        "title": "Duplicar semana"
+      },
+      "edit": {
+        "success": "La reserva se ha modificado correctamente",
+        "title": "Editar reserva"
+      },
+      "list": {
+        "title": "Reservas"
+      },
+      "update": {
+        "success": "La reserva se ha actualizado correctamente",
+        "title": "Actualizar reserva"
+      }
+    },
+    "tesauro": {
+      "tooltip": "Introduce los datos separados por comas o pulsando la tecla 'Enter'"
+    },
+    "title": "WorldProfe"
+  }
+}

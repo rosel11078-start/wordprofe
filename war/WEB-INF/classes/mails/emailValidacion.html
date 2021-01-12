@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.validacion.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<h3 th:text="#{email.bienvenido(${user.nombre})}"></h3>
+
+<p>
+    <span th:text="#{email.validacion.text1}"></span>
+    <a th:href="@{|${baseUrl}/#/validar?key=${user.claveActivacion}|}" th:text="#{email.validacion.link}"></a><span
+    th:text="#{email.validacion.text2}"></span>
+</p>
+
+<p>
+    <a th:href="@{|${baseUrl}/#/validar?key=${user.claveActivacion}|}"
+       th:text="@{|${baseUrl}/#/validar?key=${user.claveActivacion}|}"></a>
+</p>
+
+<p>
+    <span th:text="#{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.reserva.general.title}"></title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<h3 th:text="#{email.reserva.aceptacionrechazo.saludo(${user.nombre})}"></h3>
+
+<p>
+    <span
+        th:utext="#{email.reserva.aceptacion.text1(${reserva.profesor.nombre + ' ' + reserva.profesor.apellidos}, ${baseUrl})}"></span>
+</p>
+
+<p>
+    <span th:text=" #{email.despedida}"></span>
+    <br/>
+    <em th:text="#{email.signature}"></em>
+</p>
+
+</body>
+</html>

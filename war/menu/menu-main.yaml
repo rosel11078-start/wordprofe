@@ -1,0 +1,59 @@
+# HELP ME:
+#- label: Etiqueta
+#  icon: Glyphicon que se mostrará junto al texto
+#  state: Estado al que redirige
+#  authorities: Roles que pueden ver la entrada del menú
+#  states: Lista de estados en los cuales se muestra la entrada del menú
+#  actives: Lista de estados en los cuales la entrada del menú se marcará como activa.
+#  modal: Permite abrir una ventana modal estática pasándole el ID.
+#  componente: Componente HTML.
+#  subtree: Dropdown
+#    - label: divider
+
+####################### PUBLICA #######################
+
+# Enlace a la administración. Útil durante el desarrollo.
+#- label: Admin
+#  icon: glyphicon glyphicon-log-in
+#  state: admin/login
+
+#- label: global.menu.home
+#  state: home
+
+# Lista de profesores
+- label: global.menu.profesores
+  icon: glyphicon glyphicon-globe
+  state: profesor/list
+
+# Paquetes de créditos
+- label: global.menu.paquetescreditos
+  icon: glyphicon glyphicon-shopping-cart
+  state: paquetecreditos
+  authorities: ROLE_ANONYMOUS, ROLE_ALUMNO
+
+
+# Mi agenda
+- label: global.menu.miespacio.miagenda
+  icon: glyphicon glyphicon-calendar
+  state: miespacio/miagenda
+  authorities: ROLE_ALUMNO, ROLE_PROFESOR
+
+# Mis compras
+- label: global.menu.miespacio.miscompras
+  icon: glyphicon glyphicon-shopping-cart
+  state: miespacio/miscompras
+  authorities: ROLE_ALUMNO
+
+# Mis alumnos
+- label: global.menu.miespacio.misalumnos
+  icon: glyphicon glyphicon-list-alt
+  state: miespacio/misalumnos
+  authorities: ROLE_EMPRESA
+
+# Mi perfil
+- label: global.menu.miespacio.perfil
+  icon: glyphicon glyphicon-user
+  state: miespacio/perfil
+  actives: miespacio/perfil/contrasena
+  authorities: ROLE_AUTHENTICATED
+  class: menu-perfil
