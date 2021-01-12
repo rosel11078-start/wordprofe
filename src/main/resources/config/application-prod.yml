@@ -14,17 +14,25 @@
 # locale:
 #     default: es
 
+=======
+<<<<<<< HEAD
+# locale:
+#     default: es
+
 server:
     port: 9000
     compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
 
+>>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 
 spring:
     message:
         basename: i18n/messages
         encoding: UTF-8
+<<<<<<< HEAD
+=======
   # Configuración de la BASE DE DATOS
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
@@ -47,6 +55,7 @@ spring:
 =======
 spring:
 >>>>>>> d09843e915049721670bb7619fd5b5fa1efde72e
+>>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 
   # Configuración de la BASE DE DATOS
   datasource:
@@ -70,14 +79,22 @@ spring:
 
   mail: # Configuración del servidor de correo
     host: smtp.ionos.es
+<<<<<<< HEAD
+    port: 587
+=======
     port: 587 
+>>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
     username: admin@worldprofe.com
     password: $Adminworldprofe.2020$
     protocol: smtp
     default-encoding: UTF-8
     properties.mail.smtp:
       auth: true
+<<<<<<< HEAD
+      starttls.enable: false
+=======
       starttls.enable: false 
+>>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 
 properties:
   paypal:
@@ -93,6 +110,14 @@ properties:
     redirectAfterSignIn: "/social-auth"
     redirectAfterSignUp: "/social-register"
 
+<<<<<<< HEAD
+  smsapi:
+    token: "6RhjJ3TUAU64sjQXxLXm8NBop0xwHzatdSMAubVJ"
+    #url: "http://api.smsapi.pl/"
+    url: "http://api.smsapi.com/"
+
+=======
+>>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 server:
   compression:
     enabled: true

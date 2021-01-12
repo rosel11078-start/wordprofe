@@ -1,0 +1,64 @@
+{
+  "comun": {
+    "cancelar": "Cancelar",
+    "aceptar": "Aceptar",
+    "cargando": "Cargando..."
+  },
+  "idiomas": {
+    "es": "es",
+    "en": "en"
+  },
+  "datepicker": {
+    "currentday": "Hoy",
+    "clear": "Limpiar",
+    "close": "Cerrar"
+  },
+  "imagen": {
+    "form": {
+      "upload": "Subir nueva imagen",
+      "uploadperfil": "Subir imagen de perfil",
+      "setperfil": "Confirmar"
+    }
+  },
+  "upload": {
+    "file": {
+      "title": "Adjuntar archivo",
+      "vacio": "No hay ningún archivo seleccionado",
+      "subiendo": "Debes esperar a que se suba el archivo"
+    }
+  },
+  "multiselect": {
+    "todos": "Todos",
+    "cualquiera": "Cualquiera",
+    "default": "Seleccionar",
+    "search": "Buscar...",
+    "selectioncount": "seleccionados"
+  },
+  "fecha": {
+    "legendfecha": "Fecha",
+    "legendnacimiento": "Fecha de nacimiento",
+    "legendmuerte": "Fecha de la muerte",
+    "dia": "Día",
+    "mes": "Mes",
+    "ano": "Año"
+  },
+  "estaticas": {
+    "title": "Estáticas",
+    "pagina": {
+      "principal": "Principal"
+    },
+    "idioma": {
+      "EN": "Inglés",
+      "ES": "Español"
+    },
+    "i18n": {
+      "titulo": "Título",
+      "contenido": "Contenido"
+    },
+    "form": {
+      "edit": {
+        "success": "La página estática se ha modificado con éxito"
+      }
+    }
+  }
+}
