@@ -44,12 +44,8 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
     Page<Reserva> filterByAdmin(@Param("estado") Estado estado, @Param("revisadas") Boolean revisadas, Pageable pageable);
 
     @Query(value = "SELECT r FROM Reserva r WHERE r.claseLibre.id = :id")
-    List<Reserva> findByClaseLibre(@Param("id") Long id);
-<<<<<<< HEAD
-    
+    List<Reserva> findByClaseLibre(@Param("id") Long id);   
     
     List<Reserva> findAllByEstado(Estado estado);
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 
 }
