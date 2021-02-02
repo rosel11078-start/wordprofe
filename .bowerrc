@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 {
     "directory": "src/main/webapp/client/bower_components"
 }
-=======
-{
-    "directory": "src/main/webapp/client/bower_components"
-}
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
+
+
+
