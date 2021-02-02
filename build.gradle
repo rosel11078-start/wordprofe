@@ -13,11 +13,8 @@ buildscript {
 		maven { url 'https://plugins.gradle.org/m2/' }
         maven { url 'http://repo.spring.io/milestone/' }
         maven { url 'http://repo.spring.io/plugins-release' }
-<<<<<<< HEAD
         maven { url = uri('https://oss.sonatype.org/content/repositories/snapshots')}
 	    maven { url = uri('http://repo.maven.apache.org/maven2')}
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
     }
     dependencies {
         classpath group: 'net.ltgt.gradle', name: 'gradle-apt-plugin', version: '0.6'
@@ -28,11 +25,8 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'maven'
-<<<<<<< HEAD
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 defaultTasks 'bootRun'
@@ -80,10 +74,7 @@ configurations {
 repositories {
     mavenLocal()
 	mavenCentral()
-<<<<<<< HEAD
     maven { url 'http://labs.smsapi.com/maven' }
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
     // maven { url 'http://repo.spring.io/milestone' }
     // maven { url 'http://repo.spring.io/snapshot' }
     // maven { url 'https://repository.jboss.org/nexus/content/repositories/releases' }
@@ -149,24 +140,21 @@ dependencies {
     compile group: 'org.apache.poi', name: 'poi', version: '3.15'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.15'
 
-    // AutenticaciÃ³n social
+    // Autenticación social
     compile group: 'org.springframework.social', name: 'spring-social-security', version: '1.1.4.RELEASE'
     compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '1.1.1.RELEASE'
     compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
     compile group: 'org.springframework.social', name: 'spring-social-config', version: '1.1.6.RELEASE'
 
-    // IntegraciÃ³n con PayPal
+    // Integración con PayPal
     compile('com.paypal.sdk:rest-api-sdk:1.9.3') {
         exclude group: 'org.slf4j'
         exclude group: 'org.apache.logging.log4j'
     }
 
-<<<<<<< HEAD
-    // IntegraciÃ³n SMSAPI
+    // Integración SMSAPI
     compile group: 'org.json', name: 'json', version:'20140107'
     compile group: 'pl.smsapi', name: 'smsapi-lib', version:'2.5'
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 }
 
 compileJava.dependsOn(processResources)

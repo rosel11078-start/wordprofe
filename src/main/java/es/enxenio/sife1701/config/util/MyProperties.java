@@ -16,13 +16,10 @@ public class MyProperties {
     private final Social social = new Social();
     private final Async async = new Async();
     private final Paypal paypal = new Paypal();
-    private final Datos datos = new Datos();
-<<<<<<< HEAD
-    private final Smsapi smsapi = new Smsapi();
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
 
-    // =====================================================================
+    private final Datos datos = new Datos();
+    private final Smsapi smsapi = new Smsapi();
+
 
     public Http getHttp() {
         return http;
@@ -54,14 +51,13 @@ public class MyProperties {
 
     public Datos getDatos() {
         return datos;
+
     }
-<<<<<<< HEAD
     
     public Smsapi getSmsapi() {
     	return smsapi;
     }
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
+
 
     // =====================================================================
 
@@ -311,7 +307,7 @@ public class MyProperties {
             this.prefijoSerieSimple = prefijoSerieSimple;
         }
     }
-<<<<<<< HEAD
+
     
     public static class Smsapi{
         private String token;
@@ -334,8 +330,8 @@ public class MyProperties {
           this.token = token;
      }
 
+
     }
-=======
->>>>>>> 72d2793e36e6da77c4af2412e8f79d73999d1398
+
 
 }
