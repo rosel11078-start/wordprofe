@@ -179,12 +179,14 @@ $panel_heading_height: 36px;
     h4 {
         color: #666;
         font-size: 18px;
-    }
+    }	
 
     p {
         font-size: 15px;
         color: #666;
     }
+
+	
 
     /* ==========================================================================
     Formularios
@@ -280,17 +282,26 @@ $panel_heading_height: 36px;
 				font-weight: 500;
                 font-size: 20px;
                 margin-bottom: 15px;
-            }
-
+            }		
+			
             .presentacion {
                 margin-top: 15px;
                 padding-top: 15px;
                 padding-bottom: 10px;
                 border-top: 1px solid #ddd;
-
-                p {
-                    margin: 0 0 5px;
+				
+                .p {
+                    margin: 0 0 5px;			
+					
                 }
+				.span{
+					.p{
+						
+							font-size: 15px;
+						
+					}
+				}
+				
             }
         }
 
