@@ -4,6 +4,7 @@ var browserSync = require('browser-sync'),
     del = require('del'),
     es = require('event-stream'),
     gulp = require('gulp'),
+    babel = require("gulp-babel"),
     angularFilesort = require('gulp-angular-filesort'),
     templateCache = require('gulp-angular-templatecache'),
     changed = require('gulp-changed'),
@@ -47,6 +48,7 @@ gulp.task('copy', function () {
             .pipe(gulp.dest(config.dist)),
         // JavaScript estático
         gulp.src(config.jsDir + '/**')
+        	.pipe(babel())
             .pipe(uglify())
             .pipe(plumber({errorHandler: handleErrors}))
             .pipe(gulp.dest(config.dist + 'assets/js/')),
