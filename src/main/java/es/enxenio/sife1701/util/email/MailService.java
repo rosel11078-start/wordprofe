@@ -64,8 +64,10 @@ public class MailService {
     @Inject
     private MyProperties properties;
 
+
     @Autowired
-    private JavaMailSenderImpl javaMailSender;
+    private JavaMailSenderImpl javamailSender;
+
 
     @Autowired
     private MessageSource messageSource;
@@ -111,12 +113,13 @@ public class MailService {
         //final List<char[]> resourceList = oneMethod.getValidatorResource();
 
         //Spring Framework JavaMailSenderImplementation    
+
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.ionos.es");
-        mailSender.setPort(587);
+        mailSender.setPort(465);
         //setting username and password
         mailSender.setUsername("admin@worldprofe.com");
-        mailSender.setPassword("$Adminworldprofe.2020$");
+        mailSender.setPassword("i80k8WP46$");
 
         //setting Spring JavaMailSenderImpl Properties
         Properties mailProp = mailSender.getJavaMailProperties();

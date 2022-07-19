@@ -1,5 +1,6 @@
 var fs = require('fs'),
     gulp = require('gulp'),
+    //babel = require("gulp-babel"),
     lazypipe = require('lazypipe'),
     footer = require('gulp-footer'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -22,6 +23,7 @@ var initTask = lazypipe()
     .pipe(footer, ';');
 var jsTask = lazypipe()
     .pipe(ngAnnotate)
+    //.pipe(babel)
     .pipe(uglify);
 var cssTask = lazypipe()
     .pipe(prefix)

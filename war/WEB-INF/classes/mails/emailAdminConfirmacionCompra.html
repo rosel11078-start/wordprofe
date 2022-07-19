@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.compra.title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+        h3 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    <span th:text="#{email.admin.compra.text1}"></span>
+</p>
+
+<h4 th:text="#{email.compra.detalles.title}"></h4>
+
+<p>
+    <span th:text="#{email.admin.compra.usuario.nombre}"></span>
+    <span th:text="${user.nombre + ' ' + user.apellidos + ' (' + user.email + ')'}"></span>
+</p>
+
+<p>
+    <span th:text="#{email.compra.detalles.fecha}"></span>
+    <span th:text="${#calendars.format(compra.fecha, 'dd/MM/yyyy, HH:mm')}"></span>
+</p>
+
+<p>
+    <span th:text="#{email.compra.detalles.creditos}"></span>
+    <span th:text="${compra.creditos}"></span>
+</p>
+
+<div>
+    <p>
+        <span th:text="#{email.compra.total}"></span>
+        <span th:text="${#numbers.formatDecimal(compra.precioConIva, 0, 'COMMA', 2, 'POINT')}"></span> €
+    </p>
+</div>
+
+<br/>
+
+<p>
+    <span th:if="${!compra.solicitarFactura}" th:utext="#{email.admin.compra.noSolicitarFactura}"></span>
+</p>
+
+<div th:if="${compra.solicitarFactura}">
+    <p th:utext="#{email.admin.compra.solicitarFactura}"></p>
+
+    <h4 th:text="#{email.compra.datosFacturacion.title}"></h4>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.nombre}"></span>
+        <span th:text="${user.datosFacturacion.nombre}"></span>
+    </p>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.cifnif}"></span>
+        <span th:text="${user.datosFacturacion.nif}"></span>
+    </p>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.direccion}"></span>
+        <span th:text="${user.datosFacturacion.direccion}"></span>
+    </p>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.localidad}"></span>
+        <span th:text="${user.datosFacturacion.localidad}"></span>
+    </p>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.cp}"></span>
+        <span th:text="${user.datosFacturacion.codigoPostal}"></span>
+    </p>
+
+    <p>
+        <span th:text="#{email.admin.compra.usuario.provincia}"></span>
+        <span th:text="${user.datosFacturacion.provincia}"></span>
+    </p>
+</div>
+
+</body>
+</html>

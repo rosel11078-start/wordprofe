@@ -1,3 +1,4 @@
+
 # EditorConfig helps developers define and maintain consistent
 # coding styles between different editors and IDEs
 # editorconfig.org
@@ -19,3 +20,4 @@ trim_trailing_whitespace = false
 [*.{json,yaml,yml}]
 indent_style = space
 indent_size = 2
+
